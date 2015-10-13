@@ -1,0 +1,676 @@
+// @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+@import "theme/base";
+@import "theme/skeleton";
+@import "theme/layout";
+@import "theme/ionicons";
+@import "theme/retina";
+@import "theme/owl.carousel";
+@import "theme/owl.transitions";
+@import "hover.scss";
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+// The Code starts here
+// -------------------------------------
+// Table of contents
+
+  // 1. Global
+  // 2. Home
+  // 3. Video Player
+  // 4. Video Player
+  // 5. Coming Soon Page
+  // 6. Footer Icon
+  // 7. For pictures on video page
+  // 8. Fixes
+// -------------------------------------
+// -------------------------------------
+// -------------------------------------
+// -------------------------------------
+// 1. Global
+
+h1,h2,h3,h4,h5,h6,p,a  {font-family: "proxima-nova",sans-serif;}
+a {color: black; transition: .2s all}
+a:hover {color: #8A8A8A;text-decoration: none;}
+
+.pb-30 {padding-bottom: 30px !important;}
+.pt-30 {padding-top: 30px !important;}
+.ptb-30 {padding: 30px 0 !important;}
+.ptb-100 {padding: 100px 0 !important;}
+.mb-0 {margin-bottom: 0px !important;}
+.mb-20 {margin-bottom: 20px;}
+.mt-0 {margin-top: 0px !important;}
+.mt-5 {margin-top: 5px !important;}
+.pb-0 {padding-bottom: 0px !important;}
+.white {color:white !important;}
+.xsmall {font-size: 8px !important;}
+.f30 {font-size: 30px !important;}
+
+.black-bkg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  top: 0;
+}
+.t-center {text-align: center;}
+.t-up {text-transform: uppercase;}
+
+.vcenter {
+  position: absolute;
+  top: 40%;
+  margin: auto;
+  right: 0;
+  left: 0;
+}
+
+.el-center {text-align: center;}
+
+.space-100 {margin-top: 100px;}
+
+.menu-separator {
+  position: absolute;
+  border-top: 1px solid black;
+  width: 40%;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.cd-scndr-mem {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  max-width: 300px;
+  left: 50%;
+  margin-left: -150px;
+  -webkit-transform: translateY(-55%);
+  -ms-transform: translateY(-55%);
+  transform: translateY(-55%);
+}
+.interior-pg {margin-top: 80px;}
+.interior-pg .cd-menu-icon, .interior-pg .cd-primary-nav-trigger .cd-menu-icon::before, .interior-pg .cd-primary-nav-trigger .cd-menu-icon:after {
+  background-color: black;
+}
+.interior-pg .cd-header {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background: #EE57A6;
+}
+
+.home .cd-header {
+  background: transparent;
+  box-shadow: none;
+}
+.home .cd-header.is-visible {background-color: rgba(255, 255, 255, 0.96);}
+
+.welcome .cd-header, .welcome .scroll-to-top, .welcome footer {
+  display: none;
+}
+
+.welcome {
+  background-color: #f9f9f9;
+  border: white 30px solid;
+  width: 100%;
+  min-height: 100%;
+}
+.welcome-content {
+  padding: 1% 0;
+  .logo {
+    img {
+      margin: 0 auto;
+      display: block;
+      max-width: 15%;
+    }
+    @media (max-width: 736px) {
+      img {
+        max-width: 25%;
+      }
+    }
+  }
+  .warning {font-size: 12px;}
+  .enter {
+    font-size: 20px;
+    width: 100%;
+    margin: 0 auto;
+    a {
+      margin: 0 30px;
+      &::after {border-bottom: 1px solid black;}
+    }
+  }
+
+}
+
+
+.action-wrap p, .prev:hover, .next:hover, #royal_preloader.text .loader, .like-our-proj span, .list-social-nav li:hover.icon-soc-nav a, .cd-scndr-nav a.curent-nav-color, .cd-primary-nav .cd-scndr-nav .cd-label a:hover, .footer-copy-text a:hover, .about-box .icon, .services-box .icon, .team-box p, .quote-wrap-hart .icon, a.blog-link, #filter li a:hover, #filter li .current, .blog-box-1 .date p em, #ajax-form button, .contact-block .text p span, .link-recents a:hover, .pricing-item .number-price span, .pricing-item .number-price span:last-child {color: #EE57A6;}
+
+.center-login {
+  width: 40%;
+  margin: 0 auto;
+  input {width:100%;}
+}
+// 2. Home Page
+
+.home-main {
+  position: relative;
+  background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/home-main.jpg');
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  background-size: cover;
+
+  h1 {font-weight: 300;color: white;text-align: center;font-size: 50px;letter-spacing: 15px;margin-top:0;}
+  p {font-weight: 100;color: white;text-align: center;letter-spacing: 10px;margin-bottom:0;}
+  .btn {
+    border-radius: 0;
+    background: transparent !important;
+    border: 3px solid white;
+    width: 70%;
+    color: white;
+    letter-spacing: 5px;
+    font-weight: 100;
+    margin: 0 auto;
+    display: block;
+  }
+  .hvr-shutter-out-vertical:before {
+    background: white;
+  }
+  .btn:hover, .btn:focus, .btn.focus {color:black;}
+}
+.latest-videos {
+  background: white;
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  .title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+    font-weight: 300;
+    letter-spacing: 12px;
+    font-size: 20px;
+  }
+
+  .all-videos {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 10px;
+    font-size: 15px;
+  }
+
+  .video-small-title {letter-spacing: 2px;margin-top: 10px;margin-bottom: 0;}
+  .video-small-date {color:#777777;font-size: 12px;margin-bottom: 30px;}
+  .starting {margin-bottom: 0;color:#777777;}
+  .nono {padding:0;}
+  .likes {color:#777777; margin-bottom: 0; margin-top: 5px;}
+}
+
+
+.products-home {
+  position: relative;
+  background-image: url('https://s3-us-west-2.amazonaws.com/veronica-rodriguez/images/home-product.jpg');
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+
+  padding-top: 150px;
+  padding-bottom: 120px;
+  h2 {font-weight: 100;color: white;text-align: center;font-size: 20px;letter-spacing: 5px;margin-top: 0;margin-bottom:20px;}
+
+  .btn {
+    border: none;
+    color: black;
+    letter-spacing: 5px;
+    font-weight: 100;
+    background: #d2d2d2;
+    transition: all .2s;
+  }
+
+  .btn:hover, .btn:focus, .btn.focus {color:black;background: white;}
+
+}
+
+.events-home {
+  @extend .products-home;
+  background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/home-main-2.jpg');
+  .black-bkg {
+    background-color: rgba(0,0,0,0.7);
+  }
+}
+
+.news-home {
+
+  .all-videos {
+    text-align: right;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 5px;
+    font-size: 12px;
+  }
+
+  .title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+    font-weight: 300;
+    letter-spacing: 12px;
+    font-size: 20px;
+  }
+}
+
+.chat-home {
+  @extend .products-home;
+  background-image: none;
+  background: black;
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+// 3. Video Player
+.vjs-default-skin.vjs-big-play-centered .vjs-big-play-button {margin-left: -1em;margin-top: -1em;}
+.vjs-default-skin .vjs-big-play-button:before {line-height: 1.9em;color: white;}
+.vjs-default-skin .vjs-big-play-button {
+  width: 2em;
+  height: 2em;
+  background-color: rgba(0,0,0,.4);
+  border: .1em solid #FFFFFF;
+  border-radius: 50%;
+}
+
+.video-player {
+  position: relative;
+  height: 660px;
+  @media (max-width: 1024px) {
+    height: 465px;
+  }
+  @media (max-width: 736px) {
+    height: 400px;
+  }
+  @media (max-width: 414px) {
+    height: 220px;
+  }
+}
+
+// 4. Video Root Page
+.video-index {
+  @extend .latest-videos;
+  padding-top: 100px;
+}
+
+.more-videos {
+  .title {
+    text-align: left;
+  }
+}
+.vjs-poster {
+  background-size: cover !important;
+}
+
+// 5. Video Show Page
+.back-to-vids {
+  @extend .latest-videos;
+  background: #f4f4f4;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  .row {
+    margin: 0px;
+  }
+  .all-videos {
+    text-align: left;
+    margin: 0;
+  }
+}
+
+// 5. Coming Soon Page
+
+.coming-soon {
+  @extend .home-main;
+  background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/coming-soon.jpg');
+}
+
+
+// 6. Footer Icon
+
+.footer-links a {
+  color: black;
+  margin: 0 10px;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: .2s all;
+  &:hover {text-decoration: underline;}
+}
+
+.footer-links p {
+  color: black;
+  margin: 10px 0 0 0;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.footer-social-links{
+    font-size: 14px;
+    text-align: center;
+}
+.footer-social-links a{
+    width: 25px;
+    height: 25px;
+    line-height: 25px !important;
+    position: relative;
+    margin: 10px 6px;
+    text-align: center;
+    display: inline-block;
+    color: #111;
+    padding: 0;
+
+    -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -o-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+}
+.footer-social-links a i,
+.footer-social-links a span{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.footer-social-links a:before{
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #111;
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+    -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -o-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+
+}
+.footer-social-links a:hover{
+    color: #fff;
+}
+.footer-social-links a:hover:before{
+    background: #111;
+}
+
+.link-amazon {
+  background: image-url('amazon.png');
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.link-amazon:hover {
+  background: image-url('amazon-wht.png');
+}
+
+
+// 7. For pictures on video page
+// -----------------------
+// The anchor tag
+// a {}
+// height: 100%;
+// width: 100%;
+// position: absolute;
+// margin-left: -15px;
+// ---------------------
+
+.vid-pics {
+  height: 300px;
+  background-size: cover !important;
+  background-position: center center;
+  border: white 10px solid;
+  position: relative;
+}
+
+
+.slideshow-block{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: transparent;
+}
+a.link{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    display: block;
+    z-index: 10;
+    background: transparent no-repeat center top;
+}
+a.link:hover{
+    background-position: center -150px;
+}
+.slides{
+    z-index:0;
+    visibility:hidden;
+}
+.slides.active{
+    visibility:visible;
+}
+.previous_page, .next_page {display: none !important;}
+.pagination > li > a, .pagination > li > span {float:none;}
+.pagination {width:100%;text-align: center;}
+.pagination > .active > a {background-color: #FE9DCE;border-color: #FE9DCE;}
+.pagination > li > a {color:#FE9DCE;}
+
+
+.model-featured {
+  height: 500px;
+  position: relative;
+  background-position: center top;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.model-info {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.model-videos {
+
+}
+
+.col-xs-position-fix {
+  position: static;
+}
+
+// 8. Fixes
+
+.video-index {
+  @extend .latest-videos;
+  padding-top: 100px;
+}
+
+.policy-fix {
+  padding: 20px 0;
+  font-weight: 300;
+}
+
+
+.t-center, form#new_user.new_user {
+  input {
+    padding: 10px;
+    width: 100%
+  }
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  letter-spacing: 2px;
+}
+
+.login-size {
+}
+
+
+header h3.title {
+  font-weight: 300
+}
+
+@media only screen and (max-width: 480px) {
+  header h3.title {
+    display: none
+  }
+
+  .cd-primary-nav ul.cd-scndr-nav {
+    top: 60%;
+  }
+
+  .policy-fix {
+    font-size: .8em;
+  }
+}
+
+.no-left-padding {
+  padding-left: 0;
+}
+
+.menu-separator-fix {
+  margin-top: 20px;
+  padding-bottom: 0;
+  border-top: 1px solid black;
+  text-shadow: none;
+}
+
+.cd-scndr-nav {
+  top: 50%;
+}
+
+@media only screen and (max-width: 690px) {
+  .policy-fix {
+    word-break: break-word;
+  }
+}
+
+.margin-top-twenty {
+  margin-top: 20px;
+}
+
+.recurring-info {
+  padding-top: 20px;
+  font-size: 12px;
+}
+
+
+.radio-fix {
+  label {
+    border-radius: 3px;
+    font-weight: normal;
+  }
+
+  h4 {
+    text-align: left
+  }
+
+  h5 {
+    text-align: left
+  }
+
+  /* hide input */
+  input.radio:empty {
+    margin-left: -999px;
+  }
+
+  /* style label */
+  input.radio:empty ~ label {
+    width: 100%;
+    position: relative;
+    float: left;
+    line-height: 1.7em;
+    text-indent: 3.25em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  input.radio:empty ~ label:before {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 1.7em;
+    border: 1px solid black;
+  }
+
+  /* toggle hover */
+  input.radio:hover:not(:checked) ~ label:before {
+    content:'\2714';
+    text-indent: .5em;
+    color: #fe70ba;
+  }
+
+  /* toggle on */
+  input.radio:checked ~ label:before {
+    content:'\2714';
+    text-indent: .5em;
+    color: #fe70ba;
+  }
+
+  input.radio:checked ~ label {
+    color: black;
+  }
+
+  /* radio focus */
+  input.radio:focus ~ label:before {
+    box-shadow: none
+  }
+}
+
+.clear-edit {
+  clear: both
+}
+
+.remove-margin-top {
+  margin-top: 0;
+}
+
+.sign-up-billing {
+  h4 {
+    padding: 15px 0;
+    margin: auto;
+  }
+  p {
+    color: #777777;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .fill-out-form {
+    margin-top: 20px
+  }
+}

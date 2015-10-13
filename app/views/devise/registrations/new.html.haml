@@ -1,0 +1,57 @@
+- bclass 'interior-pg'
+%section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
+  .container-fluid
+    .col-sm-11.col-sm-offset-1.col-md-10.col-md-offset-1.col-lg-10.col-lg-offset-2
+      .row
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
+          .col-xs-12.col-sm-6.col-sm-offset-0.col-md-5.col-md-offset-1.col-lg-4.radio-fix.pull-left
+            %h4.text-uppercase
+              Join now for instant access
+            %h5.text-uppercase
+              Choose Package
+            %div
+              %input#radio1.radio{:name => "radio", :type => "radio"}/
+              %label{:for => "radio1"} $00.00 1-Month Membership*
+            %div.clear-edit
+              %input#radio2.radio{:name => "radio", :type => "radio"}/
+              %label{:for => "radio2"} $00.00 1-Month Membership*
+            %div.clear-edit
+              %input#radio3.radio{:name => "radio", :type => "radio"}/
+              %label{:for => "radio3"} $00.00 1-Month Membership*
+          .col-xs-12.col-xs-offset-0.col-sm-5.col-md-5.col-md-offset-0.col-lg-4.col-lg-offset-0.fill-out-form
+            %h4.text-uppercase.text-left
+              Fill out Sign up Form
+            .field
+              = f.email_field :email, autofocus: true, placeholder: "EMAIL"
+              %br/
+            .field
+              %br/
+              = f.password_field :password, autocomplete: "off", placeholder: "PASSWORD minimum 8 characters."
+            .field
+              %br/
+              = f.password_field :password_confirmation, autocomplete: "off", placeholder: "PASSWORD CONFIRMATION"
+            .actions
+              = f.submit "Sign up"
+      .row
+        .col-xs-12.col-sm-12.col-sm-offset-0.col-lg-9
+          %p.recurring-info.clear-edit.text-center
+            * Recurring memberships renew automatically if not cancelled.
+      .row
+        .col-xs-12.col-sm-12.col-sm-offset-0.col-md-10.col-md-offset-1.col-lg-8.sign-up-billing
+          %h3.text-uppercase.text-left
+            SAFE, SECURE AND ANONYMOUS BILLING
+          %h4.text-uppercase.text-left
+            SAFE AND SECURE TRANSACTIONS
+          %p
+            Payments are processed by CCBill, Segpay and GMBill, three of the most trusted credit card processors in the world.
+          %h4.text-uppercase.text-left
+            Anonymous Billing
+          %p
+            All transactions will be billed discreetly to your credit card as CCBill.com * AGW Ent, SEGPAYEU.COM * AGW Ent or GMBill.com, AGW Ent B.V.
+          %p
+            No adult website names will appear on your credit card statement.
+          %h4.text-uppercase.text-left
+            Customer Support
+          %p
+            If you are experiencing any difficulties with your transaction, or have any questions concerning veronicarodriguez.com memberships, please visit the veronicarodriguez.com Support Page.

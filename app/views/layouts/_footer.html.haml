@@ -1,0 +1,35 @@
+%footer{:class => yield(:fclass)}
+  .section.padding-top-bottom-small
+    .container
+      .col-sm-12
+        .footer-social-links.ptb-30
+          %a#link-rss{"data-title" => "Amazon", :href => "http://www.amazon.com/gp/registry/wishlist/1O497OKZEUEE1/ref=cm_sw_su_w", :target => "_blank"}
+            %i.fa.fa-amazon
+          %a#link-facebook{"data-title" => "Facebook", :href => "https://www.facebook.com/teamvrod?_rdr", :target => "_blank"}
+            %i.fa.fa-facebook
+          %a#link-twitter{"data-title" => "Twitter", :href => "https://twitter.com/LilveronicaR", :target => "_blank"}
+            %i.fa.fa-twitter
+          %a#link-youtube{"data-title" => "YouTube", :href => "https://www.youtube.com/user/lilveronicar", :target => "_blank"}
+            %i.fa.fa-youtube-play
+          %a#link-vimeo{"data-title" => "Vimeo", :href => "https://vimeo.com/user35351218", :target => "_blank"}
+            %i.fa.fa-vimeo-square
+          %a#link-instagram{"data-title" => "Instagram", :href => "https://instagram.com/teamvrod/", :target => "_blank"}
+            %i.fa.fa-instagram
+          %a#link-tumblr{"data-title" => "Tumblr", :href => "http://lilveronicar.tumblr.com/", :target => "_blank"}
+            %i.fa.fa-tumblr
+          %a#link-flickr{"data-title" => "ChatStar", :href => "http://www.chatstar.com/Veronica_Rodriguez", :target => "_blank"}
+            %i.fa.fa-fa.fa-star
+      .footer-links.mb-20.t-center
+        = link_to '18 U.S.C. Section 2257 Record-keeping requirements Compliance statement', compliance_path
+        %br/
+        = link_to 'Billing Support', 'https://epoch.com/', target: '_blank'
+        = link_to 'Terms and Conditions', terms_and_conditions_path
+        = link_to 'Privacy Policy', privacy_policy_path
+        = link_to 'Contact', '#'
+      %p.t-center
+        Please visit
+        = succeed "," do
+          %script{:language => "JavaScript", :src => "https://epoch.com/compliance/epoch_descriptor.php?master_code=M-607103"}
+      .col-sm-12
+        .footer-copy-text
+          %a{:href => "/"} © veronica rodriguez 2015.

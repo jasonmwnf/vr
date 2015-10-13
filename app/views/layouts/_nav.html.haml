@@ -1,0 +1,31 @@
+%header.cd-header
+  .container-fluid.no-left-padding
+    .col-xs-2.no-left-padding
+      .logo-wrap.pull-left
+        = image_tag 'https://s3-us-west-2.amazonaws.com/vrod-web-assets/main-logo.png'
+    .col-xs-1.pull-right.col-xs-position-fix
+      %a.cd-primary-nav-trigger{:href => "#0"}
+        %span.cd-menu-icon
+    .col-xs-7.pull-right
+      %h3.title.text-uppercase.pull-right.login
+        Sign up &nbsp; Login
+%nav
+  .cd-primary-nav
+    %ul.cd-scndr-nav
+      %li.cd-label= link_to 'Home', '#'
+      %li.cd-label= link_to 'Videos', '#'
+      %li.cd-label= link_to 'Models', '#'
+      %li.cd-label= link_to 'Live Shows', '#'
+      %li.cd-label= link_to 'Blog', '#'
+      %li.cd-label= link_to 'Store', '#'
+      %li.cd-label= link_to 'Events', '#'
+      %li.cd-label
+        %hr.menu-separator-fix
+      - if user_signed_in?
+        %li.cd-label
+          = link_to('Logout', destroy_user_session_path, :method => :delete)
+      - else
+        %li.cd-label
+          = link_to('Login', new_user_session_path)
+        %li.cd-label
+          = link_to('Sign Up', new_user_session_path)
