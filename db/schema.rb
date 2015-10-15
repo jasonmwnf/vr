@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151011040620) do
+ActiveRecord::Schema.define(version: 20151015150236) do
+
+  create_table "events", force: :cascade do |t|
+    t.string "name_of_location"
+    t.string "type_of_event"
+    t.date   "date"
+    t.time   "time"
+    t.string "address"
+    t.string "phone"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,5 +39,20 @@ ActiveRecord::Schema.define(version: 20151011040620) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "videos", force: :cascade do |t|
+    t.string  "title"
+    t.string  "featured_image"
+    t.text    "description"
+    t.string  "video_url"
+    t.string  "teaser_video_url"
+    t.date    "post_date"
+    t.string  "slug"
+    t.string  "thumbnail_1"
+    t.string  "thumbnail_2"
+    t.string  "thumbnail_3"
+    t.string  "thumbnail_4"
+    t.boolean "save_as_draft"
+  end
 
 end

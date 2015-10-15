@@ -1,6 +1,7 @@
 class CreateEvents < ActiveRecord::Migration
   def change
-    	t.string   :name_of_location
+    create_table :events do |t|
+      t.string   :name_of_location
       t.string   :type_of_event
       t.date     :date
       t.time     :time
@@ -8,3 +9,4 @@ class CreateEvents < ActiveRecord::Migration
       t.string   :phone
     end
   end
+end

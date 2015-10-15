@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get '/terms-and-conditions' => 'policy#terms'
   get '/privacy-policy' => 'policy#policy'
   get '/contact' => 'policy#contact'
+  get '/tour' => 'tour#index'
 
 end
