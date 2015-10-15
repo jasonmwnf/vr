@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.time     :time
       t.string   :address
       t.string   :phone
+      t.timestamps
     end
   end
 end

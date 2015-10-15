@@ -11,15 +11,63 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151015155050) do
+ActiveRecord::Schema.define(version: 20151015205056) do
 
   create_table "events", force: :cascade do |t|
-    t.string "name_of_location"
-    t.string "type_of_event"
-    t.date   "date"
-    t.time   "time"
-    t.string "address"
-    t.string "phone"
+    t.string   "name_of_location"
+    t.string   "type_of_event"
+    t.date     "date"
+    t.time     "time"
+    t.string   "address"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "models", force: :cascade do |t|
+    t.string   "name"
+    t.string   "featured_image_url"
+    t.string   "portfolio_image"
+    t.string   "nickname"
+    t.date     "birthdate"
+    t.string   "astrology"
+    t.string   "birth_place"
+    t.string   "ethnicity"
+    t.string   "nationality"
+    t.string   "hair_color"
+    t.string   "measurements"
+    t.string   "height"
+    t.string   "tattoos"
+    t.string   "pierciings"
+    t.text     "description"
+    t.string   "favorite_position"
+    t.boolean  "save_as_draft"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string   "image_url"
+    t.integer  "video_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "featured_image"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  create_table "shots", force: :cascade do |t|
+    t.integer "video_id"
+    t.integer "model_id"
+    t.integer "picture_id"
+    t.string  "slug"
   end
 
   create_table "upcoming_videos", force: :cascade do |t|
@@ -47,18 +95,20 @@ ActiveRecord::Schema.define(version: 20151015155050) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "videos", force: :cascade do |t|
-    t.string  "title"
-    t.string  "featured_image"
-    t.text    "description"
-    t.string  "video_url"
-    t.string  "teaser_video_url"
-    t.date    "post_date"
-    t.string  "slug"
-    t.string  "thumbnail_1"
-    t.string  "thumbnail_2"
-    t.string  "thumbnail_3"
-    t.string  "thumbnail_4"
-    t.boolean "save_as_draft"
+    t.string   "title"
+    t.string   "featured_image"
+    t.text     "description"
+    t.string   "video_url"
+    t.string   "teaser_video_url"
+    t.date     "post_date"
+    t.string   "thumbnail_1"
+    t.string   "thumbnail_2"
+    t.string   "thumbnail_3"
+    t.string   "thumbnail_4"
+    t.boolean  "save_as_draft"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
   end
 
 end

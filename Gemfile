@@ -33,7 +33,7 @@ gem 'figaro'
 gem 'rvm1-capistrano3', require: false
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
-
+gem 'friendly_id', '~> 5.1.0'
 
 
 
