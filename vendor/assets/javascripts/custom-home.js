@@ -1,8 +1,8 @@
 (function($) { "use strict";
 
-	
+
 	/* Scroll Too */
-	
+
 	$(document).ready(function(){"use strict";
 		$(".scroll").click(function(event){
 
@@ -16,22 +16,22 @@
 
 			$('html, body').animate({scrollTop:target_top}, 1000);
 		});
-	});		 
+	});
 
- 	
+
 	/* Top Carousel */
-	
+
 	$(document).ready(function() {
-	
+
 	  var time = 7; // time in seconds
-	 
+
 	  var $progressBar,
-		  $bar, 
-		  $elem, 
-		  isPause, 
+		  $bar,
+		  $elem,
+		  isPause,
 		  tick,
 		  percentTime;
-	 
+
 		//Init the carousel
 		$("#owl-top").owlCarousel({
 			pagination : false,
@@ -41,11 +41,11 @@
 			singleItem:true,
 			afterInit : progressBar,
 			afterMove : moved,
-			startDragging : pauseOnDragging			
-			
+			startDragging : pauseOnDragging
+
 		});
 
-		
+
 		//Init progressBar where elem is $("#owl-demo")
 		function progressBar(elem){
 		  $elem = elem;
@@ -54,7 +54,7 @@
 		  //start counting
 		  start();
 		}
-	 
+
 		//create div#progressBar and div#bar then prepend to $("#owl-demo")
 		function buildProgressBar(){
 		  $progressBar = $("<div>",{
@@ -65,7 +65,7 @@
 		  });
 		  $progressBar.append($bar).prependTo($elem);
 		}
-	 
+
 		function start() {
 		  //reset timer
 		  percentTime = 0;
@@ -73,7 +73,7 @@
 		  //run interval every 0.01 second
 		  tick = setInterval(interval, 10);
 		};
-	 
+
 		function interval() {
 		  if(isPause === false){
 			percentTime += 1 / time;
@@ -82,17 +82,17 @@
 			 });
 			//if percentTime is equal or greater than 100
 			if(percentTime >= 100){
-			  //slide to next item 
+			  //slide to next item
 			  $elem.trigger('owl.next')
 			}
 		  }
 		}
-	 
-		//pause while dragging 
+
+		//pause while dragging
 		function pauseOnDragging(){
 		  isPause = true;
 		}
-	 
+
 		//moved callback
 		function moved(){
 		  //clear interval
@@ -100,19 +100,19 @@
 		  //start again
 		  start();
 		}
-	 
-		//uncomment this to make pause on mouseover 
+
+		//uncomment this to make pause on mouseover
 		// $elem.on('mouseover',function(){
 		//   isPause = true;
 		// })
 		// $elem.on('mouseout',function(){
 		//   isPause = false;
 		// })
- 	 
+
 	  var owl = $("#owl-top");
-	 
+
 	  owl.owlCarousel();
-	 
+
 	  // Custom Navigation Events
 	  $(".next").click(function(){
 		owl.trigger('owl.next');
@@ -120,52 +120,51 @@
 	  $(".prev").click(function(){
 		owl.trigger('owl.prev');
 	  })
-	 
-	});	
 
-	
+	});
+
+
  	//Parallax
-	
+
 	$('.parallax-1').parallax("50%", 0.4);
 	$('.parallax-footer').parallax("50%", 0.4);
-	
-	
+
+
 	//Tooltip
-	
-	$(".tipped").tipper();		
- 
-  })(jQuery); 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+	$(".tipped").tipper();
+
+  })(jQuery);
 
 
 
 
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

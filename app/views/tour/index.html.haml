@@ -1,2 +1,131 @@
-%h1 Tour#index
-%p Find me in app/views/tour/index.html.haml
+- bclass 'home'
+%section.home-main
+  .black-bkg
+  .vcenter
+    .col-sm-12
+      %p WELCOME TO MY PERSONAL WEBSITE
+      %h1 VERONICA RODRIGUEZ
+      .col-sm-4.col-sm-offset-4
+        %a.btn.hvr-shutter-out-vertical.scroll{:href => "#scroll-link"} SEE MORE
+      /
+        <div class="col-sm-3">
+        <a href="#" class="btn hvr-shutter-out-vertical">PLAY REEL</a>
+        </div>
+%section#scroll-link.latest-videos
+  .container-fluid
+    .row
+      .col-sm-10.col-sm-offset-1
+        %h2.title Latest Videos
+    .row
+      .col-sm-10.col-sm-offset-1
+        - @videos.each do |vid|
+          .col-sm-4
+            .slideshow-block
+              = link_to '', vid, class: 'link'
+              .slides
+                - unless vid.featured_image.blank?
+                  = image_tag vid.featured_image, class: 'img-responsive'
+                - unless vid.thumbnail_1.blank?
+                  = image_tag vid.thumbnail_1, class: 'img-responsive'
+                - unless vid.thumbnail_2.blank?
+                  = image_tag vid.thumbnail_2, class: 'img-responsive'
+                - unless vid.thumbnail_3.blank?
+                  = image_tag vid.thumbnail_3, class: 'img-responsive'
+                - unless vid.thumbnail_4.blank?
+                  = image_tag vid.thumbnail_4, class: 'img-responsive'
+            %p.video-small-title= link_to "#{vid.title}", vid
+            %p.video-small-date= vid.post_date
+            .col-sm-12.nono
+              %p.starting
+                %b Starring:
+                Veronica Rodriguez
+                - vid.porn_stars.each do |p|
+                  , #{p.name}
+              %p.starting
+              / <p class="starting">85,274 Views*  |  Comments (500)</p>
+            /
+              <div class="col-sm-4 nono">
+              <p class="likes"><i class="fa fa-thumbs-up fa-2x"></i> 1000  <i class="fa fa-thumbs-down fa-2x"></i> 20</p>
+              </div>
+    :javascript
+      $('.slides').cycle({
+        fx:     'none',
+        speed:   1500,
+        timeout: 1
+      }).cycle('pause');
+      $('.slideshow-block').hover(function(){
+          $(this).find('.slides').addClass('active').cycle('resume');
+      }, function(){
+          $(this).find('.slides').removeClass('active').cycle('pause');
+      });
+    .space-100
+    .row
+      .col-sm-10.col-sm-offset-1
+        %h2.all-videos
+          %a{:href => "/videos"}
+            View More Videos
+            %i.fa.fa-angle-right
+%section.events-home
+  .black-bkg
+  .container-fluid
+    .row
+      .col-sm-12
+        %h2
+          %b Upcoming Events
+        .row.t-center
+          .col-xs-12.col-sm-10.col-sm-offset-1
+            - @events.each do |e|
+              .col-sm-4.white
+                %h5
+                  %b
+                    = e.type_of_event
+                    at #{e.name_of_location}
+                %hr/
+                %p
+                  = e.date
+                  | #{e.time.strftime("%I:%M %p")}
+                %p= e.address
+                %p= e.phone
+%section#scroll-link.latest-videos
+  .container-fluid
+    .row
+      .col-sm-12
+        %h2.title Future Videos
+    .row
+      .col-sm-12.nono
+        - @future.each do |f|
+          .col-sm-4.nono
+            = image_tag f.image, class: 'img-responsive'
+%section.products-home
+  .black-bkg
+  .container-fluid
+    .row
+      .col-sm-12
+        %h2 CHECK OUT MY PRODUCTS
+        .el-center
+          %a.btn.btn-default{:href => ""} COMING SOON
+%section.news-home.ptb-100
+  .container-fluid
+    .col-sm-10.col-sm-offset-1
+      .col-sm-12
+        %h2.title LATEST NEWS
+        %h3.all-videos{:style => "text-align:center;"} COMING SOON
+      /
+        <div class="col-sm-6">
+        <div class="pull-left">
+        <h2 class="title">LATEST NEWS</h2>
+        </div>
+        </div>
+      /
+        <div class="col-sm-6">
+        <div class="pull-right">
+        <h3 class="all-videos">ALL NEWS IN OUR BLOG ></h3>
+        </div>
+        </div>
+%section.chat-home
+  .container-fluid
+    .row
+      .col-sm-12
+        %h2 WANT A MORE PERSONAL CONVERSATION?
+        .el-center
+          %a.btn.btn-default{:href => "http://www.chatstar.com/Veronica_Rodriguez", :target => "_blank"} CHAT NOW
