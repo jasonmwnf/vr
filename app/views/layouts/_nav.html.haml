@@ -11,10 +11,12 @@
       - if current_page?(tour_path)
         %h3.title.text-uppercase.pull-right.login.color-white
           = link_to "Sign Up", new_user_registration_path
+          &nbsp;
           = link_to "Login", new_user_session_path
       - else
         %h3.title.text-uppercase.pull-right.login
           = link_to "Sign Up", new_user_registration_path
+          &nbsp;
           = link_to "Login", new_user_session_path
 %nav
   .cd-primary-nav

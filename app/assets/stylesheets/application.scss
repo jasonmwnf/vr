@@ -539,6 +539,25 @@ header h3.title {
 }
 
 @media only screen and (max-width: 480px) {
+  .home-main {
+    position: relative;
+    background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/vr-phone.jpg');
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-size: cover;
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 35px;
+      }
+    p {
+      margin-bottom: 35px;
+    }
+  }
+
+
+
   header h3.title {
     display: none
   }
