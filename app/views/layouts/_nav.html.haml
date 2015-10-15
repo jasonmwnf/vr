@@ -2,13 +2,20 @@
   .container-fluid.no-left-padding
     .col-xs-2.no-left-padding
       .logo-wrap.pull-left
-        = image_tag 'https://s3-us-west-2.amazonaws.com/vrod-web-assets/main-logo.png'
+        = link_to tour_path do
+          = image_tag 'https://s3-us-west-2.amazonaws.com/vrod-web-assets/main-logo.png'
     .col-xs-1.pull-right.col-xs-position-fix
       %a.cd-primary-nav-trigger{:href => "#0"}
         %span.cd-menu-icon
     .col-xs-7.pull-right
-      %h3.title.text-uppercase.pull-right.login
-        Sign up &nbsp; Login
+      - if current_page?(tour_path)
+        %h3.title.text-uppercase.pull-right.login.color-white
+          = link_to "Sign Up", new_user_registration_path
+          = link_to "Login", new_user_session_path
+      - else
+        %h3.title.text-uppercase.pull-right.login
+          = link_to "Sign Up", new_user_registration_path
+          = link_to "Login", new_user_session_path
 %nav
   .cd-primary-nav
     %ul.cd-scndr-nav
