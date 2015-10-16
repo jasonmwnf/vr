@@ -10,5 +10,15 @@ Rails.application.routes.draw do
   get '/contact' => 'policy#contact'
   get '/tour' => 'tour#index'
 
-  resources :videos
+  resources :videos,  only: [:index, :show]
+  resources :models,  only: [:index, :show]
+  resources :posts,   only: [:index, :show]
+
+  namespace :admin do
+    resources :models
+    resources :users
+    resources :pictures # did not add view
+    resources :videos
+    resources :posts
+  end
 end
