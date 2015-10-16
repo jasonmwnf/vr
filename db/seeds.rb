@@ -43,3 +43,19 @@ Video.create(
     thumbnail_3: "https://s3-us-west-2.amazonaws.com/veronicarodriguez/033+Diamonds+Make+Me+Squirt/Main+Pictures/5W4A8589.JPG",
     thumbnail_4: "https://s3-us-west-2.amazonaws.com/veronicarodriguez/033+Diamonds+Make+Me+Squirt/Main+Pictures/5W4A8637.JPG"
   )
+
+Model.create(
+        name: "",
+        portfolio_image: "",
+        favorite_position: "",
+        birthdate: "",
+        astrology: "",
+        birth_place: "",
+        nationality: "",
+        hair_color: "",
+        measurements: "",
+        height: "",
+        tattoos: "",
+        piercings: "",
+
+    )
