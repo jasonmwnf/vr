@@ -1,0 +1,54 @@
+- bclass 'interior-pg'
+%section.back-to-vids
+  .container-fluid
+    .row
+      .col-sm-10.col-sm-offset-1
+        %h2.all-videos
+          %a{:href => "/models"}
+            %i.fa.fa-angle-left GO BACK TO MODELS
+%section.model-featured{:style => "background-image: url(#{@model.featured_image_url})"}
+%section.model-info
+  .container-fluid
+    .row
+      .col-sm-10.col-sm-offset-1
+        .col-sm-4
+          %img.img-responsive{:alt => @model.name, :src => @model.portfolio_image}/
+        .col-sm-8
+          %h2= @model.name
+          %hr/
+          .col-sm-6
+            %p
+              %b Favorite Position:
+              = @model.favorite_postion
+            %p
+              %b Birthdate:
+              = @model.birthdate
+            %p
+              %b Astrology:
+              = @model.astrology
+            %p
+              %b Birth Place:
+              = @model.birth_place
+            %p
+              %b Nationality:
+              = @model.nationality
+          .col-sm-6
+            %p
+              %b Hair Color:
+              = @model.hair_color
+            %p
+              %b Measurements:
+              = @model.measurements
+            %p
+              %b Height:
+              = @model.height
+            %p
+              %b Tattoos:
+              = @model.tattoos
+            %p
+              %b Piercings:
+              = @model.piercings
+%section.model-videos
+  .continer-fluid
+    .row
+      .col-sm-10.col-sm-offset-1
