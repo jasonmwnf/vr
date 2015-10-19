@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/privacy-policy' => 'policy#policy'
   get '/contact' => 'policy#contact'
   get '/tour' => 'tour#index'
-
+  get 'admin/' => 'admin/panel#index'
   resources :videos,  only: [:index, :show]
   resources :models,  only: [:index, :show]
   resources :posts,   only: [:index, :show]
@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     resources :pictures # did not add view
     resources :videos
     resources :posts
+    resources :panel, only: [:index]
   end
 end
