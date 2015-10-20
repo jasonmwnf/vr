@@ -9,7 +9,7 @@ class Admin::VideosController < AdminsController
 
   def new
     @video = Video.new
-
+    @models = Model.all
   end
 
   def edit
