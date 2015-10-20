@@ -1,0 +1,58 @@
+- bclass 'interior-pg'
+%section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
+  .container-fluid
+    .row
+      .col-sm-4.col-sm-offset-4
+        %h2.title New Video
+        %hr
+    .row
+      = form_for @video do |f|
+        .col-sm-6
+          %h4.title Title
+          %hr
+          .form-group.text-center
+            = f.text_field :title, placeholder: "Enter Title here", class: "full-width padding-left-text-field"
+        .col-sm-6
+          %h4.title Description
+          %hr
+          .form-group.text-center
+            = f.text_field :description, class: "full-width padding-left-text-field",  placeholder: "Enter Description"
+        .col-sm-3
+          %h4.title Thumbnails
+          %hr
+          .form-group.text-center
+            = f.file_field :thumbnail_1, :title => "Thumb 1", "data-filename-placement" => "inside", class: "full-width"
+          .form-group.text-center
+            = f.file_field :thumbnail_2, :title => "Thumb 2", "data-filename-placement" => "inside",class: "full-width"
+          .form-group.text-center
+            = f.file_field :thumbnail_3, :title => "Thumb 3", "data-filename-placement" => "inside", class: "full-width"
+          .form-group.text-center
+            = f.file_field :thumbnail_4, :title => "Thumb 4", "data-filename-placement" => "inside", class: "full-width"
+        .col-sm-3
+          %h4.title Videos
+          %hr
+          .form-group.text-center
+            = f.file_field :thumbnail_4, :title => "Featured Image", "data-filename-placement" => "inside", class: "full-width"
+
+          .form-group.text-center
+            = f.file_field :thumbnail_4, :title => "Teaser Video", "data-filename-placement" => "inside", class: "full-width"
+
+          .form-group.text-center
+            = f.file_field :thumbnail_4, :title => "Full Video", "data-filename-placement" => "inside", class: "full-width"
+        .col-sm-3
+          %h4.title Photos
+          %hr
+        .col-sm-3
+          %h4.title Extras
+            .input-group.date
+              %input.form-control{:type => "text"}/
+              %span.input-group-addon
+                %i.glyphicon.glyphicon-th
+          %hr
+
+:javascript
+  $(document).ready(function(){
+    $('input[type=file]').bootstrapFileInput();
+  });
+
+

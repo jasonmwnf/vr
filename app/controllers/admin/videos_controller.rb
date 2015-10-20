@@ -7,6 +7,11 @@ class Admin::VideosController < AdminsController
 
   end
 
+  def new
+    @video = Video.new
+
+  end
+
   def edit
 
   end
