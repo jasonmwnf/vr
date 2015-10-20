@@ -1,0 +1,37 @@
+- bclass 'interior-pg'
+%section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
+  .container-fluid
+    .row
+      .col-sm-10.col-sm-offset-1
+        - @videos.each do |vid|
+          .col-sm-4
+            .slideshow-block
+              = link_to '', vid, class: 'link'
+              .slides
+                - unless vid.featured_image.blank?
+                  = image_tag vid.featured_image, class: 'img-responsive'
+            %p.video-small-title= link_to "#{vid.title}", vid
+            %p.video-small-date= vid.post_date
+            %p.starting
+              %b Starring:
+              Veronica Rodriguez
+              - vid.models.each do |p|
+                , #{p.name}
+            %p
+              = link_to "Edit Video Session", edit_admin_video_path(vid)
+              / <p class="starting">85,274 Views*  |  Comments (500)</p>
+            /
+              <div class="col-sm-4 nono">
+              <p class="likes"><i class="fa fa-thumbs-up fa-2x"></i> 1000  <i class="fa fa-thumbs-down fa-2x"></i> 20</p>
+              </div>
+    :javascript
+      $('.slides').cycle({
+        fx:     'none',
+        speed:   1500,
+        timeout: 1
+      }).cycle('pause');
+      $('.slideshow-block').hover(function(){
+          $(this).find('.slides').addClass('active').cycle('resume');
+      }, function(){
+          $(this).find('.slides').removeClass('active').cycle('pause');
+      });

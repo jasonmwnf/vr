@@ -1,6 +1,6 @@
 class Admin::VideosController < AdminsController
   def index
-
+    @videos = Video.all
   end
 
   def show
