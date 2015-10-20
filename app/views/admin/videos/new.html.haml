@@ -44,12 +44,13 @@
           %hr
         .col-sm-3
           %h4.title Extras
-            .input-group.date
-              %input.form-control{:type => "text"}/
-              %span.input-group-addon
-                %i.glyphicon.glyphicon-th
           %hr
-
+          .text-center
+            .form-group
+              %p Posted on:
+              = f.date_select :post_date, :order => [:month, :day, :year], class: "text-center"
+            .form-group
+              %p Select Models:
 :javascript
   $(document).ready(function(){
     $('input[type=file]').bootstrapFileInput();
