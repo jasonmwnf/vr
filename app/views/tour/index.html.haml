@@ -20,7 +20,7 @@
       .col-sm-10.col-sm-offset-1
         - @videos.each do |vid|
           .col-sm-4
-            .slideshow-block
+            .slideshow-block-fix
               = link_to '', vid, class: 'link'
               .slides
                 - unless vid.featured_image.blank?

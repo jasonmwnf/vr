@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/contact' => 'policy#contact'
   get '/tour' => 'tour#index'
   get 'admin/' => 'admin/panel#index'
-  resources :videos,  only: [:index, :show]
+  resources :videos,  only: [:index, :show, :update, :create]
   resources :models,  only: [:index, :show]
   resources :posts,   only: [:index, :show]
 
