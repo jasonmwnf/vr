@@ -1,0 +1,5 @@
+- @videopics.each do |img|
+  .col-sm-3
+    %i.glyphicon.glyphicon-remove.text-right.remove-icon
+    .vid-pics.vid-pics-fix{:style => "background-image: url('#{img.image_url}')"}
+    %a{:href => "#"}
