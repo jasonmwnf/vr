@@ -5,7 +5,6 @@ class Admin::VideosController < AdminsController
 
   def show
     @video = Video.friendly.find(params[:id])
-
   end
 
   def new
@@ -14,7 +13,8 @@ class Admin::VideosController < AdminsController
   end
 
   def edit
-
+    @video = Video.friendly.find(params[:id])
+    @models = Model.all
   end
 
   def create

@@ -1,0 +1,81 @@
+- bclass 'interior-pg'
+%section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
+  .container-fluid
+    .row
+      .col-sm-4.col-sm-offset-4
+        %h2.title Video
+        %hr
+    .row
+      = form_for @video do |f|
+        .col-sm-6
+          %h4.title Title
+          %hr
+          .form-group.text-center
+            = f.text_field :title, placeholder: "Enter Title here", class: "full-width padding-left-text-field"
+        .col-sm-6
+          %h4.title Description
+          %hr
+          .form-group.text-center
+            = f.text_field :description, class: "full-width padding-left-text-field",  placeholder: "Enter Description"
+        .col-sm-2.col-sm-offset-2
+          %h4.title Thumbnails
+          %hr
+          .form-group.text-center
+            - unless @video.thumbnail_1.blank?
+              = image_tag "#{@video.thumbnail_1}"
+              = f.file_field :thumbnail_1, :title => "Thumb 1", "data-filename-placement" => "inside", class: "full-width"
+          .form-group.text-center
+            - unless @video.thumbnail_2.blank?
+              = image_tag "#{@video.thumbnail_2}"
+              = f.file_field :thumbnail_2, :title => "Thumb 2", "data-filename-placement" => "inside",class: "full-width"
+          .form-group.text-center
+            - unless @video.thumbnail_3.blank?
+              = image_tag "#{@video.thumbnail_3}"
+              = f.file_field :thumbnail_3, :title => "Thumb 3", "data-filename-placement" => "inside", class: "full-width"
+          .form-group.text-center
+            - unless @video.thumbnail_4.blank?
+              = image_tag "#{@video.thumbnail_4}"
+            = f.file_field :thumbnail_4, :title => "Thumb 4", "data-filename-placement" => "inside", class: "full-width"
+        .col-sm-2
+          %h4.title Videos
+          %hr
+          .form-group.text-center
+            - unless @video.featured_image.blank?
+              = image_tag "#{@video.featured_image}"
+            = f.file_field :featured_image, :title => "Featured Image", "data-filename-placement" => "inside", class: "full-width"
+
+          .form-group.text-center
+            %video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{\"example_option\":true}", :height => "100%", :id => "video-#{@video.id}", :poster => @video.featured_image, :preload => "false", :width => "100%"}
+            %source{:src => @video.teaser_video_url, :type => "video/mp4"}
+              %p.vjs-no-js
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                %a{:href => "http://videojs.com/html5-video-support/", :target => "_blank"} supports HTML5 video
+            = f.file_field :teaser_video_url, :title => "Teaser Video", "data-filename-placement" => "inside", class: "full-width"
+
+          .form-group.text-center
+            %video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{\"example_option\":true}", :height => "100%", :id => "video-#{@video.id}", :poster => @video.featured_image, :preload => "auto", :width => "100%"}
+            %source{:src => @video.video_url, :type => "video/mp4"}
+              %p.vjs-no-js
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                %a{:href => "http://videojs.com/html5-video-support/", :target => "_blank"} supports HTML5 video
+
+            = f.file_field :video_url, :title => "Full Video", "data-filename-placement" => "inside", class: "full-width"
+        .col-sm-4
+          %h4.title Extras
+          %hr
+          .text-center
+            .form-group
+              %p
+                %b Posted on:
+              = f.date_select :post_date, :order => [:month, :day, :year], class: "text-center"
+            .form-group
+              %p
+                %b Select Models:
+              %ul
+                = f.select "models", options_from_collection_for_select(@models, "id", "name"), {}, { :multiple => true, class: "full-width", :size => "10" }
+:javascript
+  $(document).ready(function(){
+    $('input[type=file]').bootstrapFileInput();
+  });
+
+
