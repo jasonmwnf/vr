@@ -7,13 +7,20 @@
         %h2.title Video
         %hr
     .row
-      = form_for @video do |f|
+      = form_for [:admin, @video] do |f|
         .row
           .col-sm-4.col-sm-offset-4
             %h4.title Title
             %hr
             .form-group.text-center
               = f.text_field :title, placeholder: "Enter Title here", class: "full-width text-center"
+              - unless @video.models.blank?
+                %p.text-center
+                  %br
+                  %b Starring:
+                  Veronica Rodriguez
+                  - @video.models.each do |p|
+                    , #{p.name}
         .row
           .col-sm-3.col-sm-offset-1
             %h4.title Description

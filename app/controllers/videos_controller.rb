@@ -1,25 +1,16 @@
 class VideosController < ApplicationController
   def index
-
+    @videos = Video.all
   end
 
   def show
-
-  end
-
-  def create
-
-  end
-
-  def update
-    @video = Video.find(params[:id])
-    @video.update(video_params)
-    redirect_to root_path
+    @video = find_video
   end
 
   private
-    def video_params
-      params.require(:video).permit!
+    def find_video
+      @video = Video.find(params[:id])
+      @models = @video.models
     end
 
 end
