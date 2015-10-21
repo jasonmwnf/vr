@@ -1,3 +1,4 @@
+%script{:src => "http://vjs.zencdn.net/5.0.0/video.js"}
 - bclass 'interior-pg'
 %section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
   .container-fluid
@@ -17,7 +18,7 @@
           %hr
           .form-group.text-center
             = f.text_field :description, class: "full-width padding-left-text-field",  placeholder: "Enter Description"
-        .col-sm-2.col-sm-offset-2
+        .col-sm-2.col-sm-offset-3
           %h4.title Thumbnails
           %hr
           .form-group.text-center
@@ -45,22 +46,15 @@
             = f.file_field :featured_image, :title => "Featured Image", "data-filename-placement" => "inside", class: "full-width"
 
           .form-group.text-center
-            %video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{\"example_option\":true}", :height => "100%", :id => "video-#{@video.id}", :poster => @video.featured_image, :preload => "false", :width => "100%"}
-            %source{:src => @video.teaser_video_url, :type => "video/mp4"}
-              %p.vjs-no-js
-                To view this video please enable JavaScript, and consider upgrading to a web browser that
-                %a{:href => "http://videojs.com/html5-video-support/", :target => "_blank"} supports HTML5 video
+            %video#my-video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{}", :width => "100%", :height => "100%", :poster => @video.featured_image, :preload => "auto"}
+              %source{:src => @video.teaser_video_url, :type => "video/mp4", :width => "100%"}
             = f.file_field :teaser_video_url, :title => "Teaser Video", "data-filename-placement" => "inside", class: "full-width"
 
           .form-group.text-center
-            %video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{\"example_option\":true}", :height => "100%", :id => "video-#{@video.id}", :poster => @video.featured_image, :preload => "auto", :width => "100%"}
-            %source{:src => @video.video_url, :type => "video/mp4"}
-              %p.vjs-no-js
-                To view this video please enable JavaScript, and consider upgrading to a web browser that
-                %a{:href => "http://videojs.com/html5-video-support/", :target => "_blank"} supports HTML5 video
-
+            %video#my-video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{}", :width => "100%", :height => "100%", :poster => @video.featured_image, :preload => "auto"}
+              %source{:src => @video.video_url, :type => "video/mp4", :width => "100%"}
             = f.file_field :video_url, :title => "Full Video", "data-filename-placement" => "inside", class: "full-width"
-        .col-sm-4
+        .col-sm-2
           %h4.title Extras
           %hr
           .text-center
@@ -73,6 +67,7 @@
                 %b Select Models:
               %ul
                 = f.select "models", options_from_collection_for_select(@models, "id", "name"), {}, { :multiple => true, class: "full-width", :size => "10" }
+
 :javascript
   $(document).ready(function(){
     $('input[type=file]').bootstrapFileInput();
