@@ -4,6 +4,7 @@ class Admin::VideosController < AdminsController
   end
 
   def show
+    @video = Video.friendly.find(params[:id])
 
   end
 

@@ -36,7 +36,8 @@ gem 'rvm1-capistrano3', require: false
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'friendly_id', '~> 5.1.0'
-gem "erb2haml", :group => :development
+gem 'erb2haml', :group => :development
+gem 'pry', :group => :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

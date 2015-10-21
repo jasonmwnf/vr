@@ -33,7 +33,7 @@
                   = image_tag vid.thumbnail_3, class: 'img-responsive'
                 - unless vid.thumbnail_4.blank?
                   = image_tag vid.thumbnail_4, class: 'img-responsive'
-            %p.video-small-title= link_to "#{vid.title}", vid
+            %p.video-small-title= link_to "#{vid.title}", vid.slug
             %p.video-small-date= vid.post_date
             .col-sm-12.nono
               %p.starting
