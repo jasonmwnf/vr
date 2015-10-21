@@ -8,66 +8,83 @@
         %hr
     .row
       = form_for @video do |f|
-        .col-sm-3.col-sm-offset-1
-          %h4.title Title
-          %hr
-          .form-group.text-center
-            = f.text_field :title, placeholder: "Enter Title here", class: "full-width padding-left-text-field"
-          %h4.title Description
-          %hr
-          .form-group.text-center
-            = f.text_area :description, class: "full-width form-control",  placeholder: "Enter Description", :rows => '10'
-        .col-sm-2.col
-          %h4.title Thumbnails
-          %hr
-          .form-group.text-center
-            - unless @video.thumbnail_1.blank?
-              = image_tag "#{@video.thumbnail_1}"
-            = f.file_field :thumbnail_1, :title => "Thumb 1", "data-filename-placement" => "inside", class: "full-width"
-          .form-group.text-center
-            - unless @video.thumbnail_2.blank?
-              = image_tag "#{@video.thumbnail_2}"
-            = f.file_field :thumbnail_2, :title => "Thumb 2", "data-filename-placement" => "inside",class: "full-width"
-          .form-group.text-center
-            - unless @video.thumbnail_3.blank?
-              = image_tag "#{@video.thumbnail_3}"
-            = f.file_field :thumbnail_3, :title => "Thumb 3", "data-filename-placement" => "inside", class: "full-width"
-          .form-group.text-center
-            - unless @video.thumbnail_4.blank?
-              = image_tag "#{@video.thumbnail_4}"
-            = f.file_field :thumbnail_4, :title => "Thumb 4", "data-filename-placement" => "inside", class: "full-width"
-        .col-sm-2
-          %h4.title Videos
-          %hr
-          .form-group.text-center
-            - unless @video.featured_image.blank?
-              = image_tag "#{@video.featured_image}"
-            = f.file_field :featured_image, :title => "Featured Image", "data-filename-placement" => "inside", class: "full-width"
+        .row
+          .col-sm-4.col-sm-offset-4
+            %h4.title Title
+            %hr
+            .form-group.text-center
+              = f.text_field :title, placeholder: "Enter Title here", class: "full-width text-center"
+        .row
+          .col-sm-3.col-sm-offset-1
+            %h4.title Description
+            %hr
+            .form-group.text-center
+              = f.text_area :description, class: "full-width form-control",  placeholder: "Enter Description", :rows => '10'
+          .col-sm-2.col
+            %h4.title Thumbnails
+            %hr
+            .form-group.text-center
+              - unless @video.thumbnail_1.blank?
+                = image_tag "#{@video.thumbnail_1}"
+              = f.file_field :thumbnail_1, :title => "Thumb 1", "data-filename-placement" => "inside", class: "full-width"
+            .form-group.text-center
+              - unless @video.thumbnail_2.blank?
+                = image_tag "#{@video.thumbnail_2}"
+              = f.file_field :thumbnail_2, :title => "Thumb 2", "data-filename-placement" => "inside",class: "full-width"
+            .form-group.text-center
+              - unless @video.thumbnail_3.blank?
+                = image_tag "#{@video.thumbnail_3}"
+              = f.file_field :thumbnail_3, :title => "Thumb 3", "data-filename-placement" => "inside", class: "full-width"
+            .form-group.text-center
+              - unless @video.thumbnail_4.blank?
+                = image_tag "#{@video.thumbnail_4}"
+              = f.file_field :thumbnail_4, :title => "Thumb 4", "data-filename-placement" => "inside", class: "full-width"
+          .col-sm-2
+            %h4.title Videos
+            %hr
+            .form-group.text-center
+              - unless @video.featured_image.blank?
+                = image_tag "#{@video.featured_image}"
+              = f.file_field :featured_image, :title => "Featured Image", "data-filename-placement" => "inside", class: "full-width"
 
-          .form-group.text-center
-            - unless @video.teaser_video_url.blank?
-              %video#my-video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{}", :width => "100%", :height => "100%", :poster => @video.featured_image, :preload => "auto"}
-                %source{:src => @video.teaser_video_url, :type => "video/mp4", :width => "100%"}
-            = f.file_field :teaser_video_url, :title => "Teaser Video", "data-filename-placement" => "inside", class: "full-width"
+            .form-group.text-center
+              - unless @video.teaser_video_url.blank?
+                %video#my-video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{}", :width => "100%", :height => "100%", :poster => @video.featured_image, :preload => "auto"}
+                  %source{:src => @video.teaser_video_url, :type => "video/mp4", :width => "100%"}
+              = f.file_field :teaser_video_url, :title => "Teaser Video", "data-filename-placement" => "inside", class: "full-width"
 
-          .form-group.text-center
-            - unless @video.video_url.blank?
-              %video#my-video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{}", :width => "100%", :height => "100%", :poster => @video.featured_image, :preload => "auto"}
-                %source{:src => @video.video_url, :type => "video/mp4", :width => "100%"}
-            = f.file_field :video_url, :title => "Full Video", "data-filename-placement" => "inside", class: "full-width"
-        .col-sm-3
-          %h4.title Extras
-          %hr
-          .text-center
-            .form-group
-              %p
-                %b Posted on:
-              = f.date_select :post_date, :order => [:month, :day, :year], class: "text-center"
-            .form-group
-              %p
-                %b Select Models:
-              %ul
-                = f.select "models", options_from_collection_for_select(@models, "id", "name"), {}, { :multiple => true, class: "full-width", :size => "10" }
+            .form-group.text-center
+              - unless @video.video_url.blank?
+                %video#my-video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{}", :width => "100%", :height => "100%", :poster => @video.featured_image, :preload => "auto"}
+                  %source{:src => @video.video_url, :type => "video/mp4", :width => "100%"}
+              = f.file_field :video_url, :title => "Full Video", "data-filename-placement" => "inside", class: "full-width"
+          .col-sm-3
+            %h4.title Extras
+            %hr
+            .text-center
+              .form-group
+                %p
+                  %b Posted on:
+                = f.date_select :post_date, :order => [:month, :day, :year], class: "text-center"
+              .form-group
+                %p
+                  %b Select Models:
+                %ul
+                  = f.select :model_ids, options_from_collection_for_select(@models, :id, :name), {}, { :multiple => true, class: "full-width", :size => "10" }
+        .row
+          .col-sm-4.col-sm-offset-4
+            %button.btn.btn-default{:type => "submit"} Submit
+        .row
+          .col-sm-4.col-sm-offset-4
+            %h2.title Pictures
+            %hr
+        .row
+          .col-sm-10.col-sm-offset-1.nono
+            - unless @video.pictures.blank?
+              .row
+                = render 'admin/videos/videopics'
+              #infinite-scrolling
+                = will_paginate @videopics
 
 :javascript
   $(document).ready(function(){

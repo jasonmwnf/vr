@@ -19,7 +19,7 @@
                   - unless vid.featured_image.blank?
                     = image_tag vid.featured_image, class: 'img-responsive'
               %p.video-small-title.video-small-title-fix= "#{vid.title}"
-              %p.video-small-date= vid.post_date
+              %p.video-small-date.text-center= vid.post_date
     :javascript
       $('.slides').cycle({
         fx:     'none',
