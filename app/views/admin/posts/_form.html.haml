@@ -1,0 +1,35 @@
+- bclass 'interior-pg'
+%section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
+  .container-fluid
+    .row
+      .col-sm-4.col-sm-offset-4
+        %h2.title Blog Posts
+        %hr
+      = form_for [:admin, @post] do |f|
+        .row
+          .col-sm-4.col-sm-offset-4
+            .form-group.text-center
+              = f.text_field :title, placeholder: "Blog Post Title", class: "full-width text-center"
+            .form-group.text-center
+              - unless @post.featured_image.blank?
+                = image_tag "#{@post.featured_image}"
+              = f.file_field :featured_image, :title => "Featured Image", "data-filename-placement" => "inside", class: "full-width"
+            .form-group.text-center
+              %p
+                %b Date of Post:
+              = f.date_select :date, :order => [:month, :day, :year], class: "text-center"
+            .form-group.text-center
+              = f.text_field :teaser, placeholder: "Teaser Text", class: "full-width text-center"
+        .row
+          .col-sm-10.col-sm-offset-1
+            .form-group
+              = f.text_area :description, placeholder: "Blog Post goes here", class: "full-width form-control", :rows => '15'
+        .row
+          .col-sm-4.col-sm-offset-4
+            %button.btn.btn-default{:type => "submit"} Submit
+:javascript
+  $(document).ready(function(){
+    $('input[type=file]').bootstrapFileInput();
+  });
+
+
