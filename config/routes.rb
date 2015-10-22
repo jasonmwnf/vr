@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :pictures # did not add view
     resources :videos
     resources :posts
+    resources :events
     resources :panel, only: [:index]
   end
 end
