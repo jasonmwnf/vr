@@ -1,0 +1,77 @@
+- bclass 'interior-pg'
+%section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
+  .container-fluid
+    .row
+      .col-sm-4.col-sm-offset-4
+        %h2.title Model
+        %hr
+    .row
+      = form_for [:admin, @model] do |f|
+        .row
+          .col-sm-4.col-sm-offset-4
+            %h4.text-center Model Name
+            .form-group.text-center
+              = f.text_field :name, placeholder: "Enter Name here", class: "full-width text-center"
+        .row
+          .col-sm-3.col-sm-offset-2
+            %h4 Description
+            %hr
+            .form-group.text-center
+              = f.text_area :description, class: "full-width form-control",  placeholder: "Enter Description", :rows => '10'
+            %h4 Social Media
+            %hr
+            .form-group.text-center
+              = f.text_field :twitter, class: "full-width text-center",  placeholder: "Twitter"
+            .form-group.text-center
+              = f.text_field :facebook, class: "full-width text-center",  placeholder: "Facebook"
+            .form-group.text-center
+              = f.text_field :instagram, class: "full-width text-center",  placeholder: "Instagram"
+            .form-group.text-center
+              = f.text_field :website, class: "full-width text-center",  placeholder: "Website"
+          .col-sm-2.col
+            %h4 Images
+            %hr
+            .form-group.text-center
+              - unless @model.featured_image_url.blank?
+                = image_tag "#{@model.featured_image_url}"
+              = f.file_field :featured_image_url, :title => "Backdrop Image", "data-filename-placement" => "inside", class: "full-width"
+            .form-group.text-center
+              - unless @model.portfolio_image.blank?
+                = image_tag "#{@model.portfolio_image}"
+              = f.file_field :portfolio_image, :title => "Portfolio Image", "data-filename-placement" => "inside",class: "full-width"
+          .col-sm-3
+            %h4 Extras
+            %hr
+            .form-group.text-center
+              %p
+                %b Birthday:
+              = f.date_select :birthdate, :order => [:month, :day, :year], class: "text-center"
+            .form-group.text-center
+              = f.text_field :nickname, placeholder: "Nick name", class: "full-width text-center"
+            .form-group.text-center
+              = f.text_field :astrology, placeholder: "Astrology", class: "full-width text-center"
+            .form-group.text-center
+              = f.text_field :birth_place, placeholder: "Birth Place", class: "full-width text-center"
+            .form-group.text-center
+              = f.text_field :ethnicity, placeholder: "Ethnicity", class: "full-width text-center"
+            .form-group.text-center
+              = f.text_field :nationality, placeholder: "Nationality", class: "full-width text-center"
+            .form-group.text-center
+              = f.text_field :hair_color, placeholder: "Hair color", class: "full-width text-center"
+            .form-group.text-center
+              = f.text_field :measurements, placeholder: "Measurements", class: "full-width text-center"
+            .form-group.text-center
+              = f.text_field :tattoos, placeholder: "Tattoos", class: "full-width text-center"
+            .form-group.text-center
+              = f.text_field :pierciings, placeholder: "Pierciings", class: "full-width text-center"
+            .form-group.text-center
+              = f.text_field :favorite_position, placeholder: "Favorite Position", class: "full-width text-center"
+
+          .col-sm-4.col-sm-offset-4
+            %button.btn.btn-default{:type => "submit"} Submit
+:javascript
+  $(document).ready(function(){
+    $('input[type=file]').bootstrapFileInput();
+  });
+
+

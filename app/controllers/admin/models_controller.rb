@@ -11,8 +11,17 @@ class Admin::ModelsController < AdminsController
 
   end
 
-  def create
+  def new
+    @model = Model.new
+  end
 
+  def create
+    @model = Model.new(video_params)
+    if @model.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def update
@@ -24,5 +33,10 @@ class Admin::ModelsController < AdminsController
   end
 
   private
+
+  def video_params
+    params.require(:model).permit!
+  end
+
 
 end
