@@ -19,7 +19,7 @@
           .col-sm-6
             %p
               %b Favorite Position:
-              = @model.favorite_postion
+              = @model.favorite_position
             %p
               %b Birthdate:
               = @model.birthdate
@@ -47,8 +47,54 @@
               = @model.tattoos
             %p
               %b Piercings:
-              = @model.piercings
-%section.model-videos
-  .continer-fluid
+              = @model.pierciings
+          .col-sm-12.footer-social-links.text-left-important.margin-top-twenty
+            %a#link-facebook{"data-title" => "Facebook", :href => "#{@model.facebook}", :target => "_blank"}
+              %i.fa.fa-facebook
+            %a#link-twitter{"data-title" => "Twitter", :href => "#{@model.twitter}", :target => "_blank"}
+              %i.fa.fa-twitter
+            %a#link-instagram{"data-title" => "Instagram", :href => "#{@model.instagram}", :target => "_blank"}
+              %i.fa.fa-instagram
+            %a#link-flickr{"data-title" => "ChatStar", :href => "#{@model.website}", :target => "_blank"}
+              %i.fa.fa-fa.fa-star
+%section.video-index.more-videos.pt-0
+  .container-fluid
     .row
       .col-sm-10.col-sm-offset-1
+        %h2.title.mb-0 Videos featuring
+    .row
+      .col-sm-10.col-sm-offset-1.nono
+        - @more_vids.each do |vid|
+          .col-sm-4.pb-30
+            .slideshow-block
+              = link_to '', vid, class: 'link'
+              .slides
+                - unless vid.featured_image.blank?
+                  = image_tag vid.featured_image, class: 'img-responsive'
+                - unless vid.thumbnail_1.blank?
+                  = image_tag vid.thumbnail_1, class: 'img-responsive'
+                - unless vid.thumbnail_2.blank?
+                  = image_tag vid.thumbnail_2, class: 'img-responsive'
+                - unless vid.thumbnail_3.blank?
+                  = image_tag vid.thumbnail_3, class: 'img-responsive'
+                - unless vid.thumbnail_4.blank?
+                  = image_tag vid.thumbnail_4, class: 'img-responsive'
+            %p.video-small-title= link_to "#{vid.title}", vid
+            %p.video-small-date= vid.post_date
+            .col-sm-12.nono
+              %p.starting
+                %b Starring:
+                Veronica Rodriguez
+                - vid.models.each do |model|
+                  , #{model.name}
+      :javascript
+        $('.slides').cycle({
+          fx:     'none',
+          speed:   1500,
+          timeout: 1
+        }).cycle('pause');
+        $('.slideshow-block').hover(function(){
+            $(this).find('.slides').addClass('active').cycle('resume');
+        }, function(){
+            $(this).find('.slides').removeClass('active').cycle('pause');
+        });
