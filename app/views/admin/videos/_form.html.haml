@@ -10,8 +10,7 @@
       = form_for [:admin, @video] do |f|
         .row
           .col-sm-4.col-sm-offset-4
-            %h4.title Title
-            %hr
+            %h4.text-center Title
             .form-group.text-center
               = f.text_field :title, placeholder: "Enter Title here", class: "full-width text-center"
               - unless @video.models.blank?
@@ -23,12 +22,12 @@
                     , #{p.name}
         .row
           .col-sm-3.col-sm-offset-1
-            %h4.title Description
+            %h4 Description
             %hr
             .form-group.text-center
               = f.text_area :description, class: "full-width form-control",  placeholder: "Enter Description", :rows => '10'
           .col-sm-2.col
-            %h4.title Thumbnails
+            %h4 Thumbnails
             %hr
             .form-group.text-center
               - unless @video.thumbnail_1.blank?
@@ -47,7 +46,7 @@
                 = image_tag "#{@video.thumbnail_4}"
               = f.file_field :thumbnail_4, :title => "Thumb 4", "data-filename-placement" => "inside", class: "full-width"
           .col-sm-2
-            %h4.title Videos
+            %h4 Videos
             %hr
             .form-group.text-center
               - unless @video.featured_image.blank?
@@ -66,7 +65,7 @@
                   %source{:src => @video.video_url, :type => "video/mp4", :width => "100%"}
               = f.file_field :video_url, :title => "Full Video", "data-filename-placement" => "inside", class: "full-width"
           .col-sm-3
-            %h4.title Extras
+            %h4 Extras
             %hr
             .text-center
               .form-group

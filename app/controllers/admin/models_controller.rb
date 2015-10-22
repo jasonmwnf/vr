@@ -1,6 +1,6 @@
 class Admin::ModelsController < AdminsController
   def index
-
+    @models = Model.all
   end
 
   def show
