@@ -1,0 +1,26 @@
+- bclass 'interior-pg'
+%section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
+  .container-fluid
+    .row
+      .col-sm-4.col-sm-offset-4
+        %h2.title Events
+        %hr
+        %h5
+          = link_to 'Add Event', new_admin_event_path
+    .row
+      .col-xs-12.col-sm-10.col-sm-offset-1
+        - @events.each do |e|
+          .col-sm-4.text-center
+            %h5
+              %b
+                = e.type_of_event
+                at #{e.name_of_location}
+            %hr/
+            %p
+              = e.date
+              | #{e.time}
+            %p= e.address
+            %p= e.phone
+            %p
+              %b
+                = link_to "Edit Event", edit_admin_event_path(e)

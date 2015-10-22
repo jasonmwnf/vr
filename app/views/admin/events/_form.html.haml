@@ -1,0 +1,34 @@
+- bclass 'interior-pg'
+%section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
+  .container-fluid
+    .row
+      .col-sm-4.col-sm-offset-4
+        %h2.title Event
+        %hr
+      = form_for [:admin, @event] do |f|
+        .col-sm-4.col-sm-offset-4
+          .form-group.text-center
+            = f.text_field :name_of_location, placeholder: "Name of Event", class: "full-width text-center"
+          .form-group.text-center
+            %p
+              %b Date of Event:
+            = f.date_select :date, :order => [:month, :day, :year], class: "text-center"
+          .form-group.text-center
+            %p
+              %b Time of Event:
+            = f.time_select :time, placeholder: "Time", class: "full-width text-center", ampm: true
+          .form-group.text-center
+            = f.text_field :type_of_event, placeholder: "Type of Event", class: "full-width text-center"
+          .form-group.text-center
+            = f.text_field :address, placeholder: "Address", class: "full-width text-center"
+          .form-group.text-center
+            = f.text_field :phone, placeholder: "Phone", class: "full-width text-center"
+
+        .col-sm-4.col-sm-offset-4
+          %button.btn.btn-default{:type => "submit"} Submit
+:javascript
+  $(document).ready(function(){
+    $('input[type=file]').bootstrapFileInput();
+  });
+
+
