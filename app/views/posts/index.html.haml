@@ -1,0 +1,35 @@
+- bclass 'interior-pg'
+%section.margin-top-twenty
+  .container-fluid
+    .row
+      .col-sm-7.col-sm-offset-1
+        %h2.title.uppercase.tli.fw-500 Blog Posts
+
+    .row
+      .col-sm-7.col-sm-offset-1
+        - @posts.each do |post|
+          .col-sm-7
+            %img.img-responsive{:alt => post.title, :src => post.featured_image}/
+            %h5.tli.mt-10.mb-0.text-uppercase.strong= post.title
+            %p.text-uppercase.f-07
+              Veronica Rodriguez
+              |
+              = post.date.strftime("%B %d")
+            %p
+              = post.teaser
+
+      .col-sm-3.col-sm-offset-1
+        %p.text-uppercase
+          = link_to "View All Posts", posts_path, class: "pink-color"
+        %hr.mt-l0
+        %p.text-uppercase
+          Recent Posts
+        - Post.all.each do |post|
+          %p.mb-0= post.title
+          %p.text-uppercase.f-07.mb-0= post.date
+          = link_to "view post", post_path(post), class: "text-uppercase f-08 pink-color"
+        %hr.mt-l0
+        %p.text-uppercase
+          Instagram
+        %p
+          Need Instagram credentials

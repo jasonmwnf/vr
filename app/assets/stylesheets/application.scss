@@ -42,13 +42,24 @@ a:hover {color: #8A8A8A;text-decoration: none;}
 .ptb-30 {padding: 30px 0 !important;}
 .ptb-100 {padding: 100px 0 !important;}
 .mb-0 {margin-bottom: 0px !important;}
-.mb-20 {margin-bottom: 20px;}
+.mb-20 {margin-bottom: 20px!important;}
 .mt-0 {margin-top: 0px !important;}
+.mt-10 {margin-top: 10px !important;}
+.mt-l0 {margin-left: 0px !important;}
 .mt-5 {margin-top: 5px !important;}
+.mt-50 {margin-top: 50px !important;}
+.mt-90 {margin-top: 90px !important;}
 .pb-0 {padding-bottom: 0px !important;}
 .white {color:white !important;}
 .xsmall {font-size: 8px !important;}
 .f30 {font-size: 30px !important;}
+.f-07 {font-size: .7em}
+.f-08 {font-size: .8em}
+.strong {font-weight: bold!important;}
+.text-left-important, .tli {text-align: left!important;}
+.fw-500 {font-weight: 500!important}
+
+.pink-color {color: #EE57A6;}
 
 .black-bkg {
   position: absolute;
@@ -753,8 +764,4 @@ img {
   font-weight: 300;
   letter-spacing: 12px;
   font-size: 20px;
-}
-
-.text-left-important {
-  text-align: left!important;
 }
