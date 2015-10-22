@@ -1,0 +1,21 @@
+- bclass 'interior-pg'
+%section.margin-top-twenty
+  .container-fluid
+    .row
+      .col-sm-7.col-sm-offset-1
+        %h2.title.uppercase.tli.fw-500 Blog Posts
+
+    .row
+      .col-sm-10.col-sm-offset-1
+        - @posts.each do |post|
+          .col-sm-3.col-sm
+            %img.img-responsive{:alt => post.title, :src => post.featured_image}/
+            %h5.tli.mt-10.mb-0.text-uppercase.strong= post.title
+            %p.text-uppercase.f-07
+              Veronica Rodriguez
+              |
+              = post.date.strftime("%B %d")
+            %p
+              = post.teaser
+            %p.strong.text-uppercase
+              = link_to "Edit Post", edit_admin_post_path(post)
