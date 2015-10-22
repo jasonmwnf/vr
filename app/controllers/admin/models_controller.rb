@@ -16,7 +16,7 @@ class Admin::ModelsController < AdminsController
   end
 
   def create
-    @model = Model.new(video_params)
+    @model = Model.new(model_params)
     if @model.save
       redirect_to root_path
     else
@@ -34,7 +34,7 @@ class Admin::ModelsController < AdminsController
 
   private
 
-  def video_params
+  def model_params
     params.require(:model).permit!
   end
 

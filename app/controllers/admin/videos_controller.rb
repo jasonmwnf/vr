@@ -28,7 +28,7 @@ class Admin::VideosController < AdminsController
   end
 
   def update
-    @video = Video.find(params[:id])
+    @video = Video.friendly.find(params[:id])
     @video.update(video_params)
     redirect_to root_path
   end
