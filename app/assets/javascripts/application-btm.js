@@ -3,7 +3,6 @@
 //= require scroll
 //= require retina-1.1.0.min
 //= require jquery.easing
-//= require menu
 //= require jquery.fs.tipper.min
 //= require owl.carousel.min
 //= require portfolio-ajax
