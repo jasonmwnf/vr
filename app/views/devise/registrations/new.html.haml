@@ -1,4 +1,4 @@
-- bclass 'interior-pg'
+
 %section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
   .container-fluid
     .row
@@ -26,14 +26,14 @@
             %h4.text-uppercase.text-left
               Fill out Sign up Form
             .field
-              = f.email_field :email, autofocus: true, placeholder: "EMAIL"
+              = f.email_field :email, autofocus: true, placeholder: "email"
               %br/
             .field
               %br/
-              = f.password_field :password, autocomplete: "off", placeholder: "PASSWORD minimum 8 characters."
+              = f.password_field :password, autocomplete: "off", placeholder: "password minimum 8 characters."
             .field
               %br/
-              = f.password_field :password_confirmation, autocomplete: "off", placeholder: "PASSWORD CONFIRMATION"
+              = f.password_field :password_confirmation, autocomplete: "off", placeholder: "password confirmation"
             .actions
               = f.submit "Sign up"
       .row
