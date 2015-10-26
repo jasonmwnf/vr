@@ -1,6 +1,15 @@
 class UsersController < ApplicationController
   def status
-    @new_user = params
-    binding.pry
+    #binding.pry
+    @user = User.find_by_email(params[:email])
+    @user.member_id ||= params[:member_id]
+    @user.save
+
+    if params[:ans] == "YGOODTEST|#{@user.member_id}"
+      @user.update(is_paid: true)
+      redirect_to videos_path
+    else
+      root_path
+    end
   end
 end
