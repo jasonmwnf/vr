@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151025070934) do
+ActiveRecord::Schema.define(version: 20151025230916) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name_of_location"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20151025070934) do
     t.boolean  "is_admin"
     t.boolean  "is_suspended"
     t.boolean  "is_paid",                default: false
+    t.string   "member_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
