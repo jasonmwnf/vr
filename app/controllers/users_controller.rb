@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def status
-    #binding.pry
     @user = User.find_by_email(params[:email])
     @user.member_id ||= params[:member_id]
     @user.save
@@ -11,5 +10,9 @@ class UsersController < ApplicationController
     else
       root_path
     end
+
+  def panel
+
+  end
   end
 end
