@@ -10,9 +10,9 @@ class UsersController < ApplicationController
     else
       root_path
     end
-
-  def panel
-
   end
+
+  def account
+    @user = current_user
   end
 end
