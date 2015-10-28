@@ -45,7 +45,7 @@ Video.create(
   )
 
 Model.create(
-        name: "",
+        name: "Ashley Cross",
         portfolio_image: "",
         favorite_position: "",
         birthdate: "",
@@ -56,6 +56,7 @@ Model.create(
         measurements: "",
         height: "",
         tattoos: "",
-        piercings: "",
-
+        pierciings: ""
     )
+
+User.create(email: "pares101@aol.com", password: "putamerda1", is_admin: true)
