@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
 
   post 'users/status' => 'users#status'
+  get 'users/outcome' => 'users#outcome'
   get 'users/account' => 'users#account'
   get 'tour/index'
   get 'welcome/index'
