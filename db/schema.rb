@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151025230916) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "events", force: :cascade do |t|
     t.string   "name_of_location"
     t.string   "type_of_event"
@@ -95,14 +98,14 @@ ActiveRecord::Schema.define(version: 20151025230916) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_admin"
+    t.boolean  "is_admin",               default: false
     t.boolean  "is_suspended"
     t.boolean  "is_paid",                default: false
     t.string   "member_id"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "videos", force: :cascade do |t|
     t.string   "title"
