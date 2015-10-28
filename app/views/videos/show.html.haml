@@ -10,21 +10,22 @@
     .row
       .col-sm-10.col-sm-offset-1
         .row
-          .col-xs-12.video-player
-            - if current_user.present? && current_user.is_paid?
-              %h4 Subscription Version
+          - if current_user.present? && current_user.is_paid?
+            .col-xs-12.video-player
+              %h3 Full Version
               %video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{\"example_option\":true}", :height => "100%", :id => "video-#{@video.id}", :poster => @video.featured_image, :preload => "auto", :width => "100%"}
-              %source{:src => @video.video_url, :type => "video/mp4"}
-                %p.vjs-no-js
-                  To view this video please enable JavaScript, and consider upgrading to a web browser that
-                  %a{:href => "http://videojs.com/html5-video-support/", :target => "_blank"} supports HTML5 video
-            - else
-              %h4 Trial Version
+                %source{:src => @video.video_url, :type => "video/mp4"}
+                  %p.vjs-no-js
+                    To view this video please enable JavaScript, and consider upgrading to a web browser that
+                    %a{:href => "http://videojs.com/html5-video-support/", :target => "_blank"} supports HTML5 video
+          - else
+            .col-xs-12.video-player
+              %h3 Teaser Version
               %video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{\"example_option\":true}", :height => "100%", :id => "video-#{@video.id}", :poster => @video.featured_image, :preload => "auto", :width => "100%"}
-              %source{:src => @video.teaser_video_url, :type => "video/mp4"}
-                %p.vjs-no-js
-                  To view this video please enable JavaScript, and consider upgrading to a web browser that
-                  %a{:href => "http://videojs.com/html5-video-support/", :target => "_blank"} supports HTML5 video
+                %source{:src => @video.teaser_video_url, :type => "video/mp4"}
+                  %p.vjs-no-js
+                    To view this video please enable JavaScript, and consider upgrading to a web browser that
+                    %a{:href => "http://videojs.com/html5-video-support/", :target => "_blank"} supports HTML5 video
         .row
           .col-sm-8
             %p.video-small-title= @video.title
