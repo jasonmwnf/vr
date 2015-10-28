@@ -30,7 +30,7 @@ class Admin::VideosController < AdminsController
   def update
     @video = Video.friendly.find(params[:id])
     @video.update(video_params)
-    redirect_to root_path
+    redirect_to video_path(@videos)
   end
 
   def destroy
