@@ -22,9 +22,11 @@
               Veronica Rodriguez
               - @latest_vid.models.each do |ps|
                 , #{ps.name}
+
         .row
           .col-sm-12
             %p= raw(@latest_vid.description)
+            = link_to "View Video", video_path(@latest_vid), class: "text-uppercase"
 %hr/
 %section.video-index.more-videos
   .container-fluid
