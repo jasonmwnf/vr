@@ -10,7 +10,12 @@ class UsersController < ApplicationController
   end
 
   def outcome
-    redirect_to users_account_path
+    if current_user.is_paid
+      redirect_to users_account_path
+    else
+      redirect_to root_path
+      flash["bg-warning"] = "You have not subscribed there was a problem with your credit card please try again."
+    end
   end
 
   def account
