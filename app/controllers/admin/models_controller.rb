@@ -8,7 +8,7 @@ class Admin::ModelsController < AdminsController
   end
 
   def edit
-
+    find_model
   end
 
   def new
@@ -18,13 +18,16 @@ class Admin::ModelsController < AdminsController
   def create
     @model = Model.new(model_params)
     if @model.save
-      redirect_to root_path
+      redirect_to admin_models_path
     else
       render :new
     end
   end
 
   def update
+    find_model
+    @model.update(model_params)
+    redirect_to admin_models_path
 
   end
 
@@ -33,6 +36,10 @@ class Admin::ModelsController < AdminsController
   end
 
   private
+
+  def find_model
+    @model = Model.find(params[:id])
+  end
 
   def model_params
     params.require(:model).permit!
