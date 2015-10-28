@@ -16,6 +16,9 @@
       try{Typekit.load();}catch(e){}
   %body{:class => "#{yield(:bclass)}"}
     = render 'layouts/header'
+
+    - flash.each do |name, msg|
+      = content_tag :div, msg, class: "#{name} text-center pad-20"
     = yield
     .scroll-to-top
     = render 'layouts/footer'
