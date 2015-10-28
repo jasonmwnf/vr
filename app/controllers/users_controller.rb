@@ -1,18 +1,18 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:outcome, :account]
   def status
     @user = User.find_by_email(params[:email])
     @user.member_id ||= params[:member_id]
-    @user.save
-
     if params[:ans] == "YGOODTEST|#{@user.member_id}"
       @user.update(is_paid: true)
-      redirect_to videos_path
     else
-      root_path
     end
   end
 
+  def outcome
+    redirect_to users_account_path
+  end
+
   def account
-    @user = current_user
   end
 end
