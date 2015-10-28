@@ -1,17 +1,17 @@
-
 %section.margin-top-twenty
   .container-fluid
     .row
-      .col-sm-12
+      .col-sm-10.col-sm-offset-1
         %h2.title.uppercase.tli.fw-500 Explore all of our models
-      - @models.each do |model|
-        .col-sm-3
-          .view.view-first
-            = image_tag "#{model.portfolio_image}"
-            .mask
-              %h2
-                = link_to model_path(model) do
-                  = model.name
-            = link_to "View More", model_path(model), class: "info text-uppercase"
-            / %a.info.text-uppercase{:href => "#"} View More
+      .col-sm-10.col-sm-offset-1
+        - @models.each do |model|
+          .col-sm-3
+            .view.view-first
+              = image_tag "#{model.portfolio_image}"
+              .mask
+                %h2
+                  = link_to model_path(model) do
+                    = model.name
+              = link_to "View More", model_path(model), class: "info text-uppercase"
+              / %a.info.text-uppercase{:href => "#"} View More
 
