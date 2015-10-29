@@ -25,11 +25,12 @@
         = link_to 'Billing Support', 'https://epoch.com/', target: '_blank'
         = link_to 'Terms and Conditions', terms_and_conditions_path
         = link_to 'Privacy Policy', privacy_policy_path
-        = link_to 'Contact', '#'
+        / = link_to 'Contact', '#'
       %p.t-center
         Please visit
-        = succeed "," do
+        = succeed "" do
           %script{:language => "JavaScript", :src => "https://epoch.com/compliance/epoch_descriptor.php?master_code=M-607103"}
+          our authorized sales agent
       .col-sm-12
         .footer-copy-text
           %a{:href => "/"} © veronica rodriguez 2015.
