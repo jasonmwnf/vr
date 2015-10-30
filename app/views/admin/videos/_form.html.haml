@@ -79,17 +79,25 @@
         .row
           .col-sm-4.col-sm-offset-4
             %button.btn.btn-default{:type => "submit"} Submit
+    - if @video.title.present?
+      .row
+        .col-sm-4.col-sm-offset-4
+          %h2 Pictures
+          %hr
+      = form_for [:admin, @video, Picture.new], :multiple => true do |f|
         .row
           .col-sm-4.col-sm-offset-4
-            %h2.title Pictures
-            %hr
+            =f.file_field :image_url, :title => "Add Pictures", "data-filename-placement" => "inside", class: ""
         .row
-          .col-sm-10.col-sm-offset-1.nono
-            - unless @video.pictures.blank?
-              .row
-                = render 'admin/videos/videopics'
-              #infinite-scrolling
-                = will_paginate @videopics
+          .col-sm-4.col-sm-offset-4
+            %button.btn.btn-default{:type => "submit"} Submit
+      .row
+        .col-sm-10.col-sm-offset-1.nono
+          - unless @video.pictures.blank?
+            .row
+              = render 'admin/videos/videopics'
+            #infinite-scrolling
+              = will_paginate @videopics
 
 :javascript
   $(document).ready(function(){

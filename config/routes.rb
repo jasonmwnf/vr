@@ -21,8 +21,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :models
     resources :users
-    resources :pictures # did not add view
-    resources :videos
+    resources :videos do
+      resources :pictures
+    end
     resources :posts
     resources :events
     resources :panel, only: [:index]
