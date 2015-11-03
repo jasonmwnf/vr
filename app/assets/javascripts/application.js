@@ -18,3 +18,7 @@
 //= require jquery.slicknav.js
 //= require dropzone
 
+Dropzone.options.photoDropzone = {
+  paramName: "image",
+  maxFilesize: 10
+}

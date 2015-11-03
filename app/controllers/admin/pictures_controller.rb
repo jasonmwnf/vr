@@ -18,6 +18,7 @@ class Admin::PicturesController < AdminsController
 
   def create
     @picture = @video.pictures.new(picture_params)
+    @picture.image_url = params[:image]
     @picture.save
     redirect_to admin_videos_path
     flash[:success] = "Picture uploaded successfully"

@@ -84,10 +84,12 @@
         .col-sm-4.col-sm-offset-4
           %h2 Pictures
           %hr
-      = form_for [:admin, @video, Picture.new], :multiple => true do |f|
+      = form_for [:admin, @video, Picture.new], :html => { :multipart => true, class: :dropzone, id: 'photoDropzone' } do |f|
+        %div(class="dz-message" data-dz-message)
+          .span Drop Files Here to upload (or click)
         .row
           .col-sm-4.col-sm-offset-4
-            =f.file_field :image_url, :title => "Add Pictures", "data-filename-placement" => "inside", class: ""
+            = f.hidden_field :image_url
         .row
           .col-sm-4.col-sm-offset-4
             %button.btn.btn-default{:type => "submit"} Submit
@@ -103,5 +105,3 @@
   $(document).ready(function(){
     $('input[type=file]').bootstrapFileInput();
   });
-
-
