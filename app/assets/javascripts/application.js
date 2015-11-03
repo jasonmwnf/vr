@@ -20,16 +20,5 @@
 
 Dropzone.options.photoDropzone = {
   paramName: "image",
-  maxFilesize: 10,
-  addRemoveLinks: true,
-  init: function() {
-    return this.on('removedfile', function(file) {
-      if (file.xhr) {
-        return $.ajax({
-          url: "" + ($("#photoDropzone").attr("action")) + "/" + (JSON.parse(file.xhr.response).id),
-          type: 'DELETE'
-        });
-      }
-    });
-  }
+  maxFilesize: 10
 };
