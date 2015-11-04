@@ -8,7 +8,7 @@ $(function(){
 
   Dropzone.options.photoDropzone = {
     paramName: "image",
-    maxFilesize: 10,
+    maxFilesize: 30,
     init: function() {
       this.on("success", function(file, response){
         updatePictures(response);
