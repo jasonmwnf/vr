@@ -16,9 +16,6 @@
 //= require jquery.cycle2.min
 //= require videos.js.coffee
 //= require jquery.slicknav.js
+//= require handlebars-v4.0.4.js
+//= require drop
 //= require dropzone
-
-Dropzone.options.photoDropzone = {
-  paramName: "image",
-  maxFilesize: 10
-};

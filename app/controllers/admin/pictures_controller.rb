@@ -34,7 +34,7 @@ class Admin::PicturesController < AdminsController
     @picture = Picture.find(params[:id])
     @picture.destroy
     flash[:notice] = "Picture deleted successfully"
-    redirect_to edit_admin_video_path(@video)
+    render json: @video.pictures
   end
 
   private
