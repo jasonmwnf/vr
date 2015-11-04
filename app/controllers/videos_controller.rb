@@ -7,7 +7,8 @@ class VideosController < ApplicationController
 
   def show
     @video = find_video
-    @videopics = @video.pictures.paginate(page: params[:page], per_page: 12).order(id: 'ASC')
+    @videopics = @video.pictures
+    # .paginate(page: params[:page], per_page: 12).order(id: 'ASC')
     respond_to do |format|
       format.html
       format.js

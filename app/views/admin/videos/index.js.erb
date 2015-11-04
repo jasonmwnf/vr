@@ -1,0 +1,6 @@
+$('#videopics').append('<%= j render(@videopics) %>');
+<% if @videopics.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@videopics) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

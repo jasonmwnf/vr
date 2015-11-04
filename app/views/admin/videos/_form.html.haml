@@ -84,19 +84,21 @@
         .col-sm-4.col-sm-offset-4
           %h2 Pictures
           %hr
-      = form_for [:admin, @video, Picture.new], :html => { :multipart => true, class: :dropzone, id: 'photoDropzone' } do |f|
-        %div(class="dz-message" data-dz-message)
-          .span Drop Files Here to upload (or click)
-        .row
-          .col-sm-4.col-sm-offset-4
-            = f.hidden_field :image_url
+      .row
+        .col-sm-10.col-sm-offset-1.nono
+          = form_for [:admin, @video, Picture.new], :html => { :multipart => true, class: :dropzone, id: 'photoDropzone' } do |f|
+            %div(class="dz-message" data-dz-message)
+              .span Drop Files Here to upload (or click)
+            .row
+              .col-sm-4.col-sm-offset-4
+                = f.hidden_field :image_url
 
       .row
         .col-sm-10.col-sm-offset-1.nono
           .row
             = render 'admin/videos/videopics'
           #infinite-scrolling
-            = will_paginate @videopics
+            / = will_paginate @videopics
 
 :javascript
   $(document).ready(function(){
