@@ -30,7 +30,7 @@ gem "haml-rails", "~> 0.9"
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails', '~> 4.4.0.0'
-gem 'carrierwave-aws'
+gem 'carrierwave'
 gem 'fog', '1.32.0'
 gem 'aws-sdk'
 gem 'figaro'
