@@ -1,4 +1,15 @@
-- @videopics.each do |img|
+.pic-container
+  - @videopics.each do |img|
+    - if img.image_url.present?
+      .col-sm-3
+        .vid-pics.vid-pics-fix{:style => "background-image: url('#{img.image_url}')"}
+        %a{:href => "#"}
+        = link_to 'Remove Picture', "#", class: 'deletePicture', data: { picture_id: img.id, video_id: @video.id }
+
+%script{:type => "text/x-handlebars-template", :id => "picture-container"}
+  {{#each pictures}}
   .col-sm-3
-    .vid-pics.vid-pics-fix{:style => "background-image: url('#{img.image_url}')"}
+    .vid-pics.vid-pics-fix{:style => "background-image: url('{{image_url.url}}')"}
     %a{:href => "#"}
+    = link_to 'Remove Picture', '#', class: 'deletePicture', data: { picture_id: "{{id}}", video_id: @video.id }
+  {{/each}}

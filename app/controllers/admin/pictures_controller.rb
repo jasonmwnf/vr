@@ -19,20 +19,22 @@ class Admin::PicturesController < AdminsController
   def create
     @picture = @video.pictures.new(picture_params)
     @picture.image_url = params[:image]
-    @picture.save
-    redirect_to admin_videos_path
-    flash[:success] = "Picture uploaded successfully"
-
+    if @picture.image_url.present?
+      @picture.save
+      flash[:notice] = "Picture successfully saved."
+    end
+    redirect_to edit_admin_video_path(@video)
   end
 
   def update
     @picture = Picture.friendly.find(params[:video])
-
   end
 
   def destroy
+    @picture = Picture.find(params[:id])
     @picture.destroy
-    flash[:warning] = "Picture deleted successfully"
+    flash[:notice] = "Picture deleted successfully"
+    render json: @video.pictures
   end
 
   private

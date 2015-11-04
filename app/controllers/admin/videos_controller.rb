@@ -20,6 +20,7 @@ class Admin::VideosController < AdminsController
     respond_to do |format|
       format.html
       format.js
+      format.json { render json: @videopics }
     end
   end
 
