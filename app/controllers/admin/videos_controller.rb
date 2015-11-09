@@ -42,7 +42,9 @@ class Admin::VideosController < AdminsController
   end
 
   def destroy
-
+    @video = Video.friendly.find(params[:id])
+    @video.destroy
+    redirect_to admin_videos_path
   end
 
   private
