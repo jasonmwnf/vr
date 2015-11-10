@@ -9,6 +9,14 @@ class FeaturedImageUrlUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
     # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
+  def move_to_cache
+    true
+  end
+
+  def move_to_store
+    true
+  end
+
   def store_dir
     "uploads/models/#{model.name}/#{mounted_as}"
   end

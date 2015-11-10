@@ -12,11 +12,11 @@ class TeaserVideoUrlUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
 
   def move_to_cache
-      true
-    end
+    true
+  end
 
-    def move_to_store
-      true
+  def move_to_store
+    true
   end
   def store_dir
     "uploads/videos/#{model.title.to_s.underscore}/#{mounted_as}"
