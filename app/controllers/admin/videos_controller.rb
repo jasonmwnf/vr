@@ -37,7 +37,7 @@ class Admin::VideosController < AdminsController
   def update
     @video = Video.friendly.find(params[:id])
     @video.update_attributes(video_params)
-    redirect_to admin_video_path(@video)
+    redirect_to admin_videos_path
     flash[:notice] = "Video has been updated"
   end
 
