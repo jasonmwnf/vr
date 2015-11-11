@@ -21,6 +21,7 @@ class Admin::ModelsController < AdminsController
       redirect_to admin_models_path
       flash[:notice] = "Model created"
     else
+      flash[:notice] = "Do not forget her name"
       render :new
     end
   end

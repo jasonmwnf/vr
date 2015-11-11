@@ -20,6 +20,7 @@ class Admin::PostsController < AdminsController
     if @post.save
       redirect_to @post
     else
+      flash[:notice] = "Do not forget the title"
       render :new
     end
 

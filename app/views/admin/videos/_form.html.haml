@@ -76,7 +76,7 @@
                 %p
                   %b Select Models:
                 %ul
-                  = f.select :model_ids, options_from_collection_for_select(@models, :id, :name), {}, { :multiple => true, class: "full-width", :size => "10" }
+                  = f.select :model_ids, options_from_collection_for_select(Model.all, :id, :name), {}, { :multiple => true, class: "full-width", :size => "10" }
         .row
           .col-sm-4.col-sm-offset-4
             %button.btn.btn-default{:type => "submit"} Submit

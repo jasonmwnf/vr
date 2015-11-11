@@ -8,7 +8,7 @@ class Video < ActiveRecord::Base
   mount_uploader :teaser_video_url, TeaserVideoUrlUploader
   extend FriendlyId
     friendly_id :title, use: [:slugged, :finders]
-  has_many :shots, dependent: :destroy
+  has_many :shots
   has_many :models, through: :shots
   has_many :pictures, dependent: :destroy
   validates_presence_of :title
