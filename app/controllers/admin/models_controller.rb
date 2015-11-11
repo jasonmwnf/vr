@@ -19,6 +19,7 @@ class Admin::ModelsController < AdminsController
     @model = Model.new(model_params)
     if @model.save
       redirect_to admin_models_path
+      flash[:notice] = "Model created"
     else
       render :new
     end
@@ -28,11 +29,14 @@ class Admin::ModelsController < AdminsController
     find_model
     @model.update(model_params)
     redirect_to admin_models_path
-
+    flash[:notice] = "Model updated"
   end
 
   def destroy
-
+    find_model
+    find_model.destroy
+    redirect_to admin_models_path
+    flash[:notice] = "Model terminated"
   end
 
   private

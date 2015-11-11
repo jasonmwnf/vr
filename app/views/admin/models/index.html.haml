@@ -1,11 +1,18 @@
 %section.margin-top-twenty
   .container-fluid
+    = render "admin/panel/admin_panel"
+    .row
+      .col-sm-4.col-sm-offset-4
+        %h2.title Models
+        %hr
+        %h5
+          = link_to 'Add Model', new_admin_model_path
     .row
       .col-sm-10.col-sm-offset-1
         %h2.title.uppercase.tli.fw-500 All Models
       .col-sm-10.col-sm-offset-1
         - @models.each do |model|
-          .col-sm-3
+          .col-sm-3.mb-20
             .view.br-0
               = image_tag "#{model.portfolio_image}"
               .mask
@@ -13,5 +20,7 @@
                   = link_to model_path(model) do
                     = model.name
               / %a.info.text-uppercase{:href => "#"} View More
-            = link_to "Edit Model", edit_admin_model_path(model), class: "strong text-uppercase"
+            = link_to "Edit", edit_admin_model_path(model), class: "strong text-uppercase"
+            = precede '-' do
+              = link_to " Delete", admin_model_path(model), method: 'delete',  class: "strong text-uppercase"
 

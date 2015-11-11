@@ -18,7 +18,7 @@ class PostFeaturedImageUploader < CarrierWave::Uploader::Base
   end
 
   def store_dir
-    "uploads/posts/#{model.title}/#{mounted_as}"
+    "uploads/posts/#{model.title}/#{mounted_as}/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

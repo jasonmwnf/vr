@@ -11,4 +11,5 @@ class Video < ActiveRecord::Base
   has_many :shots
   has_many :models, through: :shots
   has_many :pictures
+  validates_presence_of :title
 end

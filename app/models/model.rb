@@ -6,4 +6,5 @@ class Model < ActiveRecord::Base
     friendly_id :name, use: [:slugged, :finders]
   has_many :shots
   has_many :videos, through: :shots
+  validates_presence_of :name
 end
