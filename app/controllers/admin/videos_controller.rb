@@ -16,7 +16,6 @@ class Admin::VideosController < AdminsController
     @video = Video.friendly.find(params[:id])
     @videopics = @video.pictures
     # .paginate(page: params[:page], per_page: 12).order(id: 'ASC')
-    binding.pry
     respond_to do |format|
       format.html
       format.json { render json: @videopics }
