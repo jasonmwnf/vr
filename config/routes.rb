@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :videos,  only: [:index, :show]
   resources :models,  only: [:index, :show]
   resources :posts,   only: [:index, :show]
-
+  resources :live_shows, only: [:index]
   namespace :admin do
     resources :models
     resources :users
