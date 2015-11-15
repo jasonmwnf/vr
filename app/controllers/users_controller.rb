@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:outcome, :account]
   def status
+    User.create!(email: params[:email], password: params[:password] )
     @user = User.find_by_email(params[:email])
     @user.member_id ||= params[:member_id]
     if params[:ans] == "YGOODTEST|#{@user.member_id}"
