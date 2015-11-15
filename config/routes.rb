@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-  devise_for :users, controllers: { registrations: "registrations",
-    sign_up: ''
+  devise_for :users, controllers: { registrations: "registrations"
   }
 
 
