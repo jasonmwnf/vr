@@ -7,33 +7,23 @@
     .col-sm-11.col-sm-offset-1.col-md-10.col-md-offset-1.col-lg-10.col-lg-offset-2
       .row
         = form_tag('https://wnu.com/secure/services/?api=join&pi_code=&reseller=a', :method => "get") do
-          .col-xs-12.col-sm-6.col-sm-offset-0.col-md-5.col-md-offset-1.col-lg-4.radio-fix.pull-left
-            %h4.text-uppercase
+          .col-xs-12.col-md-7.col-md-offset-1.col-sm-6.radio-fix.pull-left
+            %h4.text-uppercase.text-center
               Join now for instant access
             %h5.text-uppercase
               Choose Package
-            %div
+            %div.text-center
               %input#radio1.radio{:name => "pi_code", :type => "radio", :value => "cjuuci2p893353"}/
               %label{:for => "radio1"} Recurring $29.99(USD) for every 1 month
-            %div.clear-edit
+            %div.clear-edit.text-center
               %input#radio2.radio{:name => "pi_code", :type => "radio", :value => "cjuuci3p893354"}/
               %label{:for => "radio2"} Recurring $74.85(USD) for every 3 months
-            %div.clear-edit
+            %div.clear-edit.text-center
               %input#radio3.radio{:name => "pi_code", :type => "radio", :value => "cjuuci4p893355"}/
               %label{:for => "radio3"} One Time $119.95(USD) for 365 days
-          .col-xs-12.col-xs-offset-0.col-sm-5.col-md-5.col-md-offset-0.col-lg-4.col-lg-offset-0.fill-out-form
-            %h4.text-uppercase.text-left
-              Fill out Sign up Form
-            .field
-              = email_field_tag  "Email", "", :type => "username", :placeholder => "Enter Email here"
-              %br/
-            .field
-              %br/
-              = password_field_tag "Password", "", :type => "password", :placeholder => "Enter Password Here"
-            .field
-              %br/
+            .div.clear-edit
             .actions
-              = submit_tag
+              = submit_tag 'Sign Up'
       .row
         .col-xs-12.col-sm-12.col-sm-offset-0.col-lg-9
           %p.recurring-info.clear-edit.text-center
