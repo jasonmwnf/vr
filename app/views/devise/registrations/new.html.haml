@@ -6,36 +6,34 @@
         %h2.title Sign up
     .col-sm-11.col-sm-offset-1.col-md-10.col-md-offset-1.col-lg-10.col-lg-offset-2
       .row
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-          = devise_error_messages!
+        = form_tag('https://test.wnu.com/secure/services/?api=join&pi_code=&reseller=a', :method => "get") do
           .col-xs-12.col-sm-6.col-sm-offset-0.col-md-5.col-md-offset-1.col-lg-4.radio-fix.pull-left
             %h4.text-uppercase
               Join now for instant access
             %h5.text-uppercase
               Choose Package
             %div
-              %input#radio1.radio{:name => "radio", :type => "radio"}/
+              %input#radio1.radio{:name => "pi_code", :type => "radio", :value => "cjuuci2p893353"}/
               %label{:for => "radio1"} Recurring $29.99(USD) for every 1 month
             %div.clear-edit
-              %input#radio2.radio{:name => "radio", :type => "radio"}/
+              %input#radio2.radio{:name => "pi_code", :type => "radio", :value => "cjuuci3p893354"}/
               %label{:for => "radio2"} Recurring $74.85(USD) for every 3 months
             %div.clear-edit
-              %input#radio3.radio{:name => "radio", :type => "radio"}/
+              %input#radio3.radio{:name => "pi_code", :type => "radio", :value => "cjuuci4p893355"}/
               %label{:for => "radio3"} One Time $119.95(USD) for 365 days
           .col-xs-12.col-xs-offset-0.col-sm-5.col-md-5.col-md-offset-0.col-lg-4.col-lg-offset-0.fill-out-form
             %h4.text-uppercase.text-left
               Fill out Sign up Form
             .field
-              = f.email_field :email, autofocus: true, placeholder: "email"
+              = email_field_tag  "Email", "", :type => "username", :placeholder => "Enter Email here"
               %br/
             .field
               %br/
-              = f.password_field :password, autocomplete: "off", placeholder: "password minimum 8 characters."
+              = password_field_tag "Password", "",, :type => "password" :placeholder => "Enter Password Here"
             .field
               %br/
-              = f.password_field :password_confirmation, autocomplete: "off", placeholder: "password confirmation"
             .actions
-              = f.submit "Sign up"
+              = submit_tag
       .row
         .col-xs-12.col-sm-12.col-sm-offset-0.col-lg-9
           %p.recurring-info.clear-edit.text-center
