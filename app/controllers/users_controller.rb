@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:outcome, :account]
   def status
-    User.create!(email: params[:email], password: params[:password] )
+    User.create!(email: params[:email], password: params[:password], member_id: params[:order_id], amount: params[:amount])
     @user = User.find_by_email(params[:email])
     @user.member_id ||= params[:member_id]
-    if params[:ans] == "YGOODTEST|#{@user.member_id}"
+    if params[:ans] =~ /[Y]/
       @user.update(is_paid: true)
     else
     end
