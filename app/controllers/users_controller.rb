@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:outcome, :account]
   def status
-    User.create!(email: params[:email], password: params[:password], member_id: params[:order_id], amount: params[:amount])
+    User.create!(email: params[:email], password: params[:password], member_id: params[:order_id], amount: params[:amount], answer: params[:ans])
     @user = User.find_by_email(params[:email])
     @user.member_id ||= params[:member_id]
     if params[:ans] =~ /[Y]/
