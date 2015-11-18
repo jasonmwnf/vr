@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-  devise_for :users, :skip => [:registrations]
-
-
+  devise_for :users, controllers: { registrations: "registrations"
+  }
   post 'users/status' => 'users#status'
   get 'users/outcome' => 'users#outcome'
   get 'users/account' => 'users#account'
