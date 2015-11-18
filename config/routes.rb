@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   devise_for :users, :skip => [:registrations]
-  }
 
 
   post 'users/status' => 'users#status'
