@@ -1,47 +1,26 @@
 .container-fluid
   .row.mb-0.border-bottom-gray
-    .col-sm-2.pull-left
+    .col-sm-2.pull-left.desktop
       = link_to tour_path do
-        = image_tag 'https://s3-us-west-2.amazonaws.com/vrod-web-assets/main-logo.png', class: "logo-fix"
+        = image_tag 'https://s3-us-west-2.amazonaws.com/vrod-web-assets/main-logo.png', class: "logo-fix pad-20 maxw-150"
     .col-sm-10.pull-right.text-right
       %ul#menu.text-uppercase
-        %li
+        %li.text-uppercase
           = link_to "Videos", videos_path
-        %li
+        %li.text-uppercase
           = link_to "Models", models_path
-        %li
+        %li.text-uppercase
           = link_to "Live Shows", live_shows_path
-        %li
+        %li.text-uppercase
           = link_to "Blog", posts_path
-        / %li
-        /   = link_to "Store", "#"
-        %li
+        %li.text-uppercase
+          = link_to "Store", "#"
+        %li.text-uppercase
           - if user_signed_in?
-            %li
+            %li.text-uppercase
               = link_to('Logout', destroy_user_session_path, :method => :delete)
           - else
-            %li
+            %li.text-uppercase
               = link_to('Login', new_user_session_path)
-            %li
+            %li.text-uppercase
               = link_to('Sign Up', new_user_registration_path)
-
-%nav
-  .cd-primary-nav
-    %ul.cd-scndr-nav
-      %li.cd-label= link_to 'Home', '#'
-      %li.cd-label= link_to 'Videos', '#'
-      %li.cd-label= link_to 'Models', '#'
-      %li.cd-label= link_to 'Live Shows', '#'
-      %li.cd-label= link_to 'Blog', '#'
-      %li.cd-label= link_to 'Store', '#'
-      %li.cd-label= link_to 'Events', '#'
-      %li.cd-label
-        %hr.menu-separator-fix
-      - if user_signed_in?
-        %li.cd-label
-          = link_to('Logout', destroy_user_session_path, :method => :delete)
-      - else
-        %li.cd-label
-          = link_to('Login', new_user_session_path)
-        %li.cd-label
-          = link_to('Sign Up', new_user_session_path)

@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.slicknav.js
 //= require modernizr
 //= require jquery.cycle2.min
 //= require videos.js.coffee
-//= require jquery.slicknav.js
-//= require handlebars-v4.0.4.js
-//= require drop
+
 //= require dropzone
+
