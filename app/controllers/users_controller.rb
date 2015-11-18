@@ -1,24 +1,52 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:outcome, :account]
   def status
-    User.create!(email: params[:email], password: params[:password], member_id: params[:order_id], amount: params[:amount], answer: params[:ans])
-    @user = User.find_by_email(params[:email])
-    @user.member_id ||= params[:member_id]
+    create_user
+    check_if_credit_card_approved
+  end
+
+  def outcome
+   @user = User.find_by_email(params[:email])
+    if @user.email == User.last.email
+      sign_in_last_created_user
+      check_if_user_is_paid
+    else
+      new_user_account_error
+    end
+  end
+
+  private
+
+  def check_if_credit_card_approved
     if params[:ans] =~ /[Y]/
       @user.update(is_paid: true)
     else
     end
   end
 
-  def outcome
-    if current_user.is_paid
+  def create_user
+    @user = User.create!(email: params[:email], password: params[:password], member_id: params[:order_id], amount: params[:amount], answer: params[:ans])
+  end
+
+  def sign_in_last_created_user
+    @user = User.last
+    sign_in(@user)
+  end
+
+  def set_session_new_user
+    session[:new_user] ||= params[:session_id]
+  end
+
+  def check_if_user_is_paid
+    if current_user.is_paid?
       redirect_to users_account_path
+      flash[:notice] = "Your account is now activated! Enjoy!"
     else
-      redirect_to root_path
-      flash["bg-warning"] = "You have not subscribed there was a problem with your credit card please try again."
+      new_user_account_error
     end
   end
 
-  def account
+  def new_user_account_error
+    redirect_to root_path
+    flash[:notice] = "There was an error with your account please try to subscribe again."
   end
 end
