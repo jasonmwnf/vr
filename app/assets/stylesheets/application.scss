@@ -44,7 +44,8 @@ a:hover {color: #8A8A8A;text-decoration: none;}
 .pt-30 {padding-top: 30px !important;}
 .pr-32 {padding-right: 32px!important}
 .pad-20 {padding: 20px!important}
-.pt-0 {padding-top: 0px !important;}
+.pt-0 {padding-top: 0px!important;}
+.pl-0 {padding-left: 0px!important;}
 .br-0 {border: 0px !important;}
 .ptb-30 {padding: 30px 0 !important;}
 .ptb-100 {padding: 100px 0 !important;}
@@ -60,7 +61,7 @@ a:hover {color: #8A8A8A;text-decoration: none;}
 .ml-25 {margin-left: 5%!important}
 .pb-0 {padding-bottom: 0px !important;}
 .white {color:white !important;}
-.xsmall {font-size: 8px !important;}
+.xsmall {font-size: 6px !important;}
 .f30 {font-size: 30px !important;}
 .f-07 {font-size: .7em}
 .f-08 {font-size: .8em}
@@ -72,6 +73,7 @@ a:hover {color: #8A8A8A;text-decoration: none;}
 .border-none {border: none!important;}
 .full-width {width: 100%;}
 .maxw-150 {max-width: 150px!important;}
+
 
 
 .logo {
@@ -572,6 +574,14 @@ header h3.title {
 }
 
 @media only screen and (max-width: 480px) {
+  .welcome-title {
+    h1 {
+      font-size: 1em
+    }
+    h2 {
+      font-size: 1em
+    }
+  }
   .home-main {
     position: relative;
     background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/vr-phone.jpg');
@@ -579,7 +589,6 @@ header h3.title {
     background-attachment: fixed;
     min-height: 100vh;
     background-size: cover;
-
     h1 {
         font-size: 30px;
         margin-bottom: 35px;
