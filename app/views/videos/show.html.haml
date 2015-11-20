@@ -25,22 +25,22 @@
                 %p.vjs-no-js
                   To view this video please enable JavaScript, and consider upgrading to a web browser that
                   %a{:href => "http://videojs.com/html5-video-support/", :target => "_blank"} supports HTML5 video
-    .row
-      .col-sm-10.col-sm-offset-1
-        %p.video-small-title= @video.title
-        %p.video-small-date
-          = @video.post_date
-          |
-          %b Starring:
-          Veronica Rodriguez
-          - @video.models.each do |p|
-            , #{p.name}
-        / <p class="video-small-date"></haml_block><haml_silent></haml_silent><haml_block> | <b>Starring:</b> Veronica Rodriguez | 85,274 Views*  |  Comments (500)</p>
-      .col-sm-4
-        / <p class="likes"><i class="fa fa-thumbs-up fa-2x"></i> 1000  <i class="fa fa-thumbs-down fa-2x"></i> 20</p>
       .row
-        .col-sm-12
-          %p= raw(@video.description)
+        .col-sm-8
+          %p.video-small-title= @video.title
+          %p.video-small-date
+            = @video.post_date
+            |
+            %b Starring:
+            Veronica Rodriguez
+            - @video.models.each do |p|
+              , #{p.name}
+          / <p class="video-small-date"></haml_block><haml_silent></haml_silent><haml_block> | <b>Starring:</b> Veronica Rodriguez | 85,274 Views*  |  Comments (500)</p>
+        .col-sm-4
+          / <p class="likes"><i class="fa fa-thumbs-up fa-2x"></i> 1000  <i class="fa fa-thumbs-down fa-2x"></i> 20</p>
+        .row
+          .col-sm-12
+            %p= raw(@video.description)
 %hr/
 %section.video-index
   .container-fluid
