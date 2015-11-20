@@ -44,7 +44,7 @@ class Admin::VideosController < AdminsController
     @video = Video.friendly.find(params[:id])
     @video.destroy
     redirect_to admin_videos_path
-    flash[:notice] = "Video has been terminated"
+    flash[:notice] = "Video has been deleted"
   end
 
   private
