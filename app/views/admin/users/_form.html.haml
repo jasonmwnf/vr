@@ -1,0 +1,35 @@
+%section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
+  .container-fluid
+    = render "admin/panel/admin_panel"
+    .row
+      .col-sm-4.col-sm-offset-4
+        %h2.title Add User
+        %hr
+      = form_for [:admin, @user] do |f|
+        .col-sm-4.col-sm-offset-4
+          .form-group.text-center
+            = f.text_field :email, placeholder: "Email", class: "full-width text-center"
+          .form-group.text-center
+            %p
+              %b
+                = f.label "Make User have Paid Account"
+            %p
+              = f.select :is_paid, options_for_select([["False", "false"], ["True", "true"]])
+          .form-group.text-center
+            %p
+              %b
+                = f.label :password
+            = f.password_field :password, placeholder: "Password", class: "full-width text-center"
+          .form-group.text-center
+            %p
+              %b
+                = f.label :password_confirmation
+            = f.password_field :password_confirmation, placeholder: "Password Confirmation", class: "full-width text-center"
+        .col-sm-4.col-sm-offset-4
+          %button.btn.btn-default{:type => "submit"} Submit
+:javascript
+  $(document).ready(function(){
+    $('input[type=file]').bootstrapFileInput();
+  });
+
+
