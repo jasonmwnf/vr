@@ -82,7 +82,7 @@
                 %hr/
                 %p
                   = e.date
-                  | #{e.time}
+                  %br #{e.time.strftime("%I:00 %p")} | #{e.timezone}
                 %p= e.address
                 %p= e.phone
 %section#scroll-link.latest-videos
@@ -107,21 +107,14 @@
   .container-fluid
     .col-sm-10.col-sm-offset-1
       .col-sm-12
-        %h2.title LATEST NEWS
-        %h3.all-videos{:style => "text-align:center;"} COMING SOON
-      /
-        <div class="col-sm-6">
-        <div class="pull-left">
-        <h2 class="title">LATEST NEWS</h2>
-        </div>
-        </div>
-      /
-        <div class="col-sm-6">
-        <div class="pull-right">
-        <h3 class="all-videos">ALL NEWS IN OUR BLOG ></h3>
-        </div>
-        </div>
-%section.chat-home
+        %h2.title LATEST POSTS
+        - @posts.each do |e|
+          = link_to post_path(e) do
+            .col-sm-4.white
+              = image_tag("#{e.featured_image}")
+              %h5.black-color
+                = e.title
+              %hr/
   .container-fluid
     .row
       .col-sm-12
