@@ -4,11 +4,11 @@ class Admin::PostsController < AdminsController
   end
 
   def show
-    @post = Post.friendly.find(params[:id])
+    find_post
   end
 
   def edit
-    @post = Post.friendly.find(params[:id])
+    find_post
   end
 
   def new
@@ -23,11 +23,10 @@ class Admin::PostsController < AdminsController
       flash[:notice] = "Do not forget the title"
       render :new
     end
-
   end
 
   def update
-    @post = Post.friendly.find(params[:id])
+    find_post
     if @post.update(post_params)
       redirect_to @post
     else
@@ -37,10 +36,19 @@ class Admin::PostsController < AdminsController
   end
 
   def destroy
-
+    find_post
+    @post.destroy
+    redirect_to admin_posts_path
+    flash[:notice] = "Post Deleted"
   end
 
   private
+
+  def find_post
+    @post = Post.friendly.find(params[:id])
+  end
+
+
   def post_params
     params.require(:post).permit!
   end
