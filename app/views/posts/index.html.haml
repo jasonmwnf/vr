@@ -6,15 +6,16 @@
     .row
       .col-sm-7.col-sm-offset-1
         - @posts.each do |post|
-          .col-sm-7
-            %img.img-responsive{:alt => post.title, :src => post.featured_image}/
-            %h5.tli.mt-10.mb-0.text-uppercase.strong= post.title
-            %p.text-uppercase.f-07
-              Veronica Rodriguez
-              |
-              = post.date.strftime("%B %d")
-            %p
-              = post.teaser
+          = link_to post_path(post) do
+            .col-sm-7
+              %img.img-responsive{:alt => post.title, :src => post.featured_image}/
+              %h5.tli.mt-10.mb-0.text-uppercase.strong= post.title
+              %p.text-uppercase.f-07
+                Veronica Rodriguez
+                |
+                = post.date.strftime("%B %d")
+              %p
+                = post.teaser
 
       .col-sm-3.col-sm-offset-1
         %p.text-uppercase
