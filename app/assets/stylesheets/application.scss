@@ -205,7 +205,8 @@ a:hover {color: #8A8A8A;text-decoration: none;}
   background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/home-main.jpg');
   background-position: center center;
   background-attachment: fixed;
-  min-height:100vh;
+  background-repeat: no-repeat;
+  height: 580px;
   background-size: cover;
 
   h1 {font-weight: 300;color: white;text-align: center;font-size: 50px;letter-spacing: 15px;margin-top:0;}
@@ -594,7 +595,7 @@ header h3.title {
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    min-height: 650px;
+    height: 650px;
     background-size: cover;
     h1 {
         font-size: 30px;
