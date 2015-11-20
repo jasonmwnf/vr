@@ -8,8 +8,7 @@ class Admin::EventsController < AdminsController
   end
 
   def edit
-    @event = Event.find(params[:id])
-
+    find_event
   end
 
   def new
@@ -26,7 +25,7 @@ class Admin::EventsController < AdminsController
   end
 
   def update
-    @event = Event.find(params[:id])
+    find_event
     @event.update(event_params)
     if @event.save
       redirect_to admin_events_path
@@ -36,10 +35,17 @@ class Admin::EventsController < AdminsController
   end
 
   def destroy
-
+    find_event
+    @event.destroy
+    redirect_to admin_events_path
+    flash[:notice] = "Event Deleted"
   end
 
   private
+
+  def find_event
+    @event = Event.find(params[:id])
+  end
 
   def event_params
     params.require(:event).permit!

@@ -3,26 +3,26 @@
     = render "admin/panel/admin_panel"
     .row
       .col-sm-4.col-sm-offset-4
-        %h2.title Events
+        %h2.title Live Shows
         %hr
         %h5
-          = link_to 'Add Event', new_admin_event_path
+          = link_to 'Add Live Show', new_admin_live_show_path
     .row
       .col-xs-12.col-sm-10.col-sm-offset-1
-        - @events.each do |e|
+        - @live_shows.each do |e|
           .col-sm-4.text-center
             %h5
               %b
-                = e.type_of_event
-                at #{e.name_of_location}
+                = e.title
             %hr/
             %p
               = e.date
-              | #{e.time}
-            %p= e.address
-            %p= e.phone
+            %p
+              = e.time
+              = precede(" ") do
+                = e.timezone
             %p.text-uppercase
               %b
-                = link_to "Edit", edit_admin_event_path(e)
+                = link_to "Edit", edit_admin_live_show_path(e)
                 = precede '- ' do
-                  = link_to "Remove", admin_event_path(e), method: "delete"
+                  = link_to "Remove", admin_live_show_path(e), method: "delete"

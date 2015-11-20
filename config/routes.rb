@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :videos do
       resources :pictures
     end
+    resources :live_shows
     resources :posts
     resources :events
     resources :panel, only: [:index]

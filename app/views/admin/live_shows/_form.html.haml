@@ -3,12 +3,12 @@
     = render "admin/panel/admin_panel"
     .row
       .col-sm-4.col-sm-offset-4
-        %h2.title Event
+        %h2.title Live Show
         %hr
-      = form_for [:admin, @event] do |f|
+      = form_for [:admin, @live_show] do |f|
         .col-sm-4.col-sm-offset-4
           .form-group.text-center
-            = f.text_field :name_of_location, placeholder: "Name of Event", class: "full-width text-center"
+            = f.text_field :title, placeholder: "Name of Live Show", class: "full-width text-center"
           .form-group.text-center
             %p
               %b Date of Event:
@@ -18,14 +18,7 @@
               %b Time of Event:
             = f.time_select :time, placeholder: "Time", class: "full-width text-center", ampm: true
           .form-group.text-center
-            = f.text_field :timezone, placeholder: "Enter Timezone", class: "full-width text-center"
-          .form-group.text-center
-            = f.text_field :type_of_event, placeholder: "Type of Event", class: "full-width text-center"
-          .form-group.text-center
-            = f.text_field :address, placeholder: "Address", class: "full-width text-center"
-          .form-group.text-center
-            = f.text_field :phone, placeholder: "Phone", class: "full-width text-center"
-
+            = f.text_field :timezone, placeholder: "Timezone", class: "full-width text-center"
         .col-sm-4.col-sm-offset-4
           %button.btn.btn-default{:type => "submit"} Submit
 :javascript
