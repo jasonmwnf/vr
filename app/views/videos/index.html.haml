@@ -6,7 +6,7 @@
     .row
       .col-sm-10.col-sm-offset-1
         .row
-          .col-xs-12.video-player
+          .col-xs-10.col-xs-offset-1.video-player
             %video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{\"example_option\":true}", :height => "100%", :id => "video-#{@latest_vid.id}", :poster => @latest_vid.featured_image, :preload => "auto", :width => "100%"}
               %source{:src => @latest_vid.teaser_video_url, :type => "video/mp4"}
                 %p.vjs-no-js
@@ -35,37 +35,39 @@
         %h2.title.uppercase.tli.fw-500 More Videos
     .row
       .col-sm-10.col-sm-offset-1.nono
-        - @more_vids.each do |vid|
-          .col-sm-4.pb-30
-            .slideshow-block
-              = link_to '', vid, class: 'link'
-              .slides
-                - unless vid.featured_image.blank?
-                  = image_tag vid.featured_image, class: 'img-responsive'
-                - unless vid.thumbnail_1.blank?
-                  = image_tag vid.thumbnail_1, class: 'img-responsive'
-                - unless vid.thumbnail_2.blank?
-                  = image_tag vid.thumbnail_2, class: 'img-responsive'
-                - unless vid.thumbnail_3.blank?
-                  = image_tag vid.thumbnail_3, class: 'img-responsive'
-                - unless vid.thumbnail_4.blank?
-                  = image_tag vid.thumbnail_4, class: 'img-responsive'
-            %p.video-small-title= link_to "#{vid.title}", vid
-            %p.video-small-date= vid.post_date
-            .col-sm-12.nono
-              %p.starting
-                %b Starring:
-                Veronica Rodriguez
-                - vid.models.each do |model|
-                  , #{model.name}
-      :javascript
-        $('.slides').cycle({
-          fx:     'none',
-          speed:   1500,
-          timeout: 1
-        }).cycle('pause');
-        $('.slideshow-block').hover(function(){
-            $(this).find('.slides').addClass('active').cycle('resume');
-        }, function(){
-            $(this).find('.slides').removeClass('active').cycle('pause');
-        });
+        - @more_vids.each_slice(3) do |vids|
+          .row
+            - vids.each do |vid|
+              .col-sm-4.pb-30
+                .slideshow-block
+                  = link_to '', vid, class: 'link'
+                  .slides
+                    - unless vid.featured_image.blank?
+                      = image_tag vid.featured_image, class: 'img-responsive'
+                    - unless vid.thumbnail_1.blank?
+                      = image_tag vid.thumbnail_1, class: 'img-responsive'
+                    - unless vid.thumbnail_2.blank?
+                      = image_tag vid.thumbnail_2, class: 'img-responsive'
+                    - unless vid.thumbnail_3.blank?
+                      = image_tag vid.thumbnail_3, class: 'img-responsive'
+                    - unless vid.thumbnail_4.blank?
+                      = image_tag vid.thumbnail_4, class: 'img-responsive'
+                %p.video-small-title= link_to "#{vid.title}", vid
+                %p.video-small-date= vid.post_date
+                .col-sm-12.nono
+                  %p.starting
+                    %b Starring:
+                    Veronica Rodriguez
+                    - vid.models.each do |model|
+                      , #{model.name}
+:javascript
+  $('.slides').cycle({
+    fx:     'none',
+    speed:   1500,
+    timeout: 1
+  }).cycle('pause');
+  $('.slideshow-block').hover(function(){
+      $(this).find('.slides').addClass('active').cycle('resume');
+  }, function(){
+      $(this).find('.slides').removeClass('active').cycle('pause');
+  });
