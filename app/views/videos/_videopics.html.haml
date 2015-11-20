@@ -1,4 +1,6 @@
 - @videopics.each do |img|
   .col-sm-3
-    .vid-pics.vid-pics-fix{:style => "background-image: url('#{img.image_url}')"}
-    %a{:href => "#"}
+    .vid-pics.vid-pics-fix
+      .lightbox.hide.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+        .lightbox-content
+          = image_tag("#{img.image_url}")
