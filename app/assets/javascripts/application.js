@@ -16,6 +16,6 @@
 //= require modernizr
 //= require jquery.cycle2.min
 //= require videos.js.coffee
-
+//= require height.js
 //= require dropzone
 
