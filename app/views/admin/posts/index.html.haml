@@ -18,4 +18,6 @@
             %p
               = post.teaser
             %p.strong.text-uppercase
-              = link_to "Edit Post", edit_admin_post_path(post)
+              = link_to "Edit", edit_admin_post_path(post)
+              = precede '- ' do
+                = link_to "Remove", admin_post_path(post), method: "delete"
