@@ -16,6 +16,6 @@
 //= require modernizr
 //= require jquery.cycle2.min
 //= require height.js
-//= require bootstrap-lightbox.js
 //= require dropzone
+//= require featherlight.gallery.js
 
