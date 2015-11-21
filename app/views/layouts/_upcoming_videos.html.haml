@@ -1,0 +1,17 @@
+%section#scroll-link.upcoming-videos.ptb-100
+  .container-fluid
+    .row
+      .col-sm-12
+        %h2.title Upcoming Videos
+    .row
+      .col-sm-10.col-sm-offset-1
+        - @upcoming_videos.each do |vid|
+          .col-sm-4.nono
+            = image_tag vid.featured_image, class: 'img-responsive'
+            %p.video-small-date= vid.post_date
+            .col-sm-12.nono
+              %p.starting
+                %b Starring:
+                Veronica Rodriguez
+                - vid.models.each do |p|
+                  , #{p.name}

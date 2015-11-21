@@ -21,6 +21,11 @@
                   - @video.models.each do |p|
                     , #{p.name}
         .row
+          .col-sm-4.col-sm-offset-4
+            %h4.text-center Release Date
+            .form-group.text-center
+              = f.date_select :post_date, :order => [:month, :day, :year], class: "text-center"
+        .row
           .col-sm-3.col-sm-offset-1
             %h4 Description
             %hr
@@ -68,10 +73,6 @@
             %h4 Extras
             %hr
             .text-center
-              .form-group
-                %p
-                  %b Posted on:
-                = f.date_select :post_date, :order => [:month, :day, :year], class: "text-center"
               .form-group
                 %p
                   %b Select Models:

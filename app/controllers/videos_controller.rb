@@ -1,8 +1,9 @@
 class VideosController < ApplicationController
   def index
-    @latest_vid = Video.last
+    @latest_vid = Video.latest_videos.last
     @models     = @latest_vid.models
-    @more_vids  = Video.where.not(id: @latest_vid).order(id: 'DESC')
+    @more_vids  = Video.latest_videos
+    @upcoming_videos = Video.upcoming_videos
   end
 
   def show

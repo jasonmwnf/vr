@@ -12,4 +12,12 @@ class Video < ActiveRecord::Base
   has_many :models, through: :shots
   has_many :pictures, dependent: :destroy
   validates_presence_of :title
+
+  def self.latest_videos
+    where("post_date <= ?", Date.today)
+  end
+
+  def self.upcoming_videos
+    where("post_date >= ?", Date.today)
+  end
 end

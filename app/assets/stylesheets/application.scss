@@ -79,7 +79,7 @@ a:hover {color: #8A8A8A;text-decoration: none;}
 .border-none {border: none!important;}
 .full-width {width: 100%;}
 .maxw-150 {max-width: 150px!important;}
-.t-center {text-align: center;}
+.t-center {text-align: center!important;}
 .t-up {text-transform: uppercase;}
 
 
@@ -228,10 +228,9 @@ a:hover {color: #8A8A8A;text-decoration: none;}
   }
   .btn:hover, .btn:focus, .btn.focus {color:black;}
 }
-.latest-videos {
+.latest-videos, .upcoming-videos {
   background: white;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  // padding-bottom: 150px;
 
   .title {
     text-align: center;

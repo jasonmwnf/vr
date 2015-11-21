@@ -1,0 +1,47 @@
+%section#scroll-link.latest-videos
+  .container-fluid
+    .row
+      .col-sm-10.col-sm-offset-1
+        %h2.title Latest Videos
+    .row
+      .col-sm-10.col-sm-offset-1
+        - @latest_videos.each do |vid|
+          .col-sm-4
+            .slideshow-block-fix
+              = link_to '', vid, class: 'link'
+              .slides
+                - unless vid.featured_image.blank?
+                  = image_tag vid.featured_image, class: 'img-responsive'
+                - unless vid.thumbnail_1.blank?
+                  = image_tag vid.thumbnail_1, class: 'img-responsive'
+                - unless vid.thumbnail_2.blank?
+                  = image_tag vid.thumbnail_2, class: 'img-responsive'
+                - unless vid.thumbnail_3.blank?
+                  = image_tag vid.thumbnail_3, class: 'img-responsive'
+                - unless vid.thumbnail_4.blank?
+                  = image_tag vid.thumbnail_4, class: 'img-responsive'
+            %p.video-small-title= link_to "#{vid.title}", vid.slug
+            %p.video-small-date= vid.post_date
+            .col-sm-12.nono
+              %p.starting
+                %b Starring:
+                Veronica Rodriguez
+                - vid.models.each do |p|
+                  , #{p.name}
+              %p.starting
+              / <p class="starting">85,274 Views*  |  Comments (500)</p>
+            /
+              <div class="col-sm-4 nono">
+              <p class="likes"><i class="fa fa-thumbs-up fa-2x"></i> 1000  <i class="fa fa-thumbs-down fa-2x"></i> 20</p>
+              </div>
+    :javascript
+      $('.slides').cycle({
+        fx:     'none',
+        speed:   1500,
+        timeout: 1
+      }).cycle('pause');
+      $('.slideshow-block').hover(function(){
+          $(this).find('.slides').addClass('active').cycle('resume');
+      }, function(){
+          $(this).find('.slides').removeClass('active').cycle('pause');
+      });
