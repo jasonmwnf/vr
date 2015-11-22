@@ -18,9 +18,6 @@
                   = e.time
                   = precede(" ") do
                     = e.timezone
-
-
-
     .row
-      .col-sm-7.col-sm-offset-3
-        %iframe{:allowfullscreen => "", :frameborder => "0", :height => "640px", :scrolling => "no", :src => "http://www.ustream.tv/embed/21547069?html5ui", :style => "border: 0 none transparent;", :webkitallowfullscreen => "", :width => "480px"}
+      .col-xs-12.live-stream
+        %iframe{:allowfullscreen => "yes", :frameborder => "0", :height =>'100%', :scrolling => "no", :src => "http://content.streamhoster.com/player/lv_vrodproductions/broadcast1?autoPlay=1&showPlayPauseBtn=0&bufferTime=1&expandedBufferTime=60", :webkitallowfullscreen => "yes", :width => '100%'}      }
