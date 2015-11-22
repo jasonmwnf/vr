@@ -1079,17 +1079,22 @@ img {
  @media (min-width: 1024px) {
   .live-stream {
     height: 540px;
+    background-color: black;
   }
  }
 
  @media (max-width: 1023px) {
   .live-stream {
     height: 540px;
+    background-color: black;
+
   }
  }
  @media (max-width: 414px) {
   .live-stream {
     height: 240px;
+    background-color: black;
+
   }
 
  }
