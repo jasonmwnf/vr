@@ -13,7 +13,7 @@
         %h2.title Latest Videos
     .row
       .col-sm-10.col-sm-offset-1
-        - @latest_videos.order(post_date: 'ASC').each do |vid|
+        - @latest_videos.order(post_date: 'DESC').each do |vid|
           .col-sm-4
             .slideshow-block-fix
               = link_to '', vid, class: 'link'
