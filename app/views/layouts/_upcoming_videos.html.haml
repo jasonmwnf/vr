@@ -6,8 +6,9 @@
     .row
       .col-sm-10.col-sm-offset-1
         - @upcoming_videos.each do |vid|
-          .col-sm-4.nono
+          .col-sm-4
             = image_tag vid.featured_image, class: 'img-responsive'
+            %p.video-small-title= link_to "#{vid.title}", vid.slug
             %p.video-small-date= vid.post_date
             .col-sm-12.nono
               %p.starting
