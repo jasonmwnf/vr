@@ -237,28 +237,30 @@ Main components
 
 -------------------------------- */
 
-
-.cd-header {
-  position: absolute;
-  padding-top:5px;
-  top: 0;
-  left: 0;
-  background: rgba(247, 247, 247, 0.95);
-  height: 80px;
-  width: 100%;
-  z-index: 300;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@media only screen and (min-width: 835px) {
+  .cd-header {
+    position: absolute;
+    padding-top:5px;
+    top: 0;
+    left: 0;
+    background: rgba(247, 247, 247, 0.95);
+    height: 80px;
+    width: 100%;
+    z-index: 300;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
-@media only screen and (min-width: 768px) {
+
+@media only screen and (min-width: 835px) {
   .cd-header {
     height: 80px;
     background: transparent;
     box-shadow: none;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 1320px) {
+@media only screen and (min-width: 835px) and (max-width: 1320px) {
 .cd-header .columns {
 	margin-top:25px;
 	margin-bottom: 25px;

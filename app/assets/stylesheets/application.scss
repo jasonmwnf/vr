@@ -75,7 +75,8 @@ a:hover {color: #8A8A8A;text-decoration: none;}
 .fw-500 {font-weight: 500!important}
 .notice {background: #EE57A6;color:white;}
 .pink-color {color: #EE57A6;}
-.black-color {color: black;}
+.black-color {color: black!important;}
+.white-color {color: white!important;}
 .border-none {border: none!important;}
 .full-width {width: 100%;}
 .maxw-150 {max-width: 150px!important;}
@@ -83,6 +84,17 @@ a:hover {color: #8A8A8A;text-decoration: none;}
 .t-up {text-transform: uppercase;}
 
 
+#menu.home-menu li a {
+  color: white
+}
+
+.video-index, .policy-index {
+  margin-top: 104px!important;
+}
+
+.back-to-vids {
+  margin-top: 121px;
+}
 
 .logo {
   float:left;
@@ -158,6 +170,7 @@ a:hover {color: #8A8A8A;text-decoration: none;}
   display: none;
 }
 
+
 .welcome {
   background-color: #f9f9f9;
   border: white 30px solid;
@@ -209,6 +222,7 @@ a:hover {color: #8A8A8A;text-decoration: none;}
   background-repeat: no-repeat;
   height: 580px;
   background-size: cover;
+  background-color: white;
 
   h1 {font-weight: 300;color: white;text-align: center;font-size: 50px;letter-spacing: 15px;margin-top:0;}
   p {font-weight: 100;color: white;text-align: center;letter-spacing: 10px;margin-bottom:0;}
@@ -347,6 +361,10 @@ a:hover {color: #8A8A8A;text-decoration: none;}
   @extend .latest-videos;
   padding-top: 100px;
 }
+
+
+
+
 
 .more-videos {
   .title {
@@ -796,6 +814,8 @@ img {
 
 @media only screen and (min-width: 801px) {
   ul#menu {
+    height: 104px;
+
     li, li a {
       display: inline-block;
       font-family: "proxima-nova",sans-serif;
@@ -815,7 +835,7 @@ img {
   display:none;
 }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 835px) {
   /* #menu is the original menu */
   .js #menu {
     display:none;
@@ -1051,3 +1071,25 @@ img {
     border-bottom: 10px solid transparent;
   }
 }
+
+ .menu-nav {
+  z-index: 1000;
+ }
+
+ @media (min-width: 1024px) {
+  .live-stream {
+    height: 540px;
+  }
+ }
+
+ @media (max-width: 1023px) {
+  .live-stream {
+    height: 540px;
+  }
+ }
+ @media (max-width: 414px) {
+  .live-stream {
+    height: 240px;
+  }
+
+ }
