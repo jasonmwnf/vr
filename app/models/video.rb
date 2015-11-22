@@ -18,6 +18,6 @@ class Video < ActiveRecord::Base
   end
 
   def self.upcoming_videos
-    where("post_date >= ?", Date.today)
+    where("post_date > ?", Date.today)
   end
 end
