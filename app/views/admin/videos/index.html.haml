@@ -9,7 +9,7 @@
           = link_to 'Add Video', new_admin_video_path
     .row
       .col-sm-10.col-sm-offset-1
-        - @videos.each_slice(3) do |vids|
+        - @videos.order(post_date: "DESC").each_slice(3) do |vids|
           .row
             - vids.each do |vid|
               .col-sm-4
