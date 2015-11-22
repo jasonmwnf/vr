@@ -9,27 +9,29 @@
           = link_to 'Add Video', new_admin_video_path
     .row
       .col-sm-10.col-sm-offset-1
-        - @videos.each do |vid|
-          .col-sm-4
-            %p.pull-right.strong
-              = link_to "Edit", edit_admin_video_path(vid), class: "text-uppercase"
-              = precede '- ' do
-                = link_to "Remove", admin_video_path(vid), method: "delete", class: "text-uppercase"
-            = link_to edit_admin_video_path(vid) do
-              .slideshow-block.slideshow-block-fix
-                .slides
-                  - unless vid.featured_image.blank?
-                    = image_tag vid.featured_image, class: 'img-responsive'
-              %p.video-small-title.video-small-title-fix= "#{vid.title}"
-              %p.video-small-date.text-center= vid.post_date
-    :javascript
-      $('.slides').cycle({
-        fx:     'none',
-        speed:   1500,
-        timeout: 1
-      }).cycle('pause');
-      $('.slideshow-block').hover(function(){
-          $(this).find('.slides').addClass('active').cycle('resume');
-      }, function(){
-          $(this).find('.slides').removeClass('active').cycle('pause');
-      });
+        - @videos.each_slice(3) do |vids|
+          .row
+            - vids.each do |vid|
+              .col-sm-4
+                %p.pull-right.strong
+                  = link_to "Edit", edit_admin_video_path(vid), class: "text-uppercase"
+                  = precede '- ' do
+                    = link_to "Remove", admin_video_path(vid), method: "delete", class: "text-uppercase"
+                = link_to edit_admin_video_path(vid) do
+                  .slideshow-block.slideshow-block-fix
+                    .slides
+                      - unless vid.featured_image.blank?
+                        = image_tag vid.featured_image, class: 'img-responsive'
+                  %p.video-small-title.video-small-title-fix= "#{vid.title}"
+                  %p.video-small-date.text-center= vid.post_date
+:javascript
+  $('.slides').cycle({
+    fx:     'none',
+    speed:   1500,
+    timeout: 1
+  }).cycle('pause');
+  $('.slideshow-block').hover(function(){
+      $(this).find('.slides').addClass('active').cycle('resume');
+  }, function(){
+      $(this).find('.slides').removeClass('active').cycle('pause');
+  });

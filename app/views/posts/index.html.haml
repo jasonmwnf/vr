@@ -5,9 +5,9 @@
         %h2.title.uppercase.tli.fw-500 Blog Posts
     .row
       .col-sm-7.col-sm-offset-1
-        - @posts.each do |post|
+        - @posts.order(created_at: 'DESC').each do |post|
           = link_to post_path(post) do
-            .col-sm-7
+            .col-sm-9
               %img.img-responsive{:alt => post.title, :src => post.featured_image}/
               %h5.tli.mt-10.mb-0.text-uppercase.strong= post.title
               %p.text-uppercase.f-07
@@ -23,7 +23,7 @@
         %hr.mt-l0
         %p.text-uppercase
           Recent Posts
-        - Post.all.each do |post|
+        - Post.all.order(created_at: 'DESC').each do |post|
           %p.mb-0= post.title
           %p.text-uppercase.f-07.mb-0= post.date
           = link_to "view post", post_path(post), class: "text-uppercase f-08 pink-color"
