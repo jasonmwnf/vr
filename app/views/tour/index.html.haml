@@ -96,7 +96,7 @@
                 %p
                   = e.date
                   %br
-                  = e.time
+                  = e.time.strftime("%I:00 %p")}
                   = precede(" ") do
                     = e.timezone
 = render 'layouts/upcoming_videos'
