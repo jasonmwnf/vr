@@ -2,8 +2,8 @@ class VideosController < ApplicationController
   def index
     @latest_vid = Video.latest_videos.last
     @models     = @latest_vid.models
-    @more_vids  = Video.latest_videos
-    @upcoming_videos = Video.upcoming_videos
+    @more_vids  = Video.latest_videos.order(post_date: 'DESC')
+    @upcoming_videos = Video.upcoming_videos.order(post_date: 'DESC')
   end
 
   def show

@@ -1,6 +1,6 @@
 class Admin::VideosController < AdminsController
   def index
-    @videos = Video.all
+    @videos = Video.all.order(post_date: 'DESC')
   end
 
   def show
