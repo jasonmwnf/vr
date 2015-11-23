@@ -45,7 +45,7 @@
             .form-group.text-center
               %p
                 %b Birthday:
-              = f.date_select :birthdate, :order => [:month, :day, :year], class: "text-center"
+              = f.date_select :birthdate, :order => [:month, :day, :year], :end_year => 1965, class: "text-center"
             .form-group.text-center
               = f.text_field :astrology, placeholder: "Astrology", class: "full-width text-center"
             .form-group.text-center
