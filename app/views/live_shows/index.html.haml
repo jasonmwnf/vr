@@ -15,7 +15,7 @@
                 %p.black-color
                   = e.date
                   %br
-                  = e.time
+                  = e.time.strftime("%I:00 %p")
                   = precede(" ") do
                     = e.timezone
     - if current_user.present? && current_user.is_paid?
