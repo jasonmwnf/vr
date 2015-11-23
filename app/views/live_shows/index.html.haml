@@ -4,7 +4,7 @@
       .col-sm-7.col-sm-offset-1
         %h2.title.uppercase.tli.fw-500 Live Show Schedules
         .col-xs-12.col-sm-10.col-sm-offset-1
-          - if @live_shows.present?
+          - if @live_shows
             - @live_shows.each_slice(3) do |shows|
               .row.t-center
               - shows.each do |e|
