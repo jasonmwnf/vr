@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def status
     create_user
     check_if_credit_card_approved
+    render status: 200
   end
 
   def outcome
