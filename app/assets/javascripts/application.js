@@ -18,4 +18,5 @@
 //= require height.js
 //= require dropzone
 //= require featherlight.gallery.js
-
+//= require_tree ./vendor
+//= require upload
