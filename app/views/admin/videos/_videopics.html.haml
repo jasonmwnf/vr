@@ -4,7 +4,7 @@
       .col-sm-3
         .vid-pics.vid-pics-fix{:style => "background-image: url('#{img.image_url}')"}
         %a{:href => "#"}
-        = link_to 'Delete', new_admin_video_picture_path(img), method: 'delete'
+        = link_to 'Delete', admin_video_picture_path([@video.id,img]), method: 'delete'
 
 %script{:type => "text/x-handlebars-template", :id => "picture-container"}
   {{#each pictures}}
