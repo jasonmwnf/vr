@@ -1,0 +1,12 @@
+%section.upload
+  %div{id:'results'}
+
+  %fieldset
+    %legend Upload Video
+
+    %input{ :id => 'video', :type => 'file', :name => 'video', 'data-url' => upload_video_path }
+
+    %div{id:'progress'}
+      %div{ class: 'bar'}
+
+    %p{id: 'status'}
