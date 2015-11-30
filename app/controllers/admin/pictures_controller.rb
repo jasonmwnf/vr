@@ -18,11 +18,13 @@ class Admin::PicturesController < AdminsController
 
   def create
     @picture = @video.pictures.new(picture_params)
-    @picture.image_url = params[:file]
+    @picture.image_url = params[:image]
     if @picture.image_url.present?
       @picture.save
       flash[:notice] = "Picture successfully saved."
+      render json: @picture
     end
+
     # redirect_to edit_admin_video_path(@video)
   end
 
