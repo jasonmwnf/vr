@@ -1,5 +1,9 @@
 $(function(){
 
+  if (!($("#photoDropzone").length > 0)) {
+    return;
+  }
+
   Dropzone.autoDiscover = false;
 
   var dropzone = new Dropzone ("#photoDropzone", {
