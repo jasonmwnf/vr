@@ -22,8 +22,10 @@ class Admin::PicturesController < AdminsController
     if @picture.image_url.present?
       @picture.save
       flash[:notice] = "Picture successfully saved."
+      render json: @picture
     end
-    redirect_to edit_admin_video_path(@video)
+
+    # redirect_to edit_admin_video_path(@video)
   end
 
   def update
@@ -33,8 +35,6 @@ class Admin::PicturesController < AdminsController
   def destroy
     @picture = Picture.find(params[:id])
     @picture.destroy
-    flash[:notice] = "Picture deleted successfully"
-    render json: @video.pictures
   end
 
   private

@@ -1,37 +1,25 @@
 $(function(){
 
-  var template = Handlebars.compile($("#picture-container").html());
+  Dropzone.autoDiscover = false;
 
-  function updatePictures(pictures) {
-    $(".pic-container").html(template({pictures: pictures}));
-  }
+  var dropzone = new Dropzone ("#photoDropzone", {
+        paramName: "image",
+        maxFilesize: 30,
+  });
 
-  Dropzone.options.photoDropzone = {
-    paramName: "image",
-    maxFilesize: 30,
-    init: function() {
-      this.on("success", function(file, response){
-        updatePictures(response);
-      });
-    }
-  };
+  dropzone.on("success", function(file, response) {
 
+    $(".pic-container").append("" +
+    "<div class='col-sm-3' id='img_" + response.id + "'>" +
+        "<div class='vid-pics vid-pics-fix' style='background-image: url(\"" + response.image_url.url + "\")'></div>" +
+          '<a href="#"></a>' + 
+          '<a class="deletePicture" data-remote="true" rel="nofollow" data-method="delete" href="/admin/videos/' + response.video_id + '/pictures/' + response.id + '">Remove Picture</a>' +
+    "</div>"
+    );
 
-  $(".pic-container").on("click", ".deletePicture", function(e){
-    e.preventDefault();
+    this.removeFile(file)
 
-    var self = $(this),
-        pictureId = self.attr("data-picture-id"),
-        videoId = self.attr("data-video-id"),
-        url = "/admin/videos/" + videoId + "/pictures" + "/" + pictureId
-
-    $.ajax({
-      type: "DELETE",
-      url: url,
-      success: function(data) {
-        updatePictures(data);
-      }
-    });
   });
 
 });
+
