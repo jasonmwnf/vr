@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :instagram_view
   def index
     @posts = Post.all
     @instagram_feed = Instagram.user_recent_media(412439285).take(12)
@@ -11,6 +12,6 @@ class PostsController < ApplicationController
   private
 
   def instagram_view
-    # @instagram = Instagram.user_recent_media("412439285", {:count => 12})
+    @instagram_feed = Instagram.user_recent_media(412439285).take(12)
   end
 end
