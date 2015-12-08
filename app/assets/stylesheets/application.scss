@@ -1091,11 +1091,24 @@ img {
 
   }
  }
+
+ @media (max-width: 767px) {
+  .instagram {
+    text-align: center;
+  }
+ }
+
+
  @media (max-width: 414px) {
   .live-stream {
     height: 240px;
     background-color: black;
+  }
 
+  .instagram {
+    display: none
   }
 
  }
+
+ .row-fix {margin-bottom: 10px}
