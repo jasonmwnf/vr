@@ -1,0 +1,8 @@
+%p.text-uppercase.instagram
+  Instagram
+%p.instagram
+  - @instagram_feed.each do |post|
+    .col-sm-6.col-md-6.instagram
+      %p
+        = link_to "#{post.link}", target: "_blank" do
+          = image_tag post.images.low_resolution.url
