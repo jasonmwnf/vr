@@ -612,14 +612,25 @@ header h3.title {
     position: relative;
     background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/vr-phone.jpg');
     background-position: center center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
+    height: 274px;
+    background-size: contain;
+    background-position-y: 69px;
+
     h1 {
         font-size: 30px;
         margin-bottom: 35px;
       }
     p {
       margin-bottom: 35px;
+    }
+
+    .vcenter {
+      position: absolute;
+      top: 15%;
+      margin: auto;
+      right: 0;
+      left: 0;
     }
   }
 
@@ -812,20 +823,6 @@ img {
 }
 
 @media only screen and (min-width: 801px) {
-  .home-main {
-    position: relative;
-    background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/vr-phone.jpg');
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    h1 {
-        font-size: 30px;
-        margin-bottom: 35px;
-      }
-    p {
-      margin-bottom: 35px;
-    }
-  }
   ul#menu {
     height: 104px;
 
