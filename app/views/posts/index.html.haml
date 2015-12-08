@@ -28,10 +28,4 @@
           %p.text-uppercase.f-07.mb-0= post.date
           = link_to "view post", post_path(post), class: "text-uppercase f-08 pink-color"
         %hr.mt-l0
-        %p.text-uppercase.instagram
-          Instagram
-        %p.instagram
-          - @instagram_feed.each do |post|
-            .col-sm-6.col-md-6.instagram
-              %p
-                = image_tag post.images.low_resolution.url
+        = render "instagram"
