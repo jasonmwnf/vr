@@ -97,7 +97,8 @@
                 %p
                   = e.date
                   %br
-                  = e.time.strftime("%I:00 %p")
+                  - if e.time.present?
+                    %br #{e.time.strftime("%I:00 %p")}
                   = precede(" ") do
                     = e.timezone
 = render 'layouts/upcoming_videos'
