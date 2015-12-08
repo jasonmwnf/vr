@@ -78,7 +78,8 @@
                 %hr/
                 %p
                   = e.date
-                  %br #{e.time.strftime("%I:00 %p")}
+                  - if e.time.present?
+                    %br #{e.time.strftime("%I:00 %p")}
                 %p= e.address
                 %p= e.phone
     .row
