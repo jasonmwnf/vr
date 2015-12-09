@@ -1120,22 +1120,64 @@ img {
 
  .row-fix {margin-bottom: 10px}
 
- @media only screen
-   and (min-device-width: 375px)
-   and (max-device-width: 667px)
-   and (-webkit-min-device-pixel-ratio: 2)
-   and (orientation: portrait) {
-    .home-main {
-      position: relative;
-      background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/home-main.jpg');
-      background-position: center center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      height: 580px;
-      background-size: cover;
-      background-color: white;
-
-      h1 {font-weight: 300;color: white;text-align: center;font-size: 50px;letter-spacing: 15px;margin-top:0;}
-      p {font-weight: 100;color: white;text-align: center;letter-spacing: 10px;margin-bottom:0;}
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+  .home-main {
+    position: relative;
+    background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/vr-phone.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 274px;
+    h1 {
+        font-size: 30px;
+        margin-bottom: 35px;
+      }
+    p {
+      margin-bottom: 35px;
     }
+
+    .vcenter {
+      position: absolute;
+      top: 15%;
+      margin: auto;
+      right: 0;
+      left: 0;
+    }
+  }
+
+}
+
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+  .home-main {
+    position: relative;
+    background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/vr-phone.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 274px;
+    h1 {
+        font-size: 30px;
+        margin-bottom: 35px;
+      }
+    p {
+      margin-bottom: 35px;
+    }
+
+    .vcenter {
+      position: absolute;
+      top: 15%;
+      margin: auto;
+      right: 0;
+      left: 0;
+    }
+  }
  }
