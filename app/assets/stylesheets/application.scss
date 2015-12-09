@@ -217,7 +217,7 @@ a:hover {color: #8A8A8A;text-decoration: none;}
 
 .home-main {
   position: relative;
-  // background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/home-main.jpg');
+  background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/home-main.jpg');
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -1119,54 +1119,3 @@ img {
  }
 
  .row-fix {margin-bottom: 10px}
-
-
- /* ----------- iPhone 5 and 5S ----------- */
-
- /* Portrait and Landscape */
- @media only screen
-   and (min-device-width: 320px)
-   and (max-device-width: 568px)
-   and (-webkit-min-device-pixel-ratio: 2) {
-    .home-main {
-      position: relative;
-      background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/vr-phone.jpg');
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      height: 274px;
-      h1 {
-          font-size: 30px;
-          margin-bottom: 35px;
-        }
-      p {
-        margin-bottom: 35px;
-      }
-
- }
-
- /* ----------- iPhone 6 ----------- */
-
- /* Portrait */
- @media only screen
-   and (min-device-width: 375px)
-   and (max-device-width: 667px)
-   and (-webkit-min-device-pixel-ratio: 2)
-   and (orientation: portrait) {
-    .home-main {
-      position: relative;
-      background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/vr-phone.jpg');
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      height: 274px;
-      h1 {
-          font-size: 30px;
-          margin-bottom: 35px;
-        }
-      p {
-        margin-bottom: 35px;
-      }
-
-
- }
