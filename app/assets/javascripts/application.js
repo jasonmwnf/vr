@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.slicknav.js
 //= require modernizr
 //= require jquery.cycle2.min
 //= require height.js
@@ -21,3 +20,5 @@
 //= require_tree ./vendor
 //= require upload
 //= require drop
+//= require jquery.slicknav.js
+
