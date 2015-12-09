@@ -1130,7 +1130,6 @@ img {
     background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/vr-phone.jpg');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: contain;
     height: 274px;
     h1 {
         font-size: 30px;
@@ -1180,4 +1179,19 @@ img {
       left: 0;
     }
   }
+ }
+
+ @media only screen
+   and (min-device-width: 768px)
+   and (max-device-width: 1024px)
+   and (orientation: portrait)
+   and (-webkit-min-device-pixel-ratio: 1) {
+    .home-main {
+      position: relative;
+      background-image: url('https://s3-us-west-2.amazonaws.com/vrod-web-assets/web-images/vr-phone.jpg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 274px;
+    }
  }
