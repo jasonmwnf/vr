@@ -34,7 +34,7 @@ class Admin::LiveStreamRecordingsController < AdminsController
     flash[:notice] = "Recording Updated"
   end
 
-  def delete
+  def destroy
     find_stream
     @recording.destroy
     redirect_to admin_live_stream_recordings_path
