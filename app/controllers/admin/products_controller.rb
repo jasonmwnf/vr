@@ -1,6 +1,5 @@
 class Admin::ProductsController < AdminsController
   def index
-    @products = Product.all
   end
 
   def show
@@ -12,7 +11,6 @@ class Admin::ProductsController < AdminsController
   end
 
   def new
-    @product = Product.new
   end
 
   def create
