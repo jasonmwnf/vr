@@ -15,9 +15,10 @@
                 %p.black-color
                   = e.date
                   %br
-                  = e.time.strftime("%I:00 %p")
-                  = precede(" ") do
-                    = e.timezone
+                  - if e.time.present?
+                    = e.time.strftime("%I:00 %p")
+                    = precede(" ") do
+                      = e.timezone
     - if current_user.present? && current_user.is_paid?
       .row
         .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.live-stream.col-md-7.col-md-offset-2.col-lg-8
@@ -28,17 +29,18 @@
           %br/
           %div{:style => "font-size:0.9em;text-align:center;"}
             %a{:href => "http://chatroll.com/"} Chat Software
-      .row
-        .col-sm-10.col-sm-offset-1
-          - @recordings.each_slice(3) do |recording|
-            .row
-              - recording.each do |rec|
-                .col-sm-4
-                  %p.pull-right.strong
-                  = link_to live_stream_recording_path(rec) do
-                    - unless rec.image.blank?
-                      = image_tag rec.image, class: 'img-responsive'
-                    %p.live_stream_recording-small-title.live_stream_recording-small-title-fix= "#{rec.title}"
+      - if @recordings.count > 0
+        .row
+          .col-sm-10.col-sm-offset-1
+            - @recordings.each_slice(3) do |recording|
+              .row
+                - recording.each do |rec|
+                  .col-sm-4
+                    %p.pull-right.strong
+                    = link_to live_stream_recording_path(rec) do
+                      - unless rec.image.blank?
+                        = image_tag rec.image, class: 'img-responsive'
+                      %p.live_stream_recording-small-title.live_stream_recording-small-title-fix= "#{rec.title}"
 
 
     - else
