@@ -16,11 +16,7 @@
             = f.text_field :title, placeholder: "Product name", class: "full-width text-center"
           .form-group.text-center
             = f.text_field :price, placeholder: "Price", class: "full-width text-center"
-      .row
-        .col-sm-4.col-sm-offset-4
-          .form-group
             = f.text_area :description, placeholder: "Description of Product", class: "full-width form-control", :rows => '5'
-      .row
         .col-sm-4.col-sm-offset-4
           %button.btn.btn-default{:type => "submit"} Submit
 :javascript
