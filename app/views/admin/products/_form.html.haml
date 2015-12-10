@@ -1,0 +1,30 @@
+%section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
+  .container-fluid
+    = render "admin/panel/admin_panel"
+    .row
+      .col-sm-4.col-sm-offset-4
+        %h2.title Products
+        %hr
+    .row
+      = form_for [:admin, @product] do |f|
+        .col-sm-4.col-sm-offset-4
+          .form-group.text-center
+            = f.text_field :title, placeholder: "Product name", class: "full-width text-center"
+          .form-group.text-center
+            = f.text_field :price, placeholder: "Price in cents", class: "full-width text-center"
+          .form-group.text-center
+            - unless @product.image.blank?
+              = image_tag "#{@product.image}"
+            = f.file_field :image, :title => "Featured Image", "data-filename-placement" => "inside", class: "full-width"
+        .col-sm-10.col-sm-offset-1
+          .form-group
+            = f.text_area :description, placeholder: "Blog Post goes here", class: "full-width form-control", :rows => '15'
+      .row
+        .col-sm-4.col-sm-offset-4
+          %button.btn.btn-default{:type => "submit"} Submit
+  :javascript
+    $(document).ready(function(){
+      $('input[type=file]').bootstrapFileInput();
+    });
+
+
