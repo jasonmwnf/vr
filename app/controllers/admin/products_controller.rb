@@ -11,6 +11,7 @@ class Admin::ProductsController < AdminsController
   end
 
   def new
+    @product = Product.new
   end
 
   def create
