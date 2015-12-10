@@ -14,8 +14,9 @@
             = link_to "Live Shows", live_shows_path
           %li.text-uppercase
             = link_to "Blog", posts_path
-          / %li.text-uppercase
-          /   =# link_to "Store", "#"
+          - if Product.count > 0
+            %li.text-uppercase
+              = link_to "store", products_path
           %li.text-uppercase
             - if user_signed_in?
               %li.text-uppercase
