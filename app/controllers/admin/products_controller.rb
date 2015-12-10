@@ -31,7 +31,7 @@ class Admin::ProductsController < AdminsController
     redirect_to edit_admin_product_path(@product)
   end
 
-  def delete
+  def destroy
     find_product
     @product.destroy
     redirect_to admin_products_path
