@@ -16,7 +16,7 @@ class Admin::ProductsController < AdminsController
   end
 
   def create
-    @product = Product.create(product_params)
+    @product = Product.new(product_params)
     if @product.save
       redirect_to admin_products_path
       flash[:notice] = "Product created successfully"
