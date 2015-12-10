@@ -7,7 +7,7 @@
         %hr
     .row
       = form_for [:admin, @product] do |f|
-
+        = f.text_field :title
 :javascript
   $(document).ready(function(){
     $('input[type=file]').bootstrapFileInput();
