@@ -1,0 +1,23 @@
+%section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
+  .container-fluid
+    = render "admin/panel/admin_panel"
+    .row
+      .col-sm-4.col-sm-offset-4
+        %h2.title Live Show Recordings
+        %hr
+        %h5
+          = link_to 'Add Recording', new_admin_live_stream_recording_path
+    .row
+      .col-sm-10.col-sm-offset-1
+        - @recordings.each_slice(3) do |recording|
+          .row
+            - recording.each do |rec|
+              .col-sm-4
+                %p.pull-right.strong
+                  = link_to "Edit", edit_admin_live_stream_recording_path(rec), class: "text-uppercase"
+                  = precede '- ' do
+                    = link_to "Remove", admin_live_stream_recording_path(rec), method: "delete", class: "text-uppercase"
+                = link_to edit_admin_live_stream_recording_path(rec) do
+                  - unless rec.image.blank?
+                    = image_tag rec.image, class: 'img-responsive'
+                  %p.live_stream_recording-small-title.live_stream_recording-small-title-fix= "#{rec.title}"

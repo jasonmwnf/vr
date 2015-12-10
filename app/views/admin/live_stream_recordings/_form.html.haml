@@ -1,0 +1,24 @@
+%section.policy-index.margin-top-twenty{:style => "padding-bottom: 0px;"}
+  .container-fluid
+    = render "admin/panel/admin_panel"
+    .row
+      .col-sm-4.col-sm-offset-4
+        %h2.title Live Show Recording
+        %hr
+      = form_for [:admin, @recording] do |f|
+        .col-sm-4.col-sm-offset-4
+          .form-group.text-center
+            = f.text_field :title, placeholder: "Name of Live Show", class: "full-width text-center"
+          .form-group.text-center
+            = f.file_field :image, :title => "Teaser image", "data-filename-placement" => "inside", class: "full-width"
+          .form-group.text-center
+            = f.file_field :video, :title => "Live Show Recording", "data-filename-placement" => "inside", class: "full-width"
+
+        .col-sm-4.col-sm-offset-4
+          %button.btn.btn-default{:type => "submit"} Submit
+:javascript
+  $(document).ready(function(){
+    $('input[type=file]').bootstrapFileInput();
+  });
+
+

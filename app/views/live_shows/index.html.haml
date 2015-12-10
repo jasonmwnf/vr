@@ -28,6 +28,19 @@
           %br/
           %div{:style => "font-size:0.9em;text-align:center;"}
             %a{:href => "http://chatroll.com/"} Chat Software
+      .row
+        .col-sm-10.col-sm-offset-1
+          - @recordings.each_slice(3) do |recording|
+            .row
+              - recording.each do |rec|
+                .col-sm-4
+                  %p.pull-right.strong
+                  = link_to live_stream_recording_path(rec) do
+                    - unless rec.image.blank?
+                      = image_tag rec.image, class: 'img-responsive'
+                    %p.live_stream_recording-small-title.live_stream_recording-small-title-fix= "#{rec.title}"
+
+
     - else
       .row
         .col-sm-10.col-sm-offset-1.text-center
@@ -35,6 +48,6 @@
             You do not have access to this part of the site.
           %p Live shows are for subscribed members only, please click on #{ link_to "SIGN UP", new_user_registration_path } to become a subscribed member.
 
-          %p After signing up you can view the live shows.
+          %p After signing up you can view the live show, and also have access to the previously recorded live shows.
 
 

@@ -1,0 +1,25 @@
+%section.back-to-vids
+  .container-fluid
+    .row
+      .col-sm-10.col-sm-offset-1
+        %h2.all-videos
+          %a{:href => "/live_shows"}
+            %i.fa.fa-angle-left GO BACK TO LIVE SHOWS
+%section.pb-0
+  .container-fluid
+    .row
+      - if current_user.present? && current_user.is_paid?
+        .col-xs-10.col-xs-offset-1.video-player
+          %video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{\"example_option\":true}", :height => "100%", :id => "video-#{@recording.id}", :poster => @recording.image, :preload => "auto", :width => "100%"}
+            %source{:src => @recording.video, :type => "video/mp4"}
+              %p.vjs-no-js
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                %a{:href => "http://videojs.com/html5-video-support/", :target => "_blank"} supports HTML5 video
+    .row.mt-50
+      .col-xs-10.col-xs-offset-1
+        %p.video-small-title= @recording.title
+    .row
+      .col-xs-10.col-xs-offset-1
+        %p= raw(@recording.description)
+%hr/
+%section.video-index
