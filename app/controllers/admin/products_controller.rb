@@ -13,7 +13,6 @@ class Admin::ProductsController < AdminsController
 
   def new
     @product = Product.new
-
   end
 
   def create
@@ -34,7 +33,10 @@ class Admin::ProductsController < AdminsController
   end
 
   def delete
-
+    find_product
+    @product.destroy
+    redirect_to admin_products_path
+    flash[:notice] = "Product deleted"
   end
 
   private

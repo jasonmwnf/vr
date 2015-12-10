@@ -11,7 +11,7 @@
               .form-group.text-center
                 = f.text_field :title, placeholder: "Product name", class: "full-width text-center"
               .form-group.text-center
-                = f.number_field :price, placeholder: "Price in cents", class: "full-width text-center"
+                = f.text_field :price, placeholder: "Price in cents", class: "full-width text-center"
               .form-group.text-center
                 - unless @product.image.blank?
                   = image_tag "#{@product.image}"
