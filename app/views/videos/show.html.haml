@@ -10,7 +10,7 @@
     .row
       - if current_user.present? && current_user.is_paid?
         .col-xs-10.col-xs-offset-1.video-player
-          %h3 Full Version
+          %h3 Full
           %video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{\"example_option\":true}", :height => "100%", :id => "video-#{@video.id}", :poster => @video.featured_image, :preload => "auto", :width => "100%"}
             %source{:src => @video.video_url, :type => "video/mp4"}
               %p.vjs-no-js
@@ -18,7 +18,7 @@
                 %a{:href => "http://videojs.com/html5-video-support/", :target => "_blank"} supports HTML5 video
       - else
         .col-xs-10.col-xs-offset-1.video-player
-          %h3 Teaser Version
+          %h3 Teaser
           %video.video-js.vjs-default-skin.vjs-big-play-centered{:controls => "", "data-setup" => "{\"example_option\":true}", :height => "100%", :id => "video-#{@video.id}", :poster => @video.featured_image, :preload => "auto", :width => "100%"}
             %source{:src => @video.teaser_video_url, :type => "video/mp4"}
               %p.vjs-no-js
