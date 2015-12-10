@@ -6,19 +6,7 @@
         %h2.title Products
         %hr
     .row
-      = form_for [:admin, @product] do |f|
-        .col-sm-4.col-sm-offset-4
-          .form-group.text-center
-            - unless @product.image.blank?
-              = image_tag "#{@product.image}"
-            = f.file_field :image, :title => "Product Image", "data-filename-placement" => "inside", class: "full-width"
-          .form-group.text-center
-            = f.text_field :title, placeholder: "Product name", class: "full-width text-center"
-          .form-group.text-center
-            = f.text_field :price, placeholder: "Price", class: "full-width text-center"
-            = f.text_area :description, placeholder: "Description of Product", class: "full-width form-control", :rows => '5'
-        .col-sm-4.col-sm-offset-4
-          %button.btn.btn-default{:type => "submit"} Submit
+
 :javascript
   $(document).ready(function(){
     $('input[type=file]').bootstrapFileInput();
