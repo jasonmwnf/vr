@@ -6,5 +6,6 @@ class TourController < ApplicationController
     @posts = Post.all.order(date: 'DESC').limit(3)
     @live_shows = LiveShow.all.order(date: 'DESC').limit(3)
     @upcoming_videos = Video.upcoming_videos.limit(3)
+    @products = Product.all.limit(3)
   end
 end
