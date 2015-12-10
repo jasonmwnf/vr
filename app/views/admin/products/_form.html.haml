@@ -6,7 +6,7 @@
         %h2.title Product
         %hr
     .row
-      = puts @product
+      = form_for [:admin, @product] do |f|
 
 :javascript
   $(document).ready(function(){
