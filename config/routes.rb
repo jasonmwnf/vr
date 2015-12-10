@@ -19,10 +19,12 @@ Rails.application.routes.draw do
   resources :videos,  only: [:index, :new, :show]
   resources :models,  only: [:index, :show]
   resources :posts,   only: [:index, :show]
+  resources :products,   only: [:index, :show]
   resources :live_shows, only: [:index]
   namespace :admin do
     resources :models
     resources :users
+    resources :products
     resources :videos do
       resources :pictures
     end
@@ -31,4 +33,5 @@ Rails.application.routes.draw do
     resources :events
     resources :panel, only: [:index]
   end
+  resources :charges
 end
