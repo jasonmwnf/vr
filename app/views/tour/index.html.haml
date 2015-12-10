@@ -98,7 +98,7 @@
                   = e.date
                   %br
                   - if e.time.present?
-                    %br #{e.time.strftime("%I:00 %p")}
+                    %br #{e.time.strftime("%i:00 %p")}
                   = precede(" ") do
                     = e.timezone
 = render 'layouts/upcoming_videos'
@@ -106,25 +106,36 @@
   .black-bkg
   .container-fluid
     .row
-      .col-sm-12
-        %h2 CHECK OUT MY PRODUCTS
-        .el-center
-          %a.btn.btn-default{:href => ""} COMING SOON
+      - if @products.present?
+        .col-sm-10.col-sm-offset-1
+          %h2 check out my products
+          - @products.each do |e|
+            = link_to product_path(e) do
+              .col-sm-4.white.text-center
+                = image_tag("#{e.image}")
+                %h5.black-color
+                  = e.title
+                %hr/
+      - else
+        .col-sm-12.fixd-padding-top
+          %h2 checkout my products
+          .el-center
+            %a.btn.btn-default{:href => ""} coming soon
 %section.news-home.ptb-100
-  .container-fluid
-    .col-sm-10.col-sm-offset-1
-      .col-sm-12
-        %h2.title LATEST POSTS
-        - @posts.each do |e|
-          = link_to post_path(e) do
-            .col-sm-4.white
-              = image_tag("#{e.featured_image}")
-              %h5.black-color
-                = e.title
-              %hr/
-  .container-fluid
-    .row
-      .col-sm-12
-        %h2 WANT A MORE PERSONAL CONVERSATION?
-        .el-center
-          %a.btn.btn-default{:href => "http://www.chatstar.com/Veronica_Rodriguez", :target => "_blank"} CHAT NOW
+.container-fluid
+  .col-sm-10.col-sm-offset-1
+    .col-sm-12
+      %h2.title latest posts
+      - @posts.each do |e|
+        = link_to post_path(e) do
+          .col-sm-4.white
+            = image_tag("#{e.featured_image}")
+            %h5.black-color
+              = e.title
+            %hr/
+.container-fluid
+  .row
+    .col-sm-12
+      %h2 want a more personal conversation?
+      .el-center
+        %a.btn.btn-default{:href => "http://www.chatstar.com/veronica_rodriguez", :target => "_blank"} chat now
