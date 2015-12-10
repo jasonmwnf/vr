@@ -1,0 +1,21 @@
+%section.video-index
+  .container-fluid
+    .row
+      .col-sm-10.col-sm-offset-1
+        %h2.title.uppercase.tli.fw-500 Explore all my products
+      .col-sm-10.col-sm-offset-1
+        - @products.each_slice(4) do |products|
+          .row
+            - products.each do |product|
+              .col-sm-3
+                = link_to product_path(product) do
+                  .text-center
+                    = product.title
+                  .view.view-first
+                    = image_tag "#{product.image}"
+                    .mask
+                      %h2
+                        = product.title
+                    = link_to "View More", product_path(product), class: "info text-uppercase"
+                    / %a.info.text-uppercase{:href => "#"} View More
+
