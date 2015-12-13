@@ -14,7 +14,7 @@ class Admin::VideosController < AdminsController
 
   def edit
     @video = Video.friendly.find(params[:id])
-    @videopics = @video.pictures.order(created_at: "DESC")
+    @videopics = @video.pictures.order(created_at: "ASC")
     # .paginate(page: params[:page], per_page: 12).order(id: 'ASC')
     respond_to do |format|
       format.html
