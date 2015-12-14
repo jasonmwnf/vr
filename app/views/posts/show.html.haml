@@ -26,6 +26,7 @@
           %p.text-uppercase.f-07.mb-0= post.date
           = link_to "view post", post_path(post), class: "text-uppercase f-08 pink-color"
         %hr.mt-l0
+        = render "instagram"
   - if current_user.present?
     - if @post.comments.count > 0
       .row
@@ -53,4 +54,3 @@
       .col-sm-6.col-sm-offset-1
         %h3.title.tli.fw-500
           only members may leave comments
-  = render "instagram"
