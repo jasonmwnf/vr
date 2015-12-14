@@ -38,17 +38,17 @@
               - if comment.user_email.present?
                 .text-uppercase.fw-500= comment.user_email
               = comment.comment
-      .row
-        .col-sm-6.col-sm-offset-1
-          %h3.title.tli.fw-500
-            Add Comment
-          = form_for [@post, @comment] do |f|
-            .form-group.full-width
-              = f.text_field :user_email, placeholder: "Enter your name", class: "full-width"
-            .form-group
-              = f.text_field :comment, placeholder: "Enter your comment", class: "full-width"
-            .form-group
-              = f.submit
+    .row
+      .col-sm-6.col-sm-offset-1
+        %h3.title.tli.fw-500
+          Add Comment
+        = form_for [@post, @comment] do |f|
+          .form-group.full-width
+            = f.text_field :user_email, placeholder: "Enter your name", class: "full-width"
+          .form-group
+            = f.text_field :comment, placeholder: "Enter your comment", class: "full-width"
+          .form-group
+            = f.submit
   - else
     .row
       .col-sm-6.col-sm-offset-1
