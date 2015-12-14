@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
   resources :videos,  only: [:index, :new, :show]
   resources :models,  only: [:index, :show]
-  resources :posts,   only: [:index, :show]
+  resources :posts,   only: [:index, :show, :create, :new] do
+    resources :comments
+  end
   resources :live_stream_recordings,   only: [:index, :show]
   resources :products
   resources :live_shows, only: [:index]

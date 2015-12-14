@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  has_many :comments
   mount_uploader :featured_image, PostFeaturedImageUploader
   mount_uploader :video, VideoBlogPostUploader
   extend FriendlyId
