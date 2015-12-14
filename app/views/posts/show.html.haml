@@ -17,16 +17,14 @@
         = raw(@post.description)
       - if current_user.present?
         - if @post.comments.count > 0
-          .row
-            .col-sm-6.col-sm-offset-1
-              %h3.title.tli.fw-500
-                Comments (Members Only)
-              - @post.comments.each do |comment|
-                %p
-                  - if comment.user_email.present?
-                    .text-uppercase.fw-500= comment.user_email
-                  = comment.comment
-        .row
+          .col-sm-6.col-sm-offset-1
+            %h3.title.tli.fw-500
+              Comments (Members Only)
+            - @post.comments.each do |comment|
+              %p
+                - if comment.user_email.present?
+                  .text-uppercase.fw-500= comment.user_email
+                = comment.comment
           .col-sm-6.col-sm-offset-1
             %h3.title.tli.fw-500
               Add Comment
@@ -38,10 +36,10 @@
               .form-group
                 = f.submit
       - else
-        .row
-          .col-sm-6.col-sm-offset-1
-            %h3.title.tli.fw-500
-              only members may leave comments
+        .col-sm-6.col-sm-offset-1
+          %h3.title.tli.fw-500
+            only members may leave comments
+
       .col-sm-4.col-sm-offset-1
         %p.text-uppercase.mt-90
           = link_to "View All Posts", posts_path, class: "pink-color"
