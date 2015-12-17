@@ -1,0 +1,42 @@
+/  'welcome'
+/ - fclass 'welcome'
+%section.welcome-content
+  .container
+    .row.mb-0
+      .col-xs-4.col-xs-offset-4.col-sm-2.col-sm-offset-5.pl-0.pad-20
+        .welcome-logo.text-center
+          = image_tag 'https://s3-us-west-2.amazonaws.com/vrod-web-assets/main-logo.png', class: ''
+    .row.mb-0
+      .col-sm-12
+        .welcome-title
+          %h1.t-up.mb-0 Veronica Rodriguez
+          %h2.t-up.mt-5 Productions
+    .row.mb-0.t-center
+      .col-sm-12
+        .warning
+          %p Welcome to VERONICARODRIGUEZ.COM, the Official Website of Venezuelan Porn Star Veronica Rodriguez.
+          %p NO MINORS ALLOWED!
+          %p.xsmall IF YOU ARE UNDER 18 YEARS OF AGE (21 YEARS IN SOME LEGAL JURISDICTIONS), YOU MUST LEAVE THIS SITE IMMEDIATELY.
+          %p.xsmall ALL CONTENT CONTAINED AT WWW.VERONICARODRIGUEZ.COM IS INTENDED FOR DISTRIBUTION EXCLUSIVELY TO CONSENTING ADULTS VISITING OUR SITE FROM A PHYSICAL LOCATION AND LEGAL JURISDICTION WHERE THE CONTENT DOES NOT VIOLATE COMMUNITY STANDARDS OR ANY LAW OR REGULATION OF THE LEGAL JURISDICTION.
+          %p.xsmall UNDER NO CIRCUMSTANCES MAY A PERSON UNDER THE AGE OF EIGHTEEN (18) YEARS DIRECTLY OR INDIRECTLY ENTER OUR SITE OR VIEW OR POSSESS ANY OF THE CONTENT APPEARING ON WWW.VERONICARODRIGUEZ.COM. BY REMAINING ON THIS SITE, YOU WARRANT AND REPRESENT THAT YOU ARE NOT OFFENDED BY SUCH CONTENT, THAT YOU ARE CURRENTLY OVER THE AGE OF EIGHTEEN (18) YEARS AND ARE CAPABLE OF LAWFULLY ENTERING THIS WEBSITE. IF YOU ARE NOT OVER EIGHTEEN (18) YEARS OF AGE, OR VISITING OUR SITE WHILE IN A JURISDICTION WHERE IT IS UNLAWFUL FOR YOU TO DO SO, PLEASE DEPART FROM THIS SITE IMMEDIATELY.
+          %p.xsmall WWW.VERONICARODRIGUEZ.COM DOES NOT ASSUME RESPONSIBILITY OR LIABILITY FOR ANY MISREPRESENTATIONS REGARDING A USER’S AGE. IN ADDITION, BY ENTERING OUR SITE YOU REPRESENT AND WARRANT THAT YOU WILL NOT ALLOW ANY MINOR ACCESS TO THIS SITE, AND THAT YOU WILL NOT COPY OR REDISTRIBUTE ANY OF THE CONTENT APPEARING ON THIS SITE TO ANY MINOR OR OTHER PERSON FOR WHOM IT IS ILLEGAL TO VIEW SUCH CONTENT. WE ALSO RECOMMEND THAT USERS WITH MINORS IN THEIR HOUSEHOLDS IMPLEMENT PARENTAL CONTROL PROTECTIONS, SUCH AS COMPUTER HARDWARE, SOFTWARE, OR FILTERING SERVICES, WHICH REDUCE MINORS' ACCESS TO WWW.VERONICARODRIGUEZ.COM.
+          %p.xsmall WWW.VERONICARODRIGUEZ.COM may offer online content that could be deemed “adult” or “erotic”. Additionally, you agree that you are aware that the content presented on WWW.VERONICARODRIGUEZ.COM (which is performed by our Talent, who are independent contractors and perform at their sole discretion) may contain graphic activities, graphic audio, and portrayals and/or descriptions of sexually oriented, explicit, offending, or disturbing activities. You acknowledge that you are aware of the possible nature of this content, that you are not offended by it, and that you have accessed WWW.VERONICARODRIGUEZ.COM freely, voluntarily and willingly. Further, you warrant and represent that it is not against the law in your jurisdiction to view such content and that, after diligent investigation, you have determined that the content on this website does not offend the moral standards of your community. You further agree not to use or access WWW.VERONICARODRIGUEZ.COM if doing so would violate the laws of your city, county, state, province or country. You also represent and warrant that you are not accessing WWW.VERONICARODRIGUEZ.COM as an agent of law enforcement or at the behest of any law enforcement authority.
+          %p.xsmall By Agreeing to this Privacy Policy, I also certify that I have read and agreed to VeronicaRodriguez.com's Privacy Policy and Terms and Conditions of Use.
+        .enter
+          = link_to 'ENTER', tour_path, class: 'f30'
+          = link_to 'EXIT', 'http://google.com', class: 'f30'
+    .row.mb-0
+      .col-sm-12.t-center
+        .footer-links.mb-20
+          = link_to '18 U.S.C. 2257 Record-Keeping Requirements Compliance Statement', compliance_path
+          %br/
+          = link_to 'Billing Support', 'https://epoch.com/', target: '_blank'
+          = link_to 'Terms and Conditions', terms_and_conditions_path
+          = link_to 'Privacy Policy', privacy_policy_path
+          = link_to 'Contact', contact_path
+          %p.mt-5
+            Please visit
+            = succeed "," do
+              %script{:language => "JavaScript", :src => "https://epoch.com/compliance/epoch_descriptor.php?master_code=M-607103"}
+        %p.mb-0 All models were at least eighteen (18) years of age when they were photographed.
+        %p.mb-0 © Veronica Rodriguez 2015 All rights reserved.
