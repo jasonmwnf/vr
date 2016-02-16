@@ -16,12 +16,16 @@ class VideosController < ApplicationController
   end
 
   def show
-    @video = find_video
-    @videopics = @video.pictures.order(created_at: "ASC")
-    # .paginate(page: params[:page], per_page: 12).order(id: 'ASC')
-    respond_to do |format|
-      format.html
-      format.js
+    if user_signed_in?
+      @video = find_video
+      @videopics = @video.pictures.order(created_at: "ASC")
+      # .paginate(page: params[:page], per_page: 12).order(id: 'ASC')
+      respond_to do |format|
+        format.html
+        format.js
+      end
+    else
+      redirect_to new_user_registration_path
     end
   end
 
