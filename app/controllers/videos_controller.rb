@@ -25,7 +25,8 @@ class VideosController < ApplicationController
         format.js
       end
     else
-      redirect_to new_user_registration_path
+      redirect_to videos_path
+      flash[:notice] = "To view other videos please sign up"
     end
   end
 
