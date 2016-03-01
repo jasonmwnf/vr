@@ -2,3 +2,5 @@
   .col-sm-3
     .vid-pics.vid-pics-fix
       = link_to(image_tag("#{img.image_url}", class: "videopics-set"), '#', html_options = {"data-featherlight" => "#{img.image_url}"})
+
+= will_paginate @videopics
