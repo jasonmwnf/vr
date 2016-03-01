@@ -18,7 +18,7 @@ class VideosController < ApplicationController
   def show
     if user_signed_in?
       @video = find_video
-      @videopics = @video.pictures.order(created_at: "ASC")
+      @videopics = @video.pictures.order(created_at: "ASC").paginate(:page => params[:page], :per_page => 8)
       # .paginate(page: params[:page], per_page: 12).order(id: 'ASC')
       respond_to do |format|
         format.html
