@@ -13,6 +13,11 @@
             %p
               %b
                 = f.label "Make User have Paid Account"
+          .form-group.text-center
+            %p
+              %b
+                = f.label :member_id
+            = f.password_field :member_id, placeholder: "Password", class: "full-width text-center"
             %p
               = f.select :is_paid, options_for_select([["False", "false"], ["True", "true"]])
           .form-group.text-center
