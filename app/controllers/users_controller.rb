@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   def outcome
    @user = User.find_by_email(params[:email])
     if @user.email == User.last.email
-      sign_in_last_created_user
-      check_if_user_is_paid
+      redirect_to new_user_session_path
+      flash[:notice] = "Thank you for signing up."
     else
       new_user_account_error
     end
