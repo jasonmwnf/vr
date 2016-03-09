@@ -6,22 +6,22 @@
         %h2.title Products
         %hr
         %h5
-          / = link_to 'Add Product', new_admin_product_path
+          = link_to 'Add Product', new_admin_product_path
     .row
       .col-sm-10.col-sm-offset-1
         %h2.title.uppercase.tli.fw-500 All Products
 
-      / - @products.each_slice(4) do |products|
-      /   .row
-      /     .col-sm-10.col-sm-offset-1
-      /       - products.each do |product|
-      /         .col-sm-3.mb-20
-      /           .color-black
-      /             = product.title
-      /           .view.br-0
-      /             = image_tag "#{product.image}"
-      /           / %a.info.text-uppercase{:href => "#"} View More
-      /           = link_to "Edit", edit_admin_product_path(product), class: "strong text-uppercase"
-      /           = precede '-' do
-      /             = link_to " Delete", admin_product_path(product), method: 'delete',  class: "strong text-uppercase"
+        - @products.each_slice(4) do |products|
+          .row
+            .col-sm-10.col-sm-offset-1
+              - products.each do |product|
+                .col-sm-3.mb-20
+                .color-black
+                  = product.title
+                .view.br-0
+                  = image_tag "#{product.image}"
+                  %a.info.text-uppercase{:href => "#"} View More
+                  = link_to "Edit", edit_admin_product_path(product), class: "strong text-uppercase"
+                  = precede '-' do
+                  = link_to " Delete", admin_product_path(product), method: 'delete',  class: "strong text-uppercase"
 
