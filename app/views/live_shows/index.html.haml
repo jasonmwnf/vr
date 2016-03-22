@@ -32,7 +32,7 @@
       - if @recordings.count > 0
         .row
           .col-sm-10.col-sm-offset-1
-            - @recordings.order(date: 'DESC').each_slice(3) do |recording|
+            - @recordings.each_slice(3) do |recording|
               .row
                 - recording.each do |rec|
                   .col-sm-4
