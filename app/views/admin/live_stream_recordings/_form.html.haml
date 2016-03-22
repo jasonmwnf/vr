@@ -13,7 +13,10 @@
             = f.file_field :image, :title => "Teaser image", "data-filename-placement" => "inside", class: "full-width"
           .form-group.text-center
             = f.file_field :video, :title => "Live Show Recording", "data-filename-placement" => "inside", class: "full-width"
-
+          .form-group.text-center
+            %p
+              %b Date of Recording
+            = f.date_select :date, :order => [:month, :day, :year], class: "text-center"
         .col-sm-4.col-sm-offset-4
           %button.btn.btn-default{:type => "submit"} Submit
 :javascript
