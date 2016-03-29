@@ -23,6 +23,26 @@
       .row
         .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.live-stream.col-md-7.col-md-offset-2.col-lg-8
           %iframe{:allowfullscreen => "yes", :frameborder => "0", :height =>'100%', :scrolling => "no", :src => "https://content.streamhoster.com/player/lv_vrodproductions/broadcast1?autoPlay=1&showPlayPauseBtn=0&bufferTime=1&expandedBufferTime=60", :webkitallowfullscreen => "yes", :width => '100%'}      }
+    - if current_user.is_admin?
+      .row
+        .col-sm-10.col-sm-offset-1.text-center
+          %h4
+            Your credits
+            = current_user.credits
+        .col-sm-6.col-sm-offset-3.text-center
+          %ul.list-inline.pt-30
+            %li
+              = link_to "Tip 5"
+            %li
+              = link_to "Tip 10"
+            %li
+              = link_to "Tip 25"
+            %li
+              = link_to "Tip 70"
+            %li
+              = link_to "Tip 150"
+            %li
+              = link_to "Private Show"
       .row
         .col-xs-12.col-sm-8.col-sm-offset-2.col-md-7.col-md-offset-2.col-lg-8
           %iframe{:allowtransparency => "true", :frameborder => "0", :height => "250px", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://chatroll.com/embed/chat/veronica-rodriguez-chat?id=n8QQt4jFQRg&platform=html&w=$0", :width => "100%"}
@@ -41,7 +61,6 @@
                       - unless rec.image.blank?
                         = image_tag rec.image, class: 'img-responsive'
                       %p.live_stream_recording-small-title.live_stream_recording-small-title-fix= "#{rec.title}"
-
 
     - else
       .row
