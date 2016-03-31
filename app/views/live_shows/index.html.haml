@@ -23,7 +23,7 @@
       .row
         .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.live-stream.col-md-7.col-md-offset-2.col-lg-8
           %iframe{:allowfullscreen => "yes", :frameborder => "0", :height =>'100%', :scrolling => "no", :src => "https://content.streamhoster.com/player/lv_vrodproductions/broadcast1?autoPlay=1&showPlayPauseBtn=0&bufferTime=1&expandedBufferTime=60", :webkitallowfullscreen => "yes", :width => '100%'}      }
-    - if current_user.is_admin?
+    - if current_user.present? && current_user.is_admin?
       .row
         .col-sm-10.col-sm-offset-1.text-center
           %h4
@@ -32,7 +32,7 @@
         .col-sm-6.col-sm-offset-3.text-center
           %ul.list-inline.pt-30
             %li
-              = link_to "Tip 5"
+              = link_to "Tip 5", "https://wnu.com/secure/services/?api=memberplus&pi_code=cocreo1p932352&member_id=#{current_user.member_id}&reseller=a", method: :post, target: "_blank"
             %li
               = link_to "Tip 10"
             %li

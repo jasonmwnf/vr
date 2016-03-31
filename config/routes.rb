@@ -13,8 +13,9 @@ Rails.application.routes.draw do
   get '/contact' => 'policy#contact'
   get '/tour' => 'tour#index'
   get 'admin/' => 'admin/panel#index'
-
   post 'videos/upload' => 'videos#upload', as: :upload_video
+
+  post 'https://wnu.com/secure/services/?api=memberplus', to: 'live_shows#credits', as: 'credits'
 
   resources :videos,  only: [:index, :new, :show]
   resources :models,  only: [:index, :show]
