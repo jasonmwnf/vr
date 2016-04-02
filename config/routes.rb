@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations"
   }
   post 'users/status' => 'users#status'
+  post '/credits' => 'live_shows#credits'
   get 'users/outcome' => 'users#outcome'
   get 'users/account' => 'users#account'
   get 'tour/index'
