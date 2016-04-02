@@ -10,8 +10,7 @@ class LiveShowsController < ApplicationController
 
   def credits
     binding.pry
-    # get current_user get member_id, email
-    # post, member_id_, email, pi_code, username( if necessary ) to
-    # https://wnu.com/secure/services/?api=memberplus
   end
+
+  private
 end
