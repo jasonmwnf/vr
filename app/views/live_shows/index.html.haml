@@ -49,18 +49,18 @@
               = link_to "Tip 150"
             %li
               = link_to "Private Show"
-      - if @recordings.count > 0
-        .row
-          .col-sm-10.col-sm-offset-1
-            - @recordings.each_slice(3) do |recording|
-              .row
-                - recording.each do |rec|
-                  .col-sm-4
-                    %p.pull-right.strong
-                    = link_to live_stream_recording_path(rec) do
-                      - unless rec.image.blank?
-                        = image_tag rec.image, class: 'img-responsive'
-                      %p.live_stream_recording-small-title.live_stream_recording-small-title-fix= "#{rec.title}"
+    - if @recordings.count > 0
+      .row
+        .col-sm-10.col-sm-offset-1
+          - @recordings.each_slice(3) do |recording|
+            .row
+              - recording.each do |rec|
+                .col-sm-4
+                  %p.pull-right.strong
+                  = link_to live_stream_recording_path(rec) do
+                    - unless rec.image.blank?
+                      = image_tag rec.image, class: 'img-responsive'
+                    %p.live_stream_recording-small-title.live_stream_recording-small-title-fix= "#{rec.title}"
 
     - else
       .row
