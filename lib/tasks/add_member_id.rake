@@ -1,7 +1,6 @@
 desc "add member_id"
 task  add_member_id: :environment do
   require 'csv'
-  @customers2 = []
 
   CSV.foreach('member_id.csv') do |row|
     User.all.each do |user|
