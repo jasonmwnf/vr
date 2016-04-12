@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331213818) do
+ActiveRecord::Schema.define(version: 20160412183806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,7 +111,6 @@ ActiveRecord::Schema.define(version: 20160331213818) do
   create_table "shots", force: :cascade do |t|
     t.integer "video_id"
     t.integer "model_id"
-    t.integer "picture_id"
     t.string  "slug"
   end
 
@@ -138,10 +137,11 @@ ActiveRecord::Schema.define(version: 20160331213818) do
     t.boolean  "is_suspended"
     t.boolean  "is_paid",                default: false
     t.string   "member_id"
-    t.string   "answer"
     t.string   "amount"
+    t.string   "answer"
     t.string   "credits"
     t.string   "username"
+    t.string   "product_code"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

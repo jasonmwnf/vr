@@ -7,20 +7,18 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+require 'csv'
+require 'pry'
 
-20.times do
-    Model.create(
-        name: "Ashley Cross",
-        portfolio_image: "/uploads/models/Addison%20Avery/portfolio_image/Addison_Avery_Proofile.jpg",
-        favorite_position: "",
-        birthdate: "",
-        astrology: "",
-        birth_place: "",
-        nationality: "",
-        hair_color: "",
-        measurements: "",
-        height: "",
-        tattoos: "",
-        pierciings: ""
-    )
+# new_customers = []
+
+
+
+CSV.foreach('member_id.csv') do |row|
+  User.all.each do |user|
+    if user.member_id == row[0]
+      user.update_attributes!(product_code: row[1])
+    end
+  end
 end
+
