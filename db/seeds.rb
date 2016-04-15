@@ -6,19 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-require 'csv'
-require 'pry'
-
-# new_customers = []
-
-
-
-CSV.foreach('member_id.csv') do |row|
-  User.all.each do |user|
-    if user.member_id == row[0]
-      user.update_attributes!(product_code: row[1])
-    end
-  end
-end
-
+User.create(email: "info@staycreativedesign.com", password: "hello12345", is_admin: true, is_paid: true, member_id: "1900464043")
