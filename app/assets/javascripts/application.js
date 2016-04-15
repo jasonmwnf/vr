@@ -21,4 +21,4 @@
 //= require upload
 //= require drop
 //= require jquery.slicknav.js
-
+//= require private_pub
