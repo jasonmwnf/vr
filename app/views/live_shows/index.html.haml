@@ -19,7 +19,7 @@
                     = e.time.strftime("%I:00 %p")
                     = precede(" ") do
                       = e.timezone
-    - if current_user.present? && current_user.is_paid?
+    - if current_user.present? && current_user.is_paid? || current_user.present? && current_user.is_admin
       .row
         .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.live-stream.col-md-7.col-md-offset-2.col-lg-8
           %iframe{:allowfullscreen => "yes", :frameborder => "0", :height =>'100%', :scrolling => "no", :src => "https://content.streamhoster.com/player/lv_vrodproductions/broadcast1?autoPlay=1&showPlayPauseBtn=0&bufferTime=1&expandedBufferTime=60", :webkitallowfullscreen => "yes", :width => '100%'}      }
@@ -38,7 +38,7 @@
         .col-sm-6.col-sm-offset-3.text-center
           %ul.list-inline.pt-30
             %li
-              = link_to "Tip 5", "https://test.wnu.com/secure/services/?api=memberplus&pi_code=cocreo1p932352&member_id=1900464043&reseller=a&username=infogus&&pi_return_url=http://629f8c42.ngrok.io/credits", method: :post, target: "_blank"
+              = link_to "Tip 5", "https://wnu.com/secure/services/?api=memberplus&pi_code=cocreo1p932352&member_id=1900464043&reseller=a&username=infogus&referrer_pi_code=cjuuci2p893353", method: :post, target: "_blank"
             %li
               = link_to "Tip 10"
             %li

@@ -1,6 +1,3 @@
-require 'net/https'
-require 'open-uri'
-
 class LiveShowsController < ApplicationController
 
   def index
