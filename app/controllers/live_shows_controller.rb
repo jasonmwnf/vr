@@ -21,7 +21,7 @@ class LiveShowsController < ApplicationController
 
   # Called via AJAX form submit from /live_shows/index.html.erb
   def tip
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:email])
     @tip_amount = params[:amount].to_i
 
     if @tip_amount <= @user.credits
