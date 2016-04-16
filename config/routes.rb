@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   }
   post 'users/status' => 'users#status'
   post '/credits' => 'live_shows#credits'
+  post '/live_shows/tip' => 'live_shows#tip'
   get 'users/outcome' => 'users#outcome'
   get 'users/account' => 'users#account'
   get 'tour/index'

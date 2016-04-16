@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412183806) do
+ActiveRecord::Schema.define(version: 20160415234621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,7 +139,7 @@ ActiveRecord::Schema.define(version: 20160412183806) do
     t.string   "member_id"
     t.string   "amount"
     t.string   "answer"
-    t.string   "credits"
+    t.integer  "credits",                default: 0
     t.string   "username"
     t.string   "product_code"
   end
