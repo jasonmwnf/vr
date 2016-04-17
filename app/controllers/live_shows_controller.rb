@@ -9,7 +9,7 @@ class LiveShowsController < ApplicationController
   def credits
     @user = User.find_by(email: params[:email])
     bought_credits = params[:trans_amount_usd].to_i
-
+    puts bought_credits
     if @user.update(credits: @user.credits + bought_credits)
       PrivatePub.publish_to("/credits/#{@user.username}", "$('#credits').html('Your credits #{@user.credits}'); alert('Transaction successful!')")
     else
