@@ -78,4 +78,5 @@
 
           %p After signing up you can view the live show, and also have access to the previously recorded live shows.
 
-= subscribe_to "/credits/#{current_user.username}"
+= if current_user.present?
+  = subscribe_to "/credits/#{current_user.username}"
