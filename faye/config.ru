@@ -1,4 +1,10 @@
-require 'faye'
-faye_server = Faye::RackAdapter.new(:mount => '/your_faye_mount', :timeout => 45)
+require "bundler/setup"
+require "yaml"
+require "faye"
+require "private_pub"
+
 Faye::WebSocket.load_adapter('thin')
-faye_server.listen(8080)
+
+PrivatePub.load_config(File.expand_path("../config/private_pub.yml", __FILE__), ENV["RAILS_ENV"] || "development")
+run PrivatePub.faye_app
+faye_server.listen(9292)
