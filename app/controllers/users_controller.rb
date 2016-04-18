@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def status
+    binding.pry
     create_user
     check_if_credit_card_approved
     render status: 200
