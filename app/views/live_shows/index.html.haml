@@ -69,13 +69,25 @@
               %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
               %input{:type => "hidden", :name => 'amount', :value => 5}
               .actions
-                %button Tip 5
+                %button.white Tip 5
           .col-sm-2
             = form_tag('/live_shows/tip', :remote => true) do
               %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
               %input{:type => "hidden", :name => 'amount', :value => 10}
               .actions
-                %button Tip 10
+                %button.white Tip 10
+          .col-sm-2
+            = form_tag('/live_shows/tip', :remote => true) do
+              %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+              %input{:type => "hidden", :name => 'amount', :value => 25}
+              .actions
+                %button.white Tip 25
+          .col-sm-2
+            = form_tag('/live_shows/tip', :remote => true) do
+              %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+              %input{:type => "hidden", :name => 'amount', :value => 70}
+              .actions
+                %button.white Tip 70
 
     - if @recordings.count > 0
       .row
