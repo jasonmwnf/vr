@@ -32,23 +32,34 @@
     - if current_user.present? && current_user.is_admin?
       .row
         .col-sm-10.col-sm-offset-1.text-center
-          %h4#credits
-            Your credits
+          %h5#credits
+            Your credits:
             = current_user.credits
         .col-sm-6.col-sm-offset-3.text-center
-          %ul.list-inline.pt-30
+          %h4
+            Purchase Credits
+          %ul.list-inline
             %li
-              = link_to "Tip 5", "https://wnu.com/secure/services/?api=memberplus&pi_code=cocreo1p932352&member_id=1900464043&reseller=a&username=infogus&referrer_pi_code=cjuuci2p893353", method: :post, target: "_blank"
+              = link_to "5 credits / $5", "https://wnu.com/secure/services/?api=memberplus&pi_code=cocreo1p932352&member_id=1900464043&reseller=a&username=infogus&referrer_pi_code=cjuuci2p893353", method: :post, target: "_blank"
             %li
-              = link_to "Tip 10"
+              = link_to "10 credits / $10"
             %li
-              = link_to "Tip 25"
+              = link_to "25 credits / $20"
             %li
-              = link_to "Tip 70"
+              = link_to "70 credits / $50"
             %li
-              = link_to "Tip 150"
+              = link_to "150 credits / $100"
+      .row
+        .col-sm-6.col-sm-offset-3.text-center
+          %h4
+            Setup a private show
+          %ul.list-inline
             %li
-              = link_to "Private Show"
+              = link_to "10 minutes / 150 credits"
+            %li
+              = link_to "30 minutes / 450 credits"
+            %li
+              = link_to "1 hour / 750 credits"
       .row
         .col-sm-10.col-sm-offset-1.text-center
           = form_tag('/live_shows/tip', :remote => true) do
