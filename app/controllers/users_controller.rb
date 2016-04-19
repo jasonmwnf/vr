@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def create_user
-    @user = User.create!(email: params[:email], password: params[:password], member_id: params[:order_id], amount: params[:amount], answer: params[:ans], username: params[:username])
+    @user = User.create!(email: params[:email], password: params[:password], member_id: params[:order_id], amount: params[:amount], answer: params[:ans], username: params[:username], product_code: params[:pi_code])
   end
 
   def sign_in_last_created_user
