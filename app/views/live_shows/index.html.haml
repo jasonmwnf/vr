@@ -62,7 +62,7 @@
             Purchase Credits
           %ul.list-inline
             %li
-              = link_to "5 credits / $5", "https://wnu.com/secure/services/?api=memberplus&pi_code=cocreo1p932352&member_id=1900464043&reseller=a&username=infogus&referrer_pi_code=cjuuci2p893353", method: :post, target: "_blank"
+              = link_to "5 credits / $5", "https://wnu.com/secure/services/?api=memberplus&pi_code=cocreo1p932352&member_id=#{current_user.member_id}&reseller=a&username=#{current_user.username}&referrer_pi_code=#{current_user.product_code}", method: :post, target: "_blank"
             %li
               = link_to "10 credits / $10"
             %li
