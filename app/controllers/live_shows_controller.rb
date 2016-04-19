@@ -19,18 +19,18 @@ class LiveShowsController < ApplicationController
   end
 
   # Called via AJAX form submit from /live_shows/index.html.erb
-  def tip
-    @user = User.find(params[:user_id])
-    @tip_amount = params[:amount].to_i
+def tip
+  @user = User.find(params[:user_id])
+  @tip_amount = params[:amount].to_i
 
-    if @tip_amount <= @user.credits
-      @user.update!(credits: @user.credits - @tip_amount)
-      PrivatePub.publish_to("/credits/infogus", 'alert("#{@user.username} #{@tip_amount}")')
-    else
-    end
-
-    render nothing: true
+  if @tip_amount <= @user.credits
+    @user.update!(credits: @user.credits - @tip_amount)
+    PrivatePub.publish_to("/credits/#{@user.username}", "$('#credits').html('Your credits #{@user.credits}');")
+  else
+    PrivatePub.publish_to("/credits/#{@user.username}", "alert('Not enough credits!');")
   end
+  render nothing: true
+end
 
   private
 end
