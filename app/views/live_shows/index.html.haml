@@ -31,6 +31,8 @@
             %a{:href => "http://chatroll.com/"} Chat Software
     - if current_user.present? && current_user.is_admin?
       .row
+        %h5#tipped_amount
+          Your credits:
         .col-sm-10.col-sm-offset-1.text-center
           %h5#credits
             Your credits:
