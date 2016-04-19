@@ -26,17 +26,38 @@
       .row
         .col-xs-12.col-sm-8.col-sm-offset-2.col-md-7.col-md-offset-2.col-lg-8
           %iframe{:allowtransparency => "true", :frameborder => "0", :height => "250px", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://chatroll.com/embed/chat/veronica-rodriguez-chat?id=n8QQt4jFQRg&platform=html&w=$0", :width => "100%"}
-          %br/
-          %div{:style => "font-size:0.9em;text-align:center;"}
-            %a{:href => "http://chatroll.com/"} Chat Software
     - if current_user.present? && current_user.is_admin?
       .row
         %h5#tipped_amount
-          Your credits:
         .col-sm-10.col-sm-offset-1.text-center
           %h5#credits
             Your credits:
             = current_user.credits
+      .row
+        .col-sm-2.col-sm-offset-2
+          = form_tag('/live_shows/tip', :remote => true) do
+            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+            %input{:type => "hidden", :name => 'amount', :value => 5}
+            .actions
+              %button.white Tip 5
+        .col-sm-2
+          = form_tag('/live_shows/tip', :remote => true) do
+            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+            %input{:type => "hidden", :name => 'amount', :value => 10}
+            .actions
+              %button.white Tip 10
+        .col-sm-2
+          = form_tag('/live_shows/tip', :remote => true) do
+            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+            %input{:type => "hidden", :name => 'amount', :value => 25}
+            .actions
+              %button.white Tip 25
+        .col-sm-2
+          = form_tag('/live_shows/tip', :remote => true) do
+            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+            %input{:type => "hidden", :name => 'amount', :value => 70}
+            .actions
+              %button.white Tip 70
         .col-sm-6.col-sm-offset-3.text-center
           %h4
             Purchase Credits
@@ -62,32 +83,6 @@
               = link_to "30 minutes / 450 credits"
             %li
               = link_to "1 hour / 750 credits"
-      .row
-        .col-sm-12.col-sm-offset-1
-          .col-sm-2
-            = form_tag('/live_shows/tip', :remote => true) do
-              %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
-              %input{:type => "hidden", :name => 'amount', :value => 5}
-              .actions
-                %button.white Tip 5
-          .col-sm-2
-            = form_tag('/live_shows/tip', :remote => true) do
-              %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
-              %input{:type => "hidden", :name => 'amount', :value => 10}
-              .actions
-                %button.white Tip 10
-          .col-sm-2
-            = form_tag('/live_shows/tip', :remote => true) do
-              %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
-              %input{:type => "hidden", :name => 'amount', :value => 25}
-              .actions
-                %button.white Tip 25
-          .col-sm-2
-            = form_tag('/live_shows/tip', :remote => true) do
-              %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
-              %input{:type => "hidden", :name => 'amount', :value => 70}
-              .actions
-                %button.white Tip 70
 
     - if @recordings.count > 0
       .row
