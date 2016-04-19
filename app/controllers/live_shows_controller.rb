@@ -25,9 +25,8 @@ class LiveShowsController < ApplicationController
 
     if @tip_amount <= @user.credits
       @user.update!(credits: @user.credits - @tip_amount)
-      PrivatePub.publish_to("/credits/#{@user.username}", "$('#credits').html('Your credits #{@user.credits}');")
+      PrivatePub.publish_to("/credits/infogus", "$('#tipped_amount').html('Thank you for tipping');")
     else
-      PrivatePub.publish_to("/credits/#{@user.username}", "alert('Not enough credits!');")
     end
 
     render nothing: true
