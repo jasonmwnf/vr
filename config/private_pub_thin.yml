@@ -1,0 +1,6 @@
+port: 8443
+ssl: true
+ssl_key_file: /etc/ssl/localcerts/vr.key
+ssl_cert_file: /etc/ssl/localcerts/vr.crt
+environment: production
+rackup: private_pub.ru
