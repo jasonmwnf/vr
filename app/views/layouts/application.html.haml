@@ -6,13 +6,12 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     = favicon_link_tag 'favicon.ico'
     %title Veronica Rodriguez
-    %link{:href => "http://vjs.zencdn.net/5.0.0/video-js.css", :rel => "stylesheet"}/
+    %link{:href => "https://vjs.zencdn.net/5.0.0/video-js.css", :rel => "stylesheet"}/
     / If you'd like to support IE8
-    %script{:src => "http://vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js"}
+    %script{:src => "https://vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js"}
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-    %script{:src => "//use.typekit.net/opo7tqv.js"}
     :javascript
       try{Typekit.load();}catch(e){}
   %body{:class => "#{yield(:bclass)}"}
