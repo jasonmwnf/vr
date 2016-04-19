@@ -25,7 +25,7 @@ class LiveShowsController < ApplicationController
 
     if @tip_amount <= @user.credits
       @user.update!(credits: @user.credits - @tip_amount)
-      PrivatePub.publish_to("/credits/infogus", "$('#tipped_amount').html('Thank you for tipping');")
+      PrivatePub.publish_to("/credits/infogus", 'alert("Transaction faild!")')
     else
     end
 
