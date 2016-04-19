@@ -1,1 +1,1 @@
-faye: bundle exec rackup private_pub.ru -s thin -p 8443 -E production
+faye: thin -C config/private_pub_thin.yml start
