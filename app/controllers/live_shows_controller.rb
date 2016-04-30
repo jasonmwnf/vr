@@ -27,6 +27,7 @@ def tip
 
   if @tip_amount <= @user.credits
     @user.update!(credits: @user.credits - @tip_amount)
+    UserMailer.private_show(current_user, @tip_amount).deliver_now
     PrivatePub.publish_to("/credits/#{@user.username}", "$('#credits').html('Your credits #{@user.credits}');")
   else
     PrivatePub.publish_to("/credits/#{@user.username}", "alert('Not enough credits!');")

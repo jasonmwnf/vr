@@ -9,6 +9,7 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  config.action_mailer.delivery_method = :smtp
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
@@ -38,4 +39,15 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  ActionMailer::Base.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+    :address                      => "smtp.gmail.com",
+    :port                         => 587,
+    :domain                       => "staycreativedesign.com",
+    :user_name                    => ENV['MAIL_USERNAME'],
+    :password                     => ENV['MAIL_PASS'],
+    :authentication               => :plain,
+    :enable_starttls_auto         => true
+  }
 end

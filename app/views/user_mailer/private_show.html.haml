@@ -1,0 +1,19 @@
+%p
+  = succeed 'Has requested a private show. ' do
+    = @user.username
+
+%p
+  = precede 'Contact email is: ' do
+    = @user.email
+
+%p
+  = precede "Has paid a total amount of: " do
+    = @amount
+
+%ul
+  %li 150 Credits - 10 minutes
+  %li 450 Credits - 30 minutes
+  %li 750 Credits - 60 minutes
+
+%p
+  Please start email communcations or use the chat room to set time and date
