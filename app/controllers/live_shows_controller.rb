@@ -2,9 +2,11 @@ class LiveShowsController < ApplicationController
 
   def index
     @live_shows = LiveShow.all
-    @recordings = LiveStreamRecording.all.order(date: 'DESC')
   end
 
+  def live_show_recordings
+    @recordings = LiveStreamRecording.all.order(date: 'DESC')
+  end
   # Called via POSTback from payment provider
   def credits
     @user = User.find_by(email: params[:email])

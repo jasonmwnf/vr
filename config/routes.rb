@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/live_shows/tip' => 'live_shows#tip'
   get 'users/outcome' => 'users#outcome'
   get 'users/account' => 'users#account'
+  get 'live-show-records' => 'live_shows#live_show_recordings'
   get 'tour/index'
   get 'welcome/index'
   get '/compliance' => 'policy#compliance'
