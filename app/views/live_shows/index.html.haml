@@ -23,7 +23,7 @@
       .col-md-12
         %h4.text-center
           = link_to "Past live shows", live_show_records_path
-    - if current_user.present? && current_user.is_paid?
+    - if current_user.present? && current_user.is_paid? || current_user.is_admin?
       .row
         .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.live-stream.col-md-7.col-md-offset-2.col-lg-8
           %iframe{:allowfullscreen => "yes", :frameborder => "0", :height =>'100%', :scrolling => "no", :src => "https://content.streamhoster.com/player/lv_vrodproductions/broadcast1?autoPlay=1&showPlayPauseBtn=0&bufferTime=1&expandedBufferTime=60", :webkitallowfullscreen => "yes", :width => '100%'}      }
@@ -31,13 +31,38 @@
         .col-xs-12.col-sm-8.col-sm-offset-2.col-md-7.col-md-offset-2.col-lg-8
           #rt-a7c17da30e63900b052cf5dda40f03e5
             %script{:language => "JavaScript", :src => "//www.rumbletalk.com/client/?H1*UirLR", :type => "text/javascript"}
-      - if current_user.present?
-        .row
-          .col-sm-10.col-sm-offset-1.text-center
-            %h5#credits
-              Your credits:
-              = current_user.credits
-        /= render 'layouts/tips'
+      .row
+        .col-sm-10.col-sm-offset-1.text-center
+          %h5#credits
+            Your credits:
+            = current_user.credits
+      .row
+        .col-sm-2.col-sm-offset-2
+          = form_tag('/live_shows/tip', :remote => true) do
+            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+            %input{:type => "hidden", :name => 'amount', :value => 5}
+            .actions
+              %button.white Tip 5
+        .col-sm-2
+          = form_tag('/live_shows/tip', :remote => true) do
+            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+            %input{:type => "hidden", :name => 'amount', :value => 10}
+            .actions
+              %button.white Tip 10
+        .col-sm-2
+          = form_tag('/live_shows/tip', :remote => true) do
+            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+            %input{:type => "hidden", :name => 'amount', :value => 25}
+            .actions
+              %button.white Tip 25
+        .col-sm-2
+          = form_tag('/live_shows/tip', :remote => true) do
+            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+            %input{:type => "hidden", :name => 'amount', :value => 70}
+            .actions
+              %button.white Tip 70
+
+              /= render 'layouts/tips'
         = render 'layouts/purchase_credits'
         = render 'layouts/private_show'
     - else
