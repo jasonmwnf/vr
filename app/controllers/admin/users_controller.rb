@@ -28,6 +28,13 @@ class Admin::UsersController < AdminsController
 
   def update
     find_user
+    if @user.update_attributes(user_params)
+      redirect_to admin_users_path
+      flash[:notice] = "User added to room"
+    else
+      redirect_to admin_users_path
+      flash[:notice] = "There was an error"
+    end
   end
 
   def destroy

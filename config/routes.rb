@@ -33,7 +33,8 @@ Rails.application.routes.draw do
   resources :live_shows, only: [:index]
   namespace :admin do
     resources :models
-    resources :users
+    resources :users do
+    end
     resources :products
     resources :live_stream_recordings
     resources :videos do

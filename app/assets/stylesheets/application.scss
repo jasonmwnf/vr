@@ -65,6 +65,7 @@ a:hover {color: #8A8A8A;text-decoration: none;}
 .mt-90 {margin-top: 90px !important;}
 .mr-0 {margin-right: 0px !important;}
 .ml-25 {margin-left: 5%!important}
+.ptb-5 {padding-top: 5px;padding-bottom: 5px;}
 .pb-0 {padding-bottom: 0px !important;}
 .white {color:white !important;}
 .xsmall {font-size: 6px !important;}
@@ -1200,4 +1201,10 @@ img {
  iframe:nth-child(2) {
    height: 300px!important;
    width: 99%!important;
+ }
+
+ .pr-button-fix {
+   margin-top: 0!important;
+   padding-top: 5px!important;
+   padding-bottom: 5px!important;
  }
