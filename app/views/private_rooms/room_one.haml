@@ -1,0 +1,57 @@
+%section.video-index
+  .container-fluid
+    - if current_user.present? && current_user.is_paid? || current_user.present? && current_user.is_admin
+      .row
+        .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.live-stream.col-md-7.col-md-offset-2.col-lg-8
+          %iframe{:allowfullscreen => "yes", :frameborder => "0", :height =>'100%', :scrolling => "no", :src => "https://content.streamhoster.com/player/lv_vrodproductions/broadcast2?autoPlay=1&showPlayPauseBtn=0&bufferTime=1&expandedBufferTime=60", :webkitallowfullscreen => "yes", :width => '100%'}      }
+      .row
+        .col-xs-12.col-sm-8.col-sm-offset-2.col-md-7.col-md-offset-2.col-lg-8
+          #rt-a7c17da30e63900b052cf5dda40f03e5
+            %script{:language => "JavaScript", :src => "//www.rumbletalk.com/client/?H1*UirLR", :type => "text/javascript"}
+      - if current_user.present? && current_user.is_admin?
+        .row
+          .col-sm-10.col-sm-offset-1.text-center
+            %h5#credits
+              Your credits:
+              = current_user.credits
+        / render "layouts/tips"
+        .row
+          .col-sm-6.col-sm-offset-3.text-center
+            %h4
+              Purchase Credits
+            %ul.list-inline
+              %li
+                = link_to "5 credits / $5", "https://wnu.com/secure/services/?api=memberplus&pi_code=cocreo1p932352&member_id=#{current_user.member_id}&reseller=a&username=#{current_user.username}&referrer_pi_code=#{current_user.product_code}", method: :post, target: "_blank"
+              %li
+                = link_to "10 credits / $10"
+              %li
+                = link_to "25 credits / $20"
+              %li
+                = link_to "70 credits / $50"
+              %li
+                = link_to "150 credits / $100"
+        .row
+          .col-sm-6.col-sm-offset-3.text-center
+            %h4
+              Setup a private show
+            %ul.list-inline
+              %li
+                = link_to "10 minutes / 150 credits"
+              %li
+                = link_to "30 minutes / 450 credits"
+              %li
+                = link_to "1 hour / 750 credits"
+    - else
+      .row
+        .col-sm-10.col-sm-offset-1.text-center
+          %h3
+            You do not have access to this part of the site.
+          %p Live shows are for subscribed members only, please click on #{ link_to "SIGN UP", new_user_registration_path } to become a subscribed member.
+
+          %p After signing up you can view the live show, and also have access to the previously recorded live shows.
+
+
+  = subscribe_to "/credits/#{current_user.try(:username)}"
+
+
+

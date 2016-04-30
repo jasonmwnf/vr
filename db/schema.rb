@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415234621) do
+ActiveRecord::Schema.define(version: 20160430075212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,10 @@ ActiveRecord::Schema.define(version: 20160415234621) do
     t.string   "video"
   end
 
+  create_table "private_rooms", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string  "title"
     t.text    "description"
@@ -142,6 +146,7 @@ ActiveRecord::Schema.define(version: 20160415234621) do
     t.integer  "credits",                default: 0
     t.string   "username"
     t.string   "product_code"
+    t.integer  "private_rooms"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

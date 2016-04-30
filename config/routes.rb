@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   get 'admin/' => 'admin/panel#index'
   post 'videos/upload' => 'videos#upload', as: :upload_video
 
+  get 'private-rooms/room-1' => 'private_rooms#room_one'
+
+  get 'private-rooms/room-2' => 'private_rooms#room_two'
+  get 'private-rooms/room-3' => 'private_rooms#room_three'
 
   resources :videos,  only: [:index, :new, :show]
   resources :models,  only: [:index, :show]
