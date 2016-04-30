@@ -28,7 +28,6 @@ def tip
   if @tip_amount <= @user.credits
     @user.update!(credits: @user.credits - @tip_amount)
     PrivatePub.publish_to("/credits/#{@user.username}", "$('#credits').html('Your credits #{@user.credits}');")
-    PrivatePub.publish_to("/credits/pornpapi}", "alert('#{@user.username} has tipped #{@tip_amount}')")
   else
     PrivatePub.publish_to("/credits/#{@user.username}", "alert('Not enough credits!');")
   end
