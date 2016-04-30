@@ -36,32 +36,29 @@
           %h5#credits
             Your credits:
             = current_user.credits
-      -# .row
-      -#   .col-sm-2.col-sm-offset-2
-      -#     = form_tag('/live_shows/tip', :remote => true) do
-      -#       %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
-      -#       %input{:type => "hidden", :name => 'amount', :value => 5}
-      -#       .actions
-      -#         %button.white Tip 5
-      -#   .col-sm-2
-      -#     = form_tag('/live_shows/tip', :remote => true) do
-      -#       %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
-      -#       %input{:type => "hidden", :name => 'amount', :value => 10}
-      -#       .actions
-      -#         %button.white Tip 10
-      -#   .col-sm-2
-      -#     = form_tag('/live_shows/tip', :remote => true) do
-      -#       %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
-      -#       %input{:type => "hidden", :name => 'amount', :value => 25}
-      -#       .actions
-      -#         %button.white Tip 25
-      -#   .col-sm-2
-      -#     = form_tag('/live_shows/tip', :remote => true) do
-      -#       %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
-      -#       %input{:type => "hidden", :name => 'amount', :value => 70}
-      -#       .actions
-      -#         %button.white Tip 70
-
+      .row
+        .com-md-12
+          %h5
+            Private shows
+      .row
+        .col-sm-3.col-sm-offset-2
+          = form_tag('/live_shows/tip', :remote => true) do
+            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+            %input{:type => "hidden", :name => 'amount', :value => 150}
+            .actions
+              %button.white 10 minutes / 150 credits
+        .col-sm-3
+          = form_tag('/live_shows/tip', :remote => true) do
+            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+            %input{:type => "hidden", :name => 'amount', :value => 450}
+            .actions
+              %button.white 30 minutes / 450 credits
+        .col-sm-3
+          = form_tag('/live_shows/tip', :remote => true) do
+            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+            %input{:type => "hidden", :name => 'amount', :value => 750}
+            .actions
+              %button.white 1 hour / 750 credits
       .row
         .col-sm-6.col-sm-offset-3.text-center
           %h4
@@ -78,30 +75,6 @@
             %li
               = link_to "150 credits / $100", "https://wnu.com/secure/services/?api=memberplus&pi_code=cocreo5p932356&member_id=#{current_user.member_id}&reseller=a&username=#{current_user.username}&referrer_pi_code=#{current_user.product_code}", method: :post, target: "_blank"
               = link_to "150 credits / $100"
-
-      .row
-        .col-sm-6.col-sm-offset-3.text-center
-          %h4
-            Setup a private show
-      .row
-        .col-sm-4
-          = form_tag('/live_shows/tip', :remote => true) do
-            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
-            %input{:type => "hidden", :name => 'amount', :value => 150}
-          .actions
-            %button.white 10 minutes / 150 credits
-        .col-sm-4
-          = form_tag('/live_shows/tip', :remote => true) do
-            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
-            %input{:type => "hidden", :name => 'amount', :value => 450}
-          .actions
-            %button.white 30 minutes / 450 credits
-        .col-sm-4
-          = form_tag('/live_shows/tip', :remote => true) do
-            %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
-            %input{:type => "hidden", :name => 'amount', :value => 750}
-          .actions
-            %button.white 1 hour / 750 credits
 
     - else
       .row
