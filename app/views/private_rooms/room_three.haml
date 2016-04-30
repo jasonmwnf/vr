@@ -1,6 +1,6 @@
 %section.video-index
   .container-fluid
-    - if current_user.present? && current_user.is_paid? || current_user.present? && current_user.is_admin
+    - if current_user.present? && current_user.private_rooms == 3 || current_user.is_admin?
       .row
         .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.live-stream.col-md-7.col-md-offset-2.col-lg-8
           %iframe{:allowfullscreen => "yes", :frameborder => "0", :height =>'100%', :scrolling => "no", :src => "https://content.streamhoster.com/player/lv_vrodproductions/broadcast4?autoPlay=1&showPlayPauseBtn=0&bufferTime=1&expandedBufferTime=60", :webkitallowfullscreen => "yes", :width => '100%'}      }
@@ -8,25 +8,24 @@
         .col-xs-12.col-sm-8.col-sm-offset-2.col-md-7.col-md-offset-2.col-lg-8
           #rt-a7c17da30e63900b052cf5dda40f03e5
             %script{:language => "JavaScript", :src => "//www.rumbletalk.com/client/?H1*UirLR", :type => "text/javascript"}
-      - if current_user.present? && current_user.private_rooms == 3 || current_user.is_admin?
-        .row
-          .col-sm-10.col-sm-offset-1.text-center
-            %h5#credits
-              Your credits:
-              = current_user.credits
-        / render "layouts/tips"
-        = render 'layouts/purchase_credits'
-        .row
-          .col-sm-6.col-sm-offset-3.text-center
-            %h4
-              Setup a private show
-            %ul.list-inline
-              %li
-                = link_to "10 minutes / 150 credits"
-              %li
-                = link_to "30 minutes / 450 credits"
-              %li
-                = link_to "1 hour / 750 credits"
+      .row
+        .col-sm-10.col-sm-offset-1.text-center
+          %h5#credits
+            Your credits:
+            = current_user.credits
+      / render "layouts/tips"
+      = render 'layouts/purchase_credits'
+      .row
+        .col-sm-6.col-sm-offset-3.text-center
+          %h4
+            Setup a private show
+          %ul.list-inline
+            %li
+              = link_to "10 minutes / 150 credits"
+            %li
+              = link_to "30 minutes / 450 credits"
+            %li
+              = link_to "1 hour / 750 credits"
     - else
       .row
         .col-sm-10.col-sm-offset-1.text-center

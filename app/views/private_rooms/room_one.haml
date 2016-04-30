@@ -1,6 +1,6 @@
 %section.video-index
   .container-fluid
-    - if current_user.present? && current_user.is_paid? || current_user.present? && current_user.is_admin
+    - if current_user.present? && current_user.private_rooms == 1 || current_user.is_admin?
       .row
         .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.live-stream.col-md-7.col-md-offset-2.col-lg-8
           %iframe{:allowfullscreen => "yes", :frameborder => "0", :height =>'100%', :scrolling => "no", :src => "https://content.streamhoster.com/player/lv_vrodproductions/broadcast2?autoPlay=1&showPlayPauseBtn=0&bufferTime=1&expandedBufferTime=60", :webkitallowfullscreen => "yes", :width => '100%'}      }
