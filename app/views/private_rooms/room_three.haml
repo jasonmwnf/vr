@@ -15,17 +15,7 @@
             = current_user.credits
       / render "layouts/tips"
       = render 'layouts/purchase_credits'
-      .row
-        .col-sm-6.col-sm-offset-3.text-center
-          %h4
-            Setup a private show
-          %ul.list-inline
-            %li
-              = link_to "10 minutes / 150 credits"
-            %li
-              = link_to "30 minutes / 450 credits"
-            %li
-              = link_to "1 hour / 750 credits"
+      = render 'layouts/private_show'
     - else
       .row
         .col-sm-10.col-sm-offset-1.text-center

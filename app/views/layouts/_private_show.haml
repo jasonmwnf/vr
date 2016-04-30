@@ -1,0 +1,24 @@
+.row
+  .col-sm-6.col-sm-offset-3.text-center
+    %h4
+      Setup a private show
+    %ul.list-inline
+      %li
+      = form_tag('/live_shows/tip', :remote => true) do
+        %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+        %input{:type => "hidden", :name => 'amount', :value => 150}
+      .actions
+        %button.white 10 minutes / 150 credits
+      %li
+      = form_tag('/live_shows/tip', :remote => true) do
+        %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+        %input{:type => "hidden", :name => 'amount', :value => 450}
+      .actions
+        %button.white 30 minutes / 450 credits
+      %li
+      = form_tag('/live_shows/tip', :remote => true) do
+        %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+        %input{:type => "hidden", :name => 'amount', :value => 750}
+      .actions
+        %button.white 1 hour / 750 credits
+
