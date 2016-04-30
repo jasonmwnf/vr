@@ -44,7 +44,7 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     :address                      => "smtp.gmail.com",
     :port                         => 587,
-    :domain                       => "staycreativedesign.com",
+    :domain                       => "veronicarodriguez.com",
     :user_name                    => ENV['MAIL_USERNAME'],
     :password                     => ENV['MAIL_PASS'],
     :authentication               => :plain,
