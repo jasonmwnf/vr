@@ -13,9 +13,8 @@
           %h5#credits
             Your credits:
             = current_user.credits
-      / render "layouts/tips"
+      = render "layouts/tips"
       = render 'layouts/purchase_credits'
-      = render 'layouts/private_show'
     - else
       .row
         .col-sm-10.col-sm-offset-1.text-center
