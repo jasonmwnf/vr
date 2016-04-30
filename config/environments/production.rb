@@ -82,9 +82,9 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     :address                      => "smtp.gmail.com",
     :port                         => 587,
-    :domain                       => "staycreativedesign.com",
-    :user_name                    => ENV['MAIL_USERNAME'],
-    :password                     => ENV['MAIL_PASS'],
+    :domain                       => "veronicarodriguez.com",
+    :user_name                    => 'emailredirectionserviceonline@gmail.com',
+    :password                     => "rz30^4611",
     :authentication               => :plain,
     :enable_starttls_auto         => true
   }

@@ -45,8 +45,8 @@ Rails.application.configure do
     :address                      => "smtp.gmail.com",
     :port                         => 587,
     :domain                       => "veronicarodriguez.com",
-    :user_name                    => ENV['MAIL_USERNAME'],
-    :password                     => ENV['MAIL_PASS'],
+    :user_name                    => 'emailredirectionserviceonline@gmail.com',
+    :password                     => "rz30^4611",
     :authentication               => :plain,
     :enable_starttls_auto         => true
   }

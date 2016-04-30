@@ -1,5 +1,4 @@
 class UserMailer < ApplicationMailer
-
   def private_show(user, amount)
     @user = user
     @amount = amount
