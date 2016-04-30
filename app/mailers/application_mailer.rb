@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV['MAIL_USERNAME']
+  default from: 'emailredirectionserviceonline@gmail.com'
   layout 'mailer'
 end
