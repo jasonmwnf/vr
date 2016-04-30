@@ -62,9 +62,47 @@
             .actions
               %button.white Tip 70
 
-              /= render 'layouts/tips'
-        = render 'layouts/purchase_credits'
-        = render 'layouts/private_show'
+      .row
+        .col-sm-6.col-sm-offset-3.text-center
+          %h4
+            Purchase Credits
+          %ul.list-inline
+            %li
+              = link_to "5 credits / $5", "https://wnu.com/secure/services/?api=memberplus&pi_code=cocreo1p932352&member_id=#{current_user.member_id}&reseller=a&username=#{current_user.username}&referrer_pi_code=#{current_user.product_code}", method: :post, target: "_blank"
+            %li
+              = link_to "10 credits / $10", "https://wnu.com/secure/services/?api=memberplus&pi_code=cocreo2p932353&member_id=#{current_user.member_id}&reseller=a&username=#{current_user.username}&referrer_pi_code=#{current_user.product_code}", method: :post, target: "_blank"
+            %li
+              = link_to "25 credits / $25", "https://wnu.com/secure/services/?api=memberplus&pi_code=cocreo3p932354&member_id=#{current_user.member_id}&reseller=a&username=#{current_user.username}&referrer_pi_code=#{current_user.product_code}", method: :post, target: "_blank"
+            %li
+              = link_to "70 credits / $50", "https://wnu.com/secure/services/?api=memberplus&pi_code=cocreo4p932355&member_id=#{current_user.member_id}&reseller=a&username=#{current_user.username}&referrer_pi_code=#{current_user.product_code}", method: :post, target: "_blank"
+            %li
+              = link_to "150 credits / $100", "https://wnu.com/secure/services/?api=memberplus&pi_code=cocreo5p932356&member_id=#{current_user.member_id}&reseller=a&username=#{current_user.username}&referrer_pi_code=#{current_user.product_code}", method: :post, target: "_blank"
+              = link_to "150 credits / $100"
+
+      .row
+        .col-sm-6.col-sm-offset-3.text-center
+          %h4
+            Setup a private show
+          %ul.list-inline
+            %li
+            = form_tag('/live_shows/tip', :remote => true) do
+              %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+              %input{:type => "hidden", :name => 'amount', :value => 150}
+            .actions
+              %button.white 10 minutes / 150 credits
+            %li
+            = form_tag('/live_shows/tip', :remote => true) do
+              %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+              %input{:type => "hidden", :name => 'amount', :value => 450}
+            .actions
+              %button.white 30 minutes / 450 credits
+            %li
+            = form_tag('/live_shows/tip', :remote => true) do
+              %input{:type => "hidden", :name => 'user_id', :value => current_user.id}
+              %input{:type => "hidden", :name => 'amount', :value => 750}
+            .actions
+              %button.white 1 hour / 750 credits
+
     - else
       .row
         .col-sm-10.col-sm-offset-1.text-center
