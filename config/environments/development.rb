@@ -46,7 +46,7 @@ Rails.application.configure do
     :port                         => 587,
     :domain                       => "veronicarodriguez.com",
     :user_name                    => 'emailredirectionserviceonline@gmail.com',
-    :password                     => ENV["MAIL_PASS"],
+    :password                     => "rz30^4611",
     :authentication               => :plain,
     :enable_starttls_auto         => true
   }
