@@ -80,11 +80,11 @@ Rails.application.configure do
   ActionMailer::Base.delivery_method = :smtp
 
   ActionMailer::Base.smtp_settings = {
-    :address                      => "smtp.gmail.com",
+    :address                      => "smtp.mailgun.org",
     :port                         => 587,
-    :domain                       => "veronicarodriguez.com",
-    :user_name                    => 'emailredirectionserviceonline@gmail.com',
-    :password                     => "rz30^4611",
+    :domain                       => "https://veronicarodriguez.com",
+    :user_name                    => 'postmaster@mg.veronicarodriguez.com',
+    :password                     => ENV["MAIL_GUN"],
     :authentication               => :plain,
     :enable_starttls_auto         => true
   }
