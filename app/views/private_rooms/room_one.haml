@@ -8,7 +8,7 @@
         .col-xs-12.col-sm-8.col-sm-offset-2.col-md-7.col-md-offset-2.col-lg-8
           #rt-a7c17da30e63900b052cf5dda40f03e5
             %script{:language => "JavaScript", :src => "//www.rumbletalk.com/client/?H1*UirLR", :type => "text/javascript"}
-      - if current_user.present? && current_user.private_room == 1 || current_user.is_admin?
+      - if current_user.present? && current_user.private_rooms == 1 || current_user.is_admin?
         .row
           .col-sm-10.col-sm-offset-1.text-center
             %h5#credits
