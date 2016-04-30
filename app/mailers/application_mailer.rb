@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'emailredirectionserviceonline@gmail.com'
+  default from: 'postmaster@mg.veronicarodriguez.com'
   layout 'mailer'
 end
