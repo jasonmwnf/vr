@@ -7,12 +7,6 @@
       .row
         .col-xs-12.col-sm-8.col-sm-offset-2.col-md-7.col-md-offset-2.col-lg-8
           %iframe{:allowtransparency => "true", :frameborder => "0", :height => "250px", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://chatroll.com/embed/chat/veronica-rodriguez-chat?id=17PwkRT2Hfb&platform=html&w=$0", :width => "100%"}
-      - if current_user.present? && current_user.private_rooms == 1 || current_user.is_admin?
-        .row
-          .col-sm-10.col-sm-offset-1.text-center
-            %h5#credits
-              Your credits:
-              = current_user.credits
       .row
         .col-sm-10.col-sm-offset-1.text-center
           %h5#credits
